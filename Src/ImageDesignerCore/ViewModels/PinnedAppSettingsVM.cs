@@ -12,6 +12,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Data;
+using Application = Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Application;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
 {
@@ -32,16 +33,25 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
       this.WPSettings = settings;
       bool flag = settings.IncludedSettings.Count > 0;
       this.SelectedAppType = !flag ? (availableOEMApps.Count<Application>() <= 0 ? (availableMSApps.Count<EnumWrapper>() <= 0 ? AppType.WebLink : AppType.MSApplication) : AppType.OEMApplication) : PinnedAppSettingsVM.GetAppTypeFromSettings(settings);
-      switch (this.SelectedAppType)
+     
+       //RnD     
+       switch (this.SelectedAppType)
       {
+                // fix it
         case AppType.OEMApplication:
-          this.AppSettings = (PinnedAppSettings) new InfusedAppSettings((PinnedAppSettings) null, this.SelectedAppType, this.AvailableOEMApps, this.AvailableMSApps);
+          this.AppSettings = (PinnedAppSettings) new InfusedAppSettings((PinnedAppSettings) null, 
+              this.SelectedAppType, /*availableOEMApps*/null, this.AvailableMSApps);
           break;
+
+             // fix it
         case AppType.MSApplication:
-          this.AppSettings = (PinnedAppSettings) new InfusedAppSettings((PinnedAppSettings) null, this.SelectedAppType, this.AvailableOEMApps, this.AvailableMSApps);
+          this.AppSettings = (PinnedAppSettings) 
+                        new InfusedAppSettings((PinnedAppSettings) null, 
+                        this.SelectedAppType, /*availableOEMApps*/null, this.AvailableMSApps);
           break;
         case AppType.WebLink:
-          this.AppSettings = (PinnedAppSettings) new WebLinkSettings((PinnedAppSettings) null, this.SelectedAppType);
+          this.AppSettings = (PinnedAppSettings)
+                        new WebLinkSettings((PinnedAppSettings) null, this.SelectedAppType);
           break;
       }
       if (flag)
@@ -195,6 +205,7 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
       return typeFromSettings;
     }
 
+    //RnD, TODO
     private static PinnedAppSettings GetAppSettings(
       PinnedAppSettings settings,
       AppType appType,
@@ -204,17 +215,25 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
       PinnedAppSettings newSettings = (PinnedAppSettings) null;
       switch (appType)
       {
+                // fix it
         case AppType.OEMApplication:
-          newSettings = (PinnedAppSettings) new InfusedAppSettings(settings, appType, availableOEMApps, availableMSApps);
+          newSettings = (PinnedAppSettings) 
+                        new InfusedAppSettings(settings, appType, /*availableOEMApps*/null, availableMSApps);
           break;
         case AppType.MSApplication:
-          newSettings = (PinnedAppSettings) new InfusedAppSettings(settings, appType, availableOEMApps, availableMSApps);
+          newSettings = (PinnedAppSettings) 
+                        new InfusedAppSettings(settings, appType, /*availableOEMApps*/null, availableMSApps);
           break;
         case AppType.WebLink:
-          newSettings = (PinnedAppSettings) new WebLinkSettings(settings, appType);
+          newSettings = (PinnedAppSettings) 
+                        new WebLinkSettings(settings, appType);
           break;
       }
-      Tools.DispatcherExec((Action) (() => BindingOperations.GetBindingExpressionBase((DependencyObject) newSettings, PinnedAppSettingsVM.AppSettingsProperty)?.UpdateTarget()));
+      Tools.DispatcherExec((Action) (() => 
+      BindingOperations.GetBindingExpressionBase(
+          (DependencyObject) newSettings, 
+            PinnedAppSettingsVM.AppSettingsProperty)?.UpdateTarget()));
+
       return newSettings;
     }
 

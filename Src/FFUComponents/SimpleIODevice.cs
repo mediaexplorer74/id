@@ -8,6 +8,7 @@ using FFUComponents.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -97,6 +98,8 @@ namespace FFUComponents
       }
       catch (AbandonedMutexException ex)
       {
+        Debug.WriteLine("[ex] " + ex.Message);
+
         this.hostLogger.EventWriteWaitAbandoned(this.DeviceUniqueID, this.DeviceFriendlyName);
         return true;
       }
@@ -120,11 +123,14 @@ namespace FFUComponents
         }
         catch (IOException ex)
         {
-          flag = true;
+            Debug.WriteLine("[ex] " + ex.Message);
+            flag = true;
         }
         catch (Win32Exception ex)
         {
-          flag = true;
+            Debug.WriteLine("[ex] " + ex.Message);
+            flag = true;
+
           if (ex.NativeErrorCode == 31)
             this.forceClearOnReconnect = false;
         }
@@ -260,11 +266,13 @@ label_4:
         }
         catch (IOException ex)
         {
-          this.hostLogger.EventWriteReconnectIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
+                    Debug.WriteLine("[ex] " + ex.Message);
+                    this.hostLogger.EventWriteReconnectIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
         }
         catch (Win32Exception ex)
         {
-          this.hostLogger.EventWriteReconnectWin32Exception(this.DeviceUniqueID, this.DeviceFriendlyName, ex.NativeErrorCode);
+                    Debug.WriteLine("[ex] " + ex.Message);
+                    this.hostLogger.EventWriteReconnectWin32Exception(this.DeviceUniqueID, this.DeviceFriendlyName, ex.NativeErrorCode);
         }
         finally
         {
@@ -310,6 +318,8 @@ label_4:
       }
       catch (IOException ex)
       {
+         Debug.WriteLine("[ex] " + ex.Message);
+
         this.hostLogger.EventWriteStreamClearIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
         this.connectEvent.WaitOne(5000, false);
       }
@@ -484,7 +494,8 @@ label_4:
         }
         catch (IOException ex)
         {
-          this.hostLogger.EventWriteWimIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
+                    Debug.WriteLine("[ex] " + ex.Message);
+                    this.hostLogger.EventWriteWimIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
         }
         catch (Win32Exception ex)
         {
@@ -534,11 +545,14 @@ label_4:
             }
             catch (IOException ex)
             {
-              goto label_15;
+                Debug.WriteLine("[ex] " + ex.Message);
+                goto label_15;
             }
             catch (Win32Exception ex)
             {
-              goto label_15;
+                Debug.WriteLine("[ex] " + ex.Message);
+
+                goto label_15;
             }
             finally
             {
@@ -624,7 +638,8 @@ label_15:
             }
             catch (IOException ex)
             {
-              throw new FFUDeviceNotReadyException((IFFUDevice) this);
+                Debug.WriteLine("[ex] Device Not ready ex. : " + ex.Message);
+                throw new FFUDeviceNotReadyException((IFFUDevice) this);
             }
             catch (Win32Exception ex)
             {
@@ -653,7 +668,8 @@ label_15:
           {
             try
             {
-              using (this.usbStream = new DTSFUsbStream(this.UsbDevicePath, TimeSpan.FromSeconds(1.0)))
+              using (this.usbStream = new DTSFUsbStream(this.UsbDevicePath, 
+                  TimeSpan.FromSeconds(1.0)))
               {
                 this.WriteDataFromBuffer(diskOffset, buffer, offset, count);
                 return;
@@ -661,11 +677,13 @@ label_15:
             }
             catch (IOException ex)
             {
-              throw new FFUDeviceNotReadyException((IFFUDevice) this);
+                            Debug.WriteLine("[ex] " + ex.Message);
+                            throw new FFUDeviceNotReadyException((IFFUDevice) this);
             }
             catch (Win32Exception ex)
             {
-              throw new FFUDeviceDiskWriteException((IFFUDevice) this, "An error occurred during a USB transfer.", (Exception) ex);
+              throw new FFUDeviceDiskWriteException((IFFUDevice) this, 
+                  "An error occurred during a USB transfer.", (Exception) ex);
             }
             finally
             {
@@ -692,11 +710,16 @@ label_15:
         }
         catch (IOException ex)
         {
-          this.hostLogger.EventWriteSkipIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
+            Debug.WriteLine("[ex] " + ex.Message);
+
+            this.hostLogger.EventWriteSkipIOException(
+                this.DeviceUniqueID, this.DeviceFriendlyName);
         }
         catch (Win32Exception ex)
         {
-          this.hostLogger.EventWriteSkipWin32Exception(this.DeviceUniqueID, this.DeviceFriendlyName, ex.NativeErrorCode);
+            Debug.WriteLine("[ex] " + ex.Message);
+            this.hostLogger.EventWriteSkipWin32Exception(
+                this.DeviceUniqueID, this.DeviceFriendlyName, ex.NativeErrorCode);
         }
         finally
         {
@@ -745,11 +768,13 @@ label_15:
             }
             catch (IOException ex)
             {
-              goto label_21;
+                            Debug.WriteLine("[ex] " + ex.Message);
+                            goto label_21;
             }
             catch (Win32Exception ex)
             {
-              goto label_21;
+                            Debug.WriteLine("[ex] " + ex.Message);
+                            goto label_21;
             }
             finally
             {
@@ -783,7 +808,8 @@ label_21:
             }
             catch (IOException ex)
             {
-              this.hostLogger.EventWriteRebootIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
+                Debug.WriteLine("[ex] " + ex.Message);
+                this.hostLogger.EventWriteRebootIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
               goto label_15;
             }
             catch (Win32Exception ex)
@@ -828,12 +854,14 @@ label_15:
             }
             catch (IOException ex)
             {
-              this.hostLogger.EventWriteMassStorageIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
+                            Debug.WriteLine("[ex] " + ex.Message);
+                            this.hostLogger.EventWriteMassStorageIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
               goto label_16;
             }
             catch (Win32Exception ex)
             {
-              this.hostLogger.EventWriteMassStorageWin32Exception(this.DeviceUniqueID, this.DeviceFriendlyName, ex.NativeErrorCode);
+                            Debug.WriteLine("[ex] " + ex.Message);
+                            this.hostLogger.EventWriteMassStorageWin32Exception(this.DeviceUniqueID, this.DeviceFriendlyName, ex.NativeErrorCode);
               goto label_16;
             }
             finally
@@ -874,7 +902,8 @@ label_16:
             }
             catch (IOException ex)
             {
-              this.hostLogger.EventWriteClearIdIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
+                            Debug.WriteLine("[ex] " + ex.Message);
+                            this.hostLogger.EventWriteClearIdIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
               goto label_16;
             }
             catch (Win32Exception ex)
@@ -954,13 +983,15 @@ label_16:
               }
               catch (IOException ex)
               {
-                this.hostLogger.EventWriteReadBootmeIOException(this.DeviceUniqueID, 
+                                Debug.WriteLine("[ex] " + ex.Message);
+                                this.hostLogger.EventWriteReadBootmeIOException(this.DeviceUniqueID, 
                     this.DeviceFriendlyName);
                 continue;
               }
               catch (Win32Exception ex)
               {
-                this.hostLogger.EventWriteReadBootmeWin32Exception(this.DeviceUniqueID, 
+                                Debug.WriteLine("[ex] " + ex.Message);
+                                this.hostLogger.EventWriteReadBootmeWin32Exception(this.DeviceUniqueID, 
                     this.DeviceFriendlyName, ex.NativeErrorCode);
                 continue;
               }
@@ -999,11 +1030,13 @@ label_16:
             }
             catch (IOException ex)
             {
-              goto label_15;
+                Debug.WriteLine("[ex] " + ex.Message);
+                goto label_15;
             }
             catch (Win32Exception ex)
             {
-              goto label_15;
+                Debug.WriteLine("[ex] " + ex.Message);
+                goto label_15;
             }
             finally
             {

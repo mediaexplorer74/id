@@ -1,9 +1,6 @@
-﻿using System;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Runtime.Versioning;
+using System;
 
 [assembly: AssemblyVersion("10.0.0.0")]
 [assembly: ComVisible(false)]

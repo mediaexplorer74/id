@@ -17,8 +17,9 @@ using System.Windows.Markup;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 {
-  public class DescribeImagePage : UserControl, IComponentConnector
+  public partial class DescribeImagePage : UserControl//, IComponentConnector
   {
+        /*
     internal TextBlock tbPageTitle;
     internal TextBlock tbPageDesc;
     internal TextBlock tbSelectedImage;
@@ -33,11 +34,13 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
     internal CheckListBox cbKeyboardLanguages;
     internal CheckListBox cbSpeechLanguages;
     private bool _contentLoaded;
+        */
 
     public DescribeImagePage() => this.InitializeComponent();
 
     private void HelpButtonClick(object sender, MouseButtonEventArgs e) => HelpProvider.ShowHelp();
 
+        /*
     [DebuggerNonUserCode]
     [GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
     public void InitializeComponent()
@@ -106,5 +109,6 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
           break;
       }
     }
+        */
   }
 }

@@ -108,7 +108,7 @@
     <Compile Include="DTSFUsbStreamWriteAsyncResult.cs" />
     <Compile Include="DTSFUsbStream.cs" />
     <Compile Include="Properties\Resources.cs" />
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />

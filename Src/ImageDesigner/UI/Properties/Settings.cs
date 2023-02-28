@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// Settings.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.UI.Properties.Settings
 // Assembly: ImageDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: AACE6177-DC79-444E-B25E-2FEDC45F69E4

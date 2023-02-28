@@ -50,11 +50,17 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
       dataContext.OutputLocation = folderBrowserDialog.SelectedPath + "\\";
     }
 
-    private void tbCurrentOutputLoc_MouseDoubleClick(object sender, MouseButtonEventArgs e) => this.tbCurrentOutputLoc.SelectAll();
+    private void tbCurrentOutputLoc_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+    {
+        this.tbCurrentOutputLoc.SelectAll();
+    }
 
-    private void tbCurrentOutputLoc_MenuItem_Click(object sender, RoutedEventArgs e) => Tools.CopyTextToClipboard(this.tbCurrentOutputLoc.SelectedText);
+    private void tbCurrentOutputLoc_MenuItem_Click(object sender, RoutedEventArgs e)
+    {
+        Tools.CopyTextToClipboard(this.tbCurrentOutputLoc.SelectedText);
+    }
 
-    private void HelpButtonClick(object sender, MouseButtonEventArgs e) => Microsoft.WindowsPhone.ImageDesigner.UI.Common.HelpProvider.ShowHelp();
+        private void HelpButtonClick(object sender, MouseButtonEventArgs e) => Microsoft.WindowsPhone.ImageDesigner.UI.Common.HelpProvider.ShowHelp();
 
         /*
     [GeneratedCode("PresentationBuildTasks", "4.0.0.0")]

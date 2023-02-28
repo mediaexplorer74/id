@@ -84,9 +84,11 @@ namespace Microsoft.WindowsPhone.MCSF.Offline
 			{
 				yield return PolicyMacroTable.MacroTildeToDollar(macroTable.ReplaceMacros(inputString));
 			}
+
+			//RnD
 			IEnumerator<string> enumerator = null;
 			yield break;
-			yield break;
+			//yield break;
 		}
 
 		// Token: 0x06000087 RID: 135 RVA: 0x00003864 File Offset: 0x00001A64

@@ -22,8 +22,9 @@ using System.Windows.Media;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 {
-  public class FlashImagePage : System.Windows.Controls.UserControl, IComponentConnector
+  public partial class FlashImagePage : System.Windows.Controls.UserControl//, IComponentConnector
   {
+        /*
     internal TextBlock tbPageTitle;
     internal TextBlock tbPageDesc;
     internal TextBlock tbFlashTxt;
@@ -39,6 +40,7 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
     internal Border bdFlashComplete;
     internal System.Windows.Controls.TextBox tbFlashComplete;
     private bool _contentLoaded;
+        */
 
     public FlashImagePage()
     {
@@ -113,6 +115,7 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 
     private void HelpButtonClick(object sender, MouseButtonEventArgs e) => Microsoft.WindowsPhone.ImageDesigner.UI.Common.HelpProvider.ShowHelp();
 
+        /*
     [GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
     [DebuggerNonUserCode]
     public void InitializeComponent()
@@ -185,5 +188,6 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
           break;
       }
     }
+        */
   }
 }

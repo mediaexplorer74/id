@@ -41,9 +41,6 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="ToolsCommon">
-      <HintPath>lib\ToolsCommon.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -69,11 +66,11 @@
     <Compile Include="LogMonitorEventArgs.cs" />
     <Compile Include="WPIDException.cs" />
     <Compile Include="IIDState.cs" />
-    <Compile Include="EnumToBooleanConverter.cs" />
+    <Compile Include="Core\EnumToBooleanConverter.cs" />
     <Compile Include="FileExistsConverter.cs" />
-    <Compile Include="NegateConverter.cs" />
-    <Compile Include="IIDCommand`1.cs" />
-    <Compile Include="DelegateCommand`1.cs" />
+    <Compile Include="Core\NegateConverter.cs" />
+    <Compile Include="IIDCommand.cs" />
+    <Compile Include="DelegateCommand.cs" />
     <Compile Include="Workflow.cs" />
     <Compile Include="ImageType.cs" />
     <Compile Include="IDStates.cs" />
@@ -104,7 +101,7 @@
     <Compile Include="TaskEventArgs.cs" />
     <Compile Include="UserConfig.cs" />
     <Compile Include="ObjectPropertyChangedEventHandler.cs" />
-    <Compile Include="ObservableNotifyObjectCollection`1.cs" />
+    <Compile Include="ObservableNotifyObjectCollection.cs" />
     <Compile Include="ObjectPropertyChangedEventArgs.cs" />
     <Compile Include="TooltipStrings.cs" />
     <Compile Include="TooltipBehavior.cs" />
@@ -187,24 +184,36 @@
     <Compile Include="ViewModels\PinnedAppSettings.cs" />
     <Compile Include="ViewModels\InfusedAppSettings.cs" />
     <Compile Include="ViewModels\WebLinkSettings.cs" />
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Strings.resx" />
     <EmbeddedResource Include="Resources\Tooltips.resx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\featureapi\featureapi.csproj">
+    <ProjectReference Include="..\featureapi\FeatureAPI.csproj">
       <Project>{0c6c36af-96c1-4799-91b0-9ede3ae0cd17}</Project>
-      <Name>featureapi</Name>
+      <Name>FeatureAPI</Name>
     </ProjectReference>
     <ProjectReference Include="..\FFUComponents\FFUComponents.csproj">
       <Project>{d87de86e-dfea-45a9-96e8-900c7639ac6d}</Project>
       <Name>FFUComponents</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ImageCustomization\ImageCustomization.csproj">
+      <Project>{aa228a11-7209-41b1-b660-07bf53dd2741}</Project>
+      <Name>ImageCustomization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCSFOffline\MCSFOffline.csproj">
+      <Project>{37ba0760-0c2c-4d4f-993f-94be80cecf4a}</Project>
+      <Name>MCSFOffline</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PkgCommonManaged\PkgCommonManaged.csproj">
       <Project>{37ba0760-0c2c-4d4f-993f-94be80cecf5c}</Project>
       <Name>PkgCommonManaged</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolsCommon\ToolsCommon.csproj">
+      <Project>{8c557c1f-7df5-4d2d-a723-85731e959c19}</Project>
+      <Name>ToolsCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

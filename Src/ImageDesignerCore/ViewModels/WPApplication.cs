@@ -11,31 +11,112 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using Application = Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Application;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
 {
   public class WPApplication : WPListItemBase
   {
     public Application Application;
+    
     private bool _isStaticVariant;
-    public static readonly DependencyProperty SourceForegroundProperty = DependencyProperty.Register(nameof (SourceForeground), typeof (string), typeof (WPApplication), new PropertyMetadata((object) WPListItemBase.DefaultForegroundColor, new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
-    public static readonly DependencyProperty LicenseForegroundProperty = DependencyProperty.Register(nameof (LicenseForeground), typeof (string), typeof (WPApplication), new PropertyMetadata((object) WPListItemBase.DefaultForegroundColor, new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
-    public static readonly DependencyProperty ProvXMLForegroundProperty = DependencyProperty.Register(nameof (ProvXMLForeground), typeof (string), typeof (WPApplication), new PropertyMetadata((object) WPListItemBase.DefaultForegroundColor, new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
-    public static readonly DependencyProperty LicenseHasWarningsProperty = DependencyProperty.Register(nameof (LicenseHasWarnings), typeof (bool), typeof (WPApplication), new PropertyMetadata((object) false));
-    public static readonly DependencyProperty LicenseHasErrorsProperty = DependencyProperty.Register(nameof (LicenseHasErrors), typeof (bool), typeof (WPApplication), new PropertyMetadata((object) false));
-    public static readonly DependencyProperty LicenseWarningsToolTipProperty = DependencyProperty.Register(nameof (LicenseWarningsToolTip), typeof (string), typeof (WPApplication), new PropertyMetadata((object) ""));
-    public static readonly DependencyProperty LicenseErrorsToolTipProperty = DependencyProperty.Register(nameof (LicenseErrorsToolTip), typeof (string), typeof (WPApplication), new PropertyMetadata((object) ""));
-    public static readonly DependencyProperty ProvXMLHasWarningsProperty = DependencyProperty.Register(nameof (ProvXMLHasWarnings), typeof (bool), typeof (WPApplication), new PropertyMetadata((object) false));
-    public static readonly DependencyProperty ProvXMLHasErrorsProperty = DependencyProperty.Register(nameof (ProvXMLHasErrors), typeof (bool), typeof (WPApplication), new PropertyMetadata((object) false));
-    public static readonly DependencyProperty ProvXMLWarningsToolTipProperty = DependencyProperty.Register(nameof (ProvXMLWarningsToolTip), typeof (string), typeof (WPApplication), new PropertyMetadata((object) ""));
-    public static readonly DependencyProperty ProvXMLErrorsToolTipProperty = DependencyProperty.Register(nameof (ProvXMLErrorsToolTip), typeof (string), typeof (WPApplication), new PropertyMetadata((object) ""));
-    public static readonly DependencyProperty TargetPartitionForegroundProperty = DependencyProperty.Register(nameof (TargetPartitionForeground), typeof (string), typeof (WPApplication), new PropertyMetadata((object) WPListItemBase.DefaultForegroundColor, new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
-    public static readonly DependencyProperty SourceProperty = DependencyProperty.Register(nameof (Source), typeof (string), typeof (WPApplication), new PropertyMetadata((object) "", new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
-    public static readonly DependencyProperty LicenseProperty = DependencyProperty.Register(nameof (License), typeof (string), typeof (WPApplication), new PropertyMetadata((object) "", new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
-    public static readonly DependencyProperty ProvXMLProperty = DependencyProperty.Register(nameof (ProvXML), typeof (string), typeof (WPApplication), new PropertyMetadata((object) "", new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
-    public static readonly DependencyProperty TargetPartitionProperty = DependencyProperty.Register(nameof (TargetPartition), typeof (AppPartition), typeof (WPApplication), new PropertyMetadata((object) AppPartition.MainOS));
 
-    public WPApplication(Application application, bool isIncludedInOutput, WPListItemBase parent)
+    public static readonly DependencyProperty 
+            SourceForegroundProperty = DependencyProperty.Register(
+                nameof (SourceForeground), typeof (string), 
+                typeof (WPApplication), 
+                new PropertyMetadata((object) WPListItemBase.DefaultForegroundColor, 
+                    new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
+
+    public static readonly DependencyProperty 
+            LicenseForegroundProperty = DependencyProperty.Register(
+                nameof (LicenseForeground), typeof (string), 
+                typeof (WPApplication), 
+                new PropertyMetadata((object) WPListItemBase.DefaultForegroundColor, 
+                    new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
+
+    public static readonly DependencyProperty 
+            ProvXMLForegroundProperty = DependencyProperty.Register(
+                nameof (ProvXMLForeground), typeof (string), typeof (WPApplication), 
+                new PropertyMetadata((object) WPListItemBase.DefaultForegroundColor,
+                    new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
+
+    public static readonly DependencyProperty 
+            LicenseHasWarningsProperty = DependencyProperty.Register(
+                nameof (LicenseHasWarnings), typeof (bool), typeof (WPApplication),
+                new PropertyMetadata((object) false));
+
+    public static readonly DependencyProperty 
+            LicenseHasErrorsProperty = DependencyProperty.Register(
+                nameof (LicenseHasErrors), typeof (bool), typeof (WPApplication), 
+                new PropertyMetadata((object) false));
+
+    public static readonly DependencyProperty
+            LicenseWarningsToolTipProperty = DependencyProperty.Register(
+                nameof (LicenseWarningsToolTip), typeof (string), 
+                typeof (WPApplication), new PropertyMetadata((object) ""));
+
+    public static readonly DependencyProperty 
+            LicenseErrorsToolTipProperty = DependencyProperty.Register(
+                nameof (LicenseErrorsToolTip), typeof (string), 
+                typeof (WPApplication), new PropertyMetadata((object) ""));
+
+    public static readonly DependencyProperty 
+            ProvXMLHasWarningsProperty = DependencyProperty.Register(
+                nameof (ProvXMLHasWarnings), typeof (bool), typeof (WPApplication),
+                new PropertyMetadata((object) false));
+
+    public static readonly DependencyProperty 
+            ProvXMLHasErrorsProperty = DependencyProperty.Register(
+                nameof (ProvXMLHasErrors), typeof (bool), typeof (WPApplication), 
+                new PropertyMetadata((object) false));
+
+    public static readonly DependencyProperty 
+            ProvXMLWarningsToolTipProperty = DependencyProperty.Register(
+                nameof (ProvXMLWarningsToolTip), typeof (string), 
+                typeof (WPApplication), new PropertyMetadata((object) ""));
+
+    public static readonly DependencyProperty 
+            ProvXMLErrorsToolTipProperty = DependencyProperty.Register(
+                nameof (ProvXMLErrorsToolTip), typeof (string), 
+                typeof (WPApplication), 
+                new PropertyMetadata((object) ""));
+
+    public static readonly DependencyProperty 
+            TargetPartitionForegroundProperty = DependencyProperty.Register(
+                nameof (TargetPartitionForeground), typeof (string), 
+                typeof (WPApplication), 
+                new PropertyMetadata((object) WPListItemBase.DefaultForegroundColor, 
+                    new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
+
+    public static readonly DependencyProperty 
+            SourceProperty = DependencyProperty.Register(
+                nameof (Source), typeof (string),
+                typeof (WPApplication), 
+                new PropertyMetadata((object) "",
+                    new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
+
+    public static readonly DependencyProperty 
+            LicenseProperty = DependencyProperty.Register(
+                nameof (License), typeof (string), typeof (WPApplication), 
+                new PropertyMetadata((object) "", 
+                    new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
+
+    public static readonly DependencyProperty 
+            ProvXMLProperty = DependencyProperty.Register(
+                nameof (ProvXML), typeof (string), typeof (WPApplication), 
+                new PropertyMetadata((object) "", 
+                    new PropertyChangedCallback(WPListItemBase.OnPropertyChanged)));
+
+    public static readonly DependencyProperty 
+            TargetPartitionProperty = DependencyProperty.Register(
+                nameof (TargetPartition), typeof (AppPartition), 
+                typeof (WPApplication), 
+                new PropertyMetadata((object) AppPartition.MainOS));
+
+
+    public WPApplication(Application application, bool isIncludedInOutput, 
+        WPListItemBase parent)
       : base(parent)
     {
       this.Application = application;

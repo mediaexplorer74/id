@@ -37,49 +37,92 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
-    <Reference Include="ToolsCommon">
-      <HintPath>lib\ToolsCommon.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FeatureAPIException.cs" />
-    <Compile Include="OEMInput.cs" />
-    <Compile Include="UserStoreMapData.cs" />
-    <Compile Include="SupportedLangs.cs" />
-    <Compile Include="OEMInputFeatures.cs" />
-    <Compile Include="UpdateHistory.cs" />
-    <Compile Include="UpdateEvent.cs" />
-    <Compile Include="UpdateOSInput.cs" />
-    <Compile Include="UpdateOSOutput.cs" />
-    <Compile Include="UpdateOSOutputPackage.cs" />
-    <Compile Include="UpdateOSOutputIdentity.cs" />
-    <Compile Include="PkgVersion.cs" />
-    <Compile Include="MicrosoftPhoneSKU.cs" />
-    <Compile Include="FeatureManifest.cs" />
-    <Compile Include="PkgFile.cs" />
-    <Compile Include="BootUIPkgFile.cs" />
-    <Compile Include="BootLocalePkgFile.cs" />
-    <Compile Include="SpeechPkgFile.cs" />
-    <Compile Include="KeyboardPkgFile.cs" />
-    <Compile Include="PrereleasePkgFile.cs" />
-    <Compile Include="DevicePkgFile.cs" />
-    <Compile Include="OEMDevicePkgFile.cs" />
-    <Compile Include="ReleasePkgFile.cs" />
-    <Compile Include="OptionalPkgFile.cs" />
-    <Compile Include="MSOptionalPkgFile.cs" />
-    <Compile Include="OEMOptionalPkgFile.cs" />
-    <Compile Include="SVPkgFile.cs" />
-    <Compile Include="SOCPkgFile.cs" />
-    <Compile Include="DeviceLayoutPkgFile.cs" />
-    <Compile Include="FMFeatures.cs" />
-    <Compile Include="FMFeatureGrouping.cs" />
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\BootLocalePkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\BootUIPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\Condition.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\ConditionSet.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\DeviceLayoutPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\DevicePkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\Edition.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\EditionLookup.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\EditionPackage.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\EditionUISettings.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\FeatureAPIException.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\FeatureCondition.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\FeatureManifest.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\FMConditionalFeature.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\FMFeatureGrouping.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\FMFeatures.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\ImagingEditions.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\KeyboardPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\MSOptionalPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\OEMDevicePkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\OEMInput.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\OEMInputFeatures.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\OEMOptionalPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\OptionalPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\PkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\PkgVersion.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\PrereleasePkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\RegistryLookup.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\ReleasePkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\SOCPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\SpeechPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\SupportedCPUType.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\SupportedLangs.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\SVPkgFile.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\UIDisplayType.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\UpdateEvent.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\UpdateHistory.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\UpdateOSInput.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\UpdateOSOutput.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\UpdateOSOutputIdentity.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\UpdateOSOutputPackage.cs" />
+    <Compile Include="Microsoft.WindowsPhone.FeatureAPI\UserStoreMapData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PkgCommonManaged\PkgCommonManaged.csproj">
       <Project>{37BA0760-0C2C-4D4F-993F-94BE80CECF5C}</Project>
       <Name>PkgCommonManaged</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ToolsCommon\ToolsCommon.csproj">
+      <Project>{8c557c1f-7df5-4d2d-a723-85731e959c19}</Project>
+      <Name>ToolsCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FeatureManifest.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImagingEditions.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OEMInput.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UpdateHistory.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UpdateOSInput.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UpdateOSOutput.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ImagingEditions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

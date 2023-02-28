@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// DialogTypeToVisibilityConverter.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.UI.Common.DialogTypeToVisibilityConverter
 // Assembly: ImageDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: AACE6177-DC79-444E-B25E-2FEDC45F69E4
@@ -18,7 +18,9 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Common
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
       CustomDialogType customDialogType = (CustomDialogType) parameter;
-      return (CustomDialogType) value == customDialogType ? (object) Visibility.Visible : (object) Visibility.Collapsed;
+      return (CustomDialogType) value == customDialogType 
+                ? (object) Visibility.Visible 
+                : (object) Visibility.Collapsed;
     }
 
     public object ConvertBack(

@@ -7,6 +7,7 @@
 using Microsoft.Win32.SafeHandles;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -44,6 +45,8 @@ namespace FFUComponents
       }
       catch (Exception ex)
       {
+        Debug.WriteLine("[ex] " + ex.Message);
+
         this.CloseDeviceHandle();
         throw;
       }
@@ -167,6 +170,7 @@ namespace FFUComponents
       }
       catch (Exception ex)
       {
+         Debug.WriteLine("[ex] " + ex.Message);
       }
     }
 
@@ -280,6 +284,7 @@ namespace FFUComponents
       }
       catch (Exception ex)
       {
+                Debug.WriteLine("[ex] " + ex.Message);
       }
     }
 
@@ -477,6 +482,7 @@ namespace FFUComponents
       }
       catch (Exception ex)
       {
+         Debug.WriteLine("[ex] " + ex.Message);
       }
       finally
       {

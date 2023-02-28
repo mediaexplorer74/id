@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1C0D026-CF7B-4080-A71A-69434D592CF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Microsoft.Phone.Test.TestMetadata</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>8.1.1702.2001</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Microsoft.Phone.Test.TestMetadata</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Log.cs" />
+    <Compile Include="Helper\Contract.cs" />
+    <Compile Include="Helper\ImageImportDescriptor.cs" />
+    <Compile Include="Helper\DelayLoadImportDescriptor.cs" />
+    <Compile Include="Helper\ImageExportDirectory.cs" />
+    <Compile Include="Helper\ImageDataDirectory.cs" />
+    <Compile Include="Helper\ImageCor20Header.cs" />
+    <Compile Include="Helper\ImageNtHeaders.cs" />
+    <Compile Include="Helper\ImageFileHeader.cs" />
+    <Compile Include="Helper\ImageOptionalHeader32.cs" />
+    <Compile Include="Helper\NativeMethods.cs" />
+    <Compile Include="Helper\PortableExecutable.cs" />
+    <Compile Include="Helper\BinaryDependencyType.cs" />
+    <Compile Include="Helper\PortableExecutableDependency.cs" />
+    <Compile Include="Helper\BinaryFile.cs" />
+    <Compile Include="Helper\DependencySuppression.cs" />
+    <Compile Include="ObjectModel\Dependency.cs" />
+    <Compile Include="ObjectModel\BinaryDependency.cs" />
+    <Compile Include="ObjectModel\PackageDependency.cs" />
+    <Compile Include="ObjectModel\RemoteFileDependency.cs" />
+    <Compile Include="ObjectModel\EnvironmentPathDependnecy.cs" />
+    <Compile Include="ObjectModel\Metadata.cs" />
+    <Compile Include="CommandLine\Command.cs" />
+    <Compile Include="CommandLine\CommandAliasAttribute.cs" />
+    <Compile Include="CommandLine\CommandAttribute.cs" />
+    <Compile Include="CommandLine\CommandException.cs" />
+    <Compile Include="CommandLine\CommandFactory.cs" />
+    <Compile Include="CommandLine\CommandOption.cs" />
+    <Compile Include="CommandLine\CommandOptionCollection.cs" />
+    <Compile Include="CommandLine\CommandSpecification.cs" />
+    <Compile Include="CommandLine\CommandSpecificationCollection.cs" />
+    <Compile Include="CommandLine\DotNetOptionParser.cs" />
+    <Compile Include="CommandLine\FormatUtility.cs" />
+    <Compile Include="CommandLine\HelpCommandBase.cs" />
+    <Compile Include="CommandLine\OptionAttribute.cs" />
+    <Compile Include="CommandLine\OptionParser.cs" />
+    <Compile Include="CommandLine\OptionSpecification.cs" />
+    <Compile Include="CommandLine\OptionSpecificationCollection.cs" />
+    <Compile Include="CommandLine\OptionSpecificationException.cs" />
+    <Compile Include="CommandLine\OptionValueType.cs" />
+    <Compile Include="CommandLine\StandardOptionParser.cs" />
+    <Compile Include="CommandLine\UsageException.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Schema\testmetadata.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Tools.IO\Microsoft.Tools.IO.csproj">
+      <Project>{daae934f-87f5-4b5e-880b-089ac2262f69}</Project>
+      <Name>Microsoft.Tools.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReflectionUtilities\ReflectionUtilities.csproj">
+      <Project>{28822914-35ca-43dc-8a41-05e397db2700}</Project>
+      <Name>ReflectionUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

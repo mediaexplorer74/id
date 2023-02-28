@@ -43,15 +43,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuildImageCmdHandler.cs" />
-    <Compile Include="FlashImageCmdHandler.cs" />
-    <Compile Include="IDCommandLine.cs" />
+    <Compile Include="UI\Common\BuildImageCmdHandler.cs" />
+    <Compile Include="UI\Common\FlashImageCmdHandler.cs" />
+    <Compile Include="UI\Common\IDCommandLine.cs" />
     <Compile Include="ImageDesignerMain.cs" />
     <Compile Include="ImageDesigner.cs" />
-    <Compile Include="UI\CustomMessageBox.cs" />
-    <Compile Include="UI\CustomGetValueDialog.cs" />
-    <Compile Include="UI\CustomGetFileDialog.cs" />
-    <Compile Include="UI\TargetValuesDialog.cs" />
+    <Compile Include="UI\Dialogs\CustomMessageBox.cs" />
+    <Compile Include="UI\Dialogs\CustomGetValueDialog.cs" />
+    <Compile Include="UI\Dialogs\CustomGetFileDialog.cs" />
+    <Compile Include="UI\Dialogs\TargetValuesDialog.cs" />
     <Compile Include="App.cs" />
     <Compile Include="UI\Common\InverseBooleanToSVConverter.cs" />
     <Compile Include="UI\Common\BooleanToVisibilityConverter.cs" />
@@ -82,32 +82,32 @@
     <Compile Include="UI\Controls\CheckListBox.cs" />
     <Compile Include="UI\Resources\Resources.cs" />
     <Compile Include="UI\Properties\Settings.cs" />
-    <Compile Include="XamlGeneratedNamespace\GeneratedInternalTypeHelper.cs" />
+    <Compile Include="UI\Resources\GeneratedInternalTypeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\images\application_32xmd.png" />
-    <Resource Include="resources\images\arrow_down_16xlg.png" />
-    <Resource Include="resources\images\arrow_up_16xlg.png" />
-    <Resource Include="resources\images\conditions_5855.png" />
-    <Resource Include="resources\images\control_openfiledialog.bmp" />
-    <Resource Include="resources\images\copy.png" />
-    <Resource Include="resources\images\customizationtemplatesleftarrow.jpg" />
-    <Resource Include="resources\images\customizationtemplatesrightarrow.jpg" />
-    <Resource Include="resources\images\delete_16xlg.png" />
-    <Resource Include="resources\images\error_red_16x16_cyan.png" />
-    <Resource Include="resources\images\folder_closed_32xmd.png" />
-    <Resource Include="resources\images\gear_32xmd.png" />
-    <Resource Include="resources\images\help_black.png" />
-    <Resource Include="resources\images\help_blue.png" />
-    <Resource Include="resources\images\imagedesignersplash.png" />
-    <Resource Include="resources\images\maptilelayer_32x.png" />
-    <Resource Include="resources\images\pencil_005_16xlg.png" />
-    <Resource Include="resources\images\properties_16xmd.png" />
-    <Resource Include="resources\images\refresh_16xlg.png" />
-    <Resource Include="resources\images\resource_32xmd.png" />
-    <Resource Include="resources\images\statusannotations_warning_32xsm_color.png" />
-    <Resource Include="resources\images\wplogowhite.png" />
+    <Resource Include="UI\Resources\Images\Application_32xmd.png" />
+    <Resource Include="UI\Resources\Images\Arrow_down_16xlg.png" />
+    <Resource Include="UI\Resources\Images\Arrow_up_16xlg.png" />
+    <Resource Include="UI\Resources\Images\Conditions_5855.png" />
+    <Resource Include="UI\Resources\Images\Control_openfiledialog.bmp" />
+    <Resource Include="UI\Resources\Images\Copy.png" />
+    <Resource Include="UI\Resources\Images\CustomizationTemplatesLeftArrow.jpg" />
+    <Resource Include="UI\Resources\Images\CustomizationTemplatesRightArrow.jpg" />
+    <Resource Include="UI\Resources\Images\Delete_16xlg.png" />
+    <Resource Include="UI\Resources\Images\Error_Red_16x16_Cyan.png" />
+    <Resource Include="UI\Resources\Images\Folder_Closed_32xmd.png" />
+    <Resource Include="UI\Resources\Images\Gear_32xmd.png" />
+    <Resource Include="UI\Resources\Images\Help_Black.png" />
+    <Resource Include="UI\Resources\Images\Help_Blue.png" />
+    <Resource Include="UI\Resources\Images\ImageDesignerSplash.png" />
+    <Resource Include="UI\Resources\Images\MapTileLayer_32x.png" />
+    <Resource Include="UI\Resources\Images\Pencil_005_16xlg.png" />
+    <Resource Include="UI\Resources\Images\Properties_16xmd.png" />
+    <Resource Include="UI\Resources\Images\Refresh_16xlg.png" />
+    <Resource Include="UI\Resources\Images\Resource_32xmd.png" />
+    <Resource Include="UI\Resources\Images\StatusAnnotations_Warning_32xsm_Color.png" />
+    <Resource Include="UI\Resources\Images\WPLogoWhite.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />
@@ -121,31 +121,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="dialogs\CustomGetFileDialog.xaml">
+    <Page Include="UI\Dialogs\CustomGetFileDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="dialogs\CustomGetValueDialog.xaml">
+    <Page Include="UI\Dialogs\CustomGetValueDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="dialogs\CustomMessageBox.xaml">
+    <Page Include="UI\Dialogs\CustomMessageBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="dialogs\IDContainer.xaml">
+    <Page Include="UI\Dialogs\IDContainer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="dialogs\PinnedAppsDialog.xaml">
+    <Page Include="UI\Dialogs\PinnedAppsDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="dialogs\PinnedAppSettingsDialog.xaml">
+    <Page Include="UI\Dialogs\PinnedAppSettingsDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="dialogs\TargetValuesDialog.xaml">
+    <Page Include="UI\Dialogs\TargetValuesDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -153,51 +153,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\BuildImagePage.xaml">
+    <Page Include="UI\Views\BuildImagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\BuildSuccessPage.xaml">
+    <Page Include="UI\Views\BuildSuccessPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\CustomizationChoicePage.xaml">
+    <Page Include="UI\Views\CustomizationChoicePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\CustomizeOSPage.xaml">
+    <Page Include="UI\Views\CustomizeOSPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\describeimagepage.xaml">
+    <Page Include="UI\Views\DescribeImagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\flashimagepage.xaml">
+    <Page Include="UI\Views\FlashImagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\gettingstartedpage.xaml">
+    <Page Include="UI\Views\GettingStartedPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\modifyimagepage.xaml">
+    <Page Include="UI\Views\ModifyImagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\PickOutputLocationPage.xaml">
+    <Page Include="UI\Views\PickOutputLocationPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\SelectImagePage.xaml">
+    <Page Include="UI\Views\SelectImagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\SelectTemplatesPage.xaml">
+    <Page Include="UI\Views\SelectTemplatesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="views\SettingUpPage.xaml">
+    <Page Include="UI\Views\SettingUpPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -206,9 +206,14 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="controls\" />
+    <Content Include="Resources\Images\Control_OpenFileDialog.bmp" />
+    <Content Include="Resources\Images\Information_blue_6227.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ImageCustomization\ImageCustomization.csproj">
+      <Project>{aa228a11-7209-41b1-b660-07bf53dd2741}</Project>
+      <Name>ImageCustomization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImageDesignerCore\ImageDesignerCore.csproj">
       <Project>{6c9a7c8a-3489-4489-8344-c9c343915f6f}</Project>
       <Name>ImageDesignerCore</Name>

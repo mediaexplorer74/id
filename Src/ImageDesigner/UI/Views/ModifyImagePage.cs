@@ -20,15 +20,15 @@ using System.Windows.Markup;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 {
-  public class ModifyImagePage : System.Windows.Controls.UserControl, IComponentConnector
+  public partial class ModifyImagePage : System.Windows.Controls.UserControl//, IComponentConnector
   {
-    internal TextBlock tbPageTitle;
-    internal TextBlock tbPageDesc;
-    internal TextBlock tbExistingProj;
-    internal System.Windows.Controls.TextBox tbProjLoc;
-    internal TextBlock tbChangeProj;
-    internal Hyperlink hlChangeProj;
-    private bool _contentLoaded;
+    //internal TextBlock tbPageTitle;
+    //internal TextBlock tbPageDesc;
+    //internal TextBlock tbExistingProj;
+    //internal System.Windows.Controls.TextBox tbProjLoc;
+    //internal TextBlock tbChangeProj;
+    //internal Hyperlink hlChangeProj;
+    //private bool _contentLoaded;
 
     public ModifyImagePage()
     {
@@ -66,6 +66,7 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 
     private void HelpButtonClick(object sender, MouseButtonEventArgs e) => Microsoft.WindowsPhone.ImageDesigner.UI.Common.HelpProvider.ShowHelp();
 
+        /*
     [DebuggerNonUserCode]
     [GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
     public void InitializeComponent()
@@ -114,5 +115,6 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
           break;
       }
     }
+        */
   }
 }

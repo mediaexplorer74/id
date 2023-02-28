@@ -236,7 +236,10 @@ namespace Microsoft.WindowsPhone.ImageUpdate.PkgCommon
 		}
 
 		// Token: 0x0600024B RID: 587 RVA: 0x0000AA60 File Offset: 0x00008C60
-		public static void Merge(IEnumerable<string> inputPkgs, VersionInfo? outputVersion, ReleaseType expectedReleaseType, CpuId expectedCpuType, BuildType expectedBuildType, string outputDir, bool compress, IDeploymentLogger _logger)
+		public static void Merge(IEnumerable<string> inputPkgs, VersionInfo? outputVersion, 
+			ReleaseType expectedReleaseType, CpuId expectedCpuType, 
+			BuildType expectedBuildType, string outputDir, bool compress, 
+			IDeploymentLogger _logger)
 		{
 			using (PkgMerger pkgMerger = new PkgMerger(expectedReleaseType, expectedCpuType, expectedBuildType))
 			{

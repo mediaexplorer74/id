@@ -16,22 +16,23 @@ using System.Windows.Markup;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 {
-  public class GettingStartedPage : UserControl, IComponentConnector
+  public partial class GettingStartedPage : UserControl//, IComponentConnector
   {
-    internal TextBlock tbPageTitle;
-    internal TextBlock tbPageDesc;
-    internal RadioButton rbSelectOption_CreateImage;
-    internal TextBlock tbSelectOption_CreateImage;
-    internal RadioButton rbSelectOption_ModifyImage;
-    internal TextBlock tbSelectOption_ModifyImage;
-    internal RadioButton rbSelectOption_FlashImage;
-    internal TextBlock tbSelectOption_FlashImage;
-    private bool _contentLoaded;
+    //internal TextBlock tbPageTitle;
+    //internal TextBlock tbPageDesc;
+    //internal RadioButton rbSelectOption_CreateImage;
+    //internal TextBlock tbSelectOption_CreateImage;
+    //internal RadioButton rbSelectOption_ModifyImage;
+    //internal TextBlock tbSelectOption_ModifyImage;
+    //internal RadioButton rbSelectOption_FlashImage;
+    //internal TextBlock tbSelectOption_FlashImage;
+    //private bool _contentLoaded;
 
     public GettingStartedPage() => this.InitializeComponent();
 
     private void HelpButtonClick(object sender, MouseButtonEventArgs e) => HelpProvider.ShowHelp();
 
+        /*
     [GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
     [DebuggerNonUserCode]
     public void InitializeComponent()
@@ -81,5 +82,6 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
           break;
       }
     }
+        */
   }
 }

@@ -9,7 +9,7 @@ ImageDesignerCore
 ImageDesignerCore.Resources
 ImageCustomization.Resources
 FFUComponents
-ToolsCommon
+ToolsCommon +
 FeatureAPI
 featuremerger
 PkgToolBox

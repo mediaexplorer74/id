@@ -8,6 +8,7 @@ using Microsoft.WindowsPhone.ImageUpdate.Customization;
 using Microsoft.WindowsPhone.ImageUpdate.Customization.XML;
 using System.Linq;
 using System.Windows;
+using Condition = Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Condition;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
 {

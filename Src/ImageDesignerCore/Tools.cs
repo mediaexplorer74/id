@@ -21,6 +21,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Xml.Linq;
+using Application = Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Application;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.Core
 {
@@ -65,17 +66,23 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
     {
       if (a == null)
         return;
-      if (Application.Current != null)
-        Application.Current.Dispatcher.Invoke((Delegate) a);
-      else
-        a();
+            if (Application.Current != null)
+            {
+                //RnD
+                //Application.Current.Dispatcher.Invoke((Delegate)a);
+            }
+            else
+                a();
     }
 
     public static T DispatcherExec<T>(Func<T> f)
     {
       T obj = default (T);
-      if (f != null)
-        obj = Application.Current == null ? f() : (T) Application.Current.Dispatcher.Invoke((Delegate) f);
+
+    if (f != null)
+        obj = Application.Current == null
+                    ? f()
+                    : default;//(T) Application.Current.Dispatcher.Invoke((Delegate) f);
       return obj;
     }
 
