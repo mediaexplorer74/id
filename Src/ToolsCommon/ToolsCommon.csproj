@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Admin\Desktop\ImageDesigner\64\ImageDesigner\ToolsCommon.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C557C1F-7DF5-4D2D-A723-85731E959C19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>ToolsCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>8.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Microsoft.WindowsPhone.ImageUpdate.Tools.Common</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandLineParser.cs" />
+    <Compile Include="CmdHandler.cs" />
+    <Compile Include="MultiCmdHandler.cs" />
+    <Compile Include="IUException.cs" />
+    <Compile Include="ParseException.cs" />
+    <Compile Include="ArgumentAlreadyDeclaredException.cs" />
+    <Compile Include="EmptyArgumentDeclaredException.cs" />
+    <Compile Include="NoSuchArgumentException.cs" />
+    <Compile Include="AmbiguousArgumentException.cs" />
+    <Compile Include="RequiredParameterAfterOptionalParameterException.cs" />
+    <Compile Include="BadGroupException.cs" />
+    <Compile Include="ParseFailedException.cs" />
+    <Compile Include="MobileCoreImage.cs" />
+    <Compile Include="MobileCoreVHD.cs" />
+    <Compile Include="MobileCoreWIM.cs" />
+    <Compile Include="RegistryValueType.cs" />
+    <Compile Include="ORRegistryKey.cs" />
+    <Compile Include="OfflineRegUtils.cs" />
+    <Compile Include="HiveToRegConverter.cs" />
+    <Compile Include="RegValidator.cs" />
+    <Compile Include="OffRegNativeMethods.cs" />
+    <Compile Include="MobileCorePartitionType.cs" />
+    <Compile Include="ImagePartition.cs" />
+    <Compile Include="SecurityInformationFlags.cs" />
+    <Compile Include="SecurityUtils.cs" />
+    <Compile Include="ConstValue`1.cs" />
+    <Compile Include="TokenPrivilege.cs" />
+    <Compile Include="PrivilegeNames.cs" />
+    <Compile Include="ProcessPrivilege.cs" />
+    <Compile Include="NativeSecurityMethods.cs" />
+    <Compile Include="FileUtils.cs" />
+    <Compile Include="CommonUtils.cs" />
+    <Compile Include="PEFileUtils.cs" />
+    <Compile Include="SystemRegistryHiveFiles.cs" />
+    <Compile Include="RegistryUtils.cs" />
+    <Compile Include="LogUtil.cs" />
+    <Compile Include="XmlValidator.cs" />
+    <Compile Include="ImagePartitionCollection.cs" />
+    <Compile Include="VHDImagePartition.cs" />
+    <Compile Include="VHD_STORAGE_TYPE_DEVICE.cs" />
+    <Compile Include="ATTACH_VIRTUAL_DISK_FLAG.cs" />
+    <Compile Include="VIRTUAL_STORAGE_TYPE.cs" />
+    <Compile Include="OPEN_VIRTUAL_DISK_FLAG.cs" />
+    <Compile Include="CREATE_VIRTUAL_DISK_FLAG.cs" />
+    <Compile Include="VIRTUAL_DISK_ACCESS_MASK.cs" />
+    <Compile Include="OPEN_VIRTUAL_DISK_VERSION.cs" />
+    <Compile Include="CREATE_VIRTUAL_DISK_VERSION.cs" />
+    <Compile Include="OPEN_VIRTUAL_DISK_PARAMETERS.cs" />
+    <Compile Include="CREATE_VIRTUAL_DISK_PARAMETERS_V1.cs" />
+    <Compile Include="CREATE_VIRTUAL_DISK_PARAMETERS.cs" />
+    <Compile Include="ATTACH_VIRTUAL_DISK_VERSION.cs" />
+    <Compile Include="ATTACH_VIRTUAL_DISK_PARAMETERS.cs" />
+    <Compile Include="DETACH_VIRTUAL_DISK_FLAG.cs" />
+    <Compile Include="VIRTUAL_STORAGE_TYPE_VENDOR.cs" />
+    <Compile Include="VirtualDiskLib.cs" />
+    <Compile Include="WPSecurityPolicy.cs" />
+    <Compile Include="SddlNormalizer.cs" />
+    <Compile Include="AclCollection.cs" />
+    <Compile Include="ResourceAcl.cs" />
+    <Compile Include="ResourceAclComparer.cs" />
+    <Compile Include="DirectoryAcl.cs" />
+    <Compile Include="FileAcl.cs" />
+    <Compile Include="RegistryAcl.cs" />
+    <Compile Include="RegAclWithFullAcl.cs" />
+    <Compile Include="RegistryStoredAcl.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="LongPathCommon.cs" />
+    <Compile Include="LongPath.cs" />
+    <Compile Include="LongPathDirectory.cs" />
+    <Compile Include="LongPathFile.cs" />
+    <Compile Include="RegValueType.cs" />
+    <Compile Include="RegValueInfo.cs" />
+    <Compile Include="RegUtil.cs" />
+    <Compile Include="RegBuilder.cs" />
+    <Compile Include="RgaBuilder.cs" />
+    <Compile Include="LogString.cs" />
+    <Compile Include="IULogger.cs" />
+    <Compile Include="XsdValidator.cs" />
+    <Compile Include="XsdValidatorException.cs" />
+    <Compile Include="DevicePaths.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DeviceLayout.xsd" />
+    <EmbeddedResource Include="FeatureManifest.xsd" />
+    <EmbeddedResource Include="FMCollection.xsd" />
+    <EmbeddedResource Include="MicrosoftPhoneSKU.xsd" />
+    <EmbeddedResource Include="OEMDevicePlatform.xsd" />
+    <EmbeddedResource Include="OEMInput.xsd" />
+    <EmbeddedResource Include="PropsProject.xsd" />
+    <EmbeddedResource Include="PublishingPackageInfo.xsd" />
+    <EmbeddedResource Include="UpdateHistory.xsd" />
+    <EmbeddedResource Include="UpdateOSInput.xsd" />
+    <EmbeddedResource Include="UpdateOSOutput.xsd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

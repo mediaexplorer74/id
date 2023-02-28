@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Admin\Desktop\ImageDesigner\64\ImageDesigner\ImageDesigner.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE40352C-F350-4FB0-918E-6850FA216676}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>ImageDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>8.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Microsoft.WindowsPhone.ImageDesigner</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildImageCmdHandler.cs" />
+    <Compile Include="FlashImageCmdHandler.cs" />
+    <Compile Include="IDCommandLine.cs" />
+    <Compile Include="ImageDesignerMain.cs" />
+    <Compile Include="ImageDesigner.cs" />
+    <Compile Include="UI\CustomMessageBox.cs" />
+    <Compile Include="UI\CustomGetValueDialog.cs" />
+    <Compile Include="UI\CustomGetFileDialog.cs" />
+    <Compile Include="UI\TargetValuesDialog.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="UI\Common\InverseBooleanToSVConverter.cs" />
+    <Compile Include="UI\Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="UI\Common\DialogTypeToVisibilityConverter.cs" />
+    <Compile Include="UI\Common\ContentConverter.cs" />
+    <Compile Include="UI\Common\NegateConverter.cs" />
+    <Compile Include="UI\Common\ResizeModeToVisibilityConverter.cs" />
+    <Compile Include="UI\Common\Transition.cs" />
+    <Compile Include="UI\Common\Negative.cs" />
+    <Compile Include="UI\Common\UITools.cs" />
+    <Compile Include="UI\Common\HelpProvider.cs" />
+    <Compile Include="UI\Views\BuildImagePage.cs" />
+    <Compile Include="UI\Views\Extensions.cs" />
+    <Compile Include="UI\Views\BuildSuccessPage.cs" />
+    <Compile Include="UI\Views\CustomizeOSPage.cs" />
+    <Compile Include="UI\Views\FlashImagePage.cs" />
+    <Compile Include="UI\Views\IDContainer.cs" />
+    <Compile Include="UI\Views\GettingStartedPage.cs" />
+    <Compile Include="UI\Views\ModifyImagePage.cs" />
+    <Compile Include="UI\Views\PickOutputLocationPage.cs" />
+    <Compile Include="UI\Views\SettingUpPage.cs" />
+    <Compile Include="UI\Views\SelectImagePage.cs" />
+    <Compile Include="UI\Views\DescribeImagePage.cs" />
+    <Compile Include="UI\Views\CustomizationChoicePage.cs" />
+    <Compile Include="UI\Views\SelectTemplatesPage.cs" />
+    <Compile Include="UI\Dialogs\PinnedAppSettingsDialog.cs" />
+    <Compile Include="UI\Dialogs\PinnedAppsDialog.cs" />
+    <Compile Include="UI\Controls\CheckListBox.cs" />
+    <Compile Include="UI\Resources\Resources.cs" />
+    <Compile Include="UI\Properties\Settings.cs" />
+    <Compile Include="XamlGeneratedNamespace\GeneratedInternalTypeHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\application_32xmd.png" />
+    <Resource Include="resources\images\arrow_down_16xlg.png" />
+    <Resource Include="resources\images\arrow_up_16xlg.png" />
+    <Resource Include="resources\images\conditions_5855.png" />
+    <Resource Include="resources\images\control_openfiledialog.bmp" />
+    <Resource Include="resources\images\copy.png" />
+    <Resource Include="resources\images\customizationtemplatesleftarrow.jpg" />
+    <Resource Include="resources\images\customizationtemplatesrightarrow.jpg" />
+    <Resource Include="resources\images\delete_16xlg.png" />
+    <Resource Include="resources\images\error_red_16x16_cyan.png" />
+    <Resource Include="resources\images\folder_closed_32xmd.png" />
+    <Resource Include="resources\images\gear_32xmd.png" />
+    <Resource Include="resources\images\help_black.png" />
+    <Resource Include="resources\images\help_blue.png" />
+    <Resource Include="resources\images\imagedesignersplash.png" />
+    <Resource Include="resources\images\maptilelayer_32x.png" />
+    <Resource Include="resources\images\pencil_005_16xlg.png" />
+    <Resource Include="resources\images\properties_16xmd.png" />
+    <Resource Include="resources\images\refresh_16xlg.png" />
+    <Resource Include="resources\images\resource_32xmd.png" />
+    <Resource Include="resources\images\statusannotations_warning_32xsm_color.png" />
+    <Resource Include="resources\images\wplogowhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Controls\CheckListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\CustomGetFileDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\CustomGetValueDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\CustomMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\IDContainer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\PinnedAppsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\PinnedAppSettingsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\TargetValuesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImageDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\BuildImagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\BuildSuccessPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\CustomizationChoicePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\CustomizeOSPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\describeimagepage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\flashimagepage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\gettingstartedpage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\modifyimagepage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\PickOutputLocationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\SelectImagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\SelectTemplatesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\settinguppage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageDesignerCore\ImageDesignerCore.csproj">
+      <Project>{6c9a7c8a-3489-4489-8344-c9c343915f6f}</Project>
+      <Name>ImageDesignerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCSFOffline\MCSFOffline.csproj">
+      <Project>{37ba0760-0c2c-4d4f-993f-94be80cecf4a}</Project>
+      <Name>MCSFOffline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PkgCommonManaged\PkgCommonManaged.csproj">
+      <Project>{37ba0760-0c2c-4d4f-993f-94be80cecf5c}</Project>
+      <Name>PkgCommonManaged</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolsCommon\ToolsCommon.csproj">
+      <Project>{8c557c1f-7df5-4d2d-a723-85731e959c19}</Project>
+      <Name>ToolsCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

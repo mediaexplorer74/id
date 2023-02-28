@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Admin\Desktop\ImageDesigner\64\ImageDesigner\ImageDesignerCore.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C9A7C8A-3489-4489-8344-C9C343915F6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>ImageDesignerCore</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>8.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Microsoft.WindowsPhone.ImageDesigner.Core</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="ToolsCommon">
+      <HintPath>lib\ToolsCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IDContext.cs" />
+    <Compile Include="PackageMetadata.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DeviceFlasherEventHandler.cs" />
+    <Compile Include="DeviceFlasherProgressEventHandler.cs" />
+    <Compile Include="FlashingResult.cs" />
+    <Compile Include="DeviceFlasher.cs" />
+    <Compile Include="DeviceMonitorEventHandler.cs" />
+    <Compile Include="DeviceMonitor.cs" />
+    <Compile Include="ImageBuilderEventHandler.cs" />
+    <Compile Include="ImageBuilder.cs" />
+    <Compile Include="ImageBuilderEventArgs.cs" />
+    <Compile Include="LogEntry.cs" />
+    <Compile Include="ConsoleLogSettings.cs" />
+    <Compile Include="PidConsoleWriter.cs" />
+    <Compile Include="LogMonitorEventHandler.cs" />
+    <Compile Include="LogMonitor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LogMonitorEventArgs.cs" />
+    <Compile Include="WPIDException.cs" />
+    <Compile Include="IIDState.cs" />
+    <Compile Include="EnumToBooleanConverter.cs" />
+    <Compile Include="FileExistsConverter.cs" />
+    <Compile Include="NegateConverter.cs" />
+    <Compile Include="IIDCommand`1.cs" />
+    <Compile Include="DelegateCommand`1.cs" />
+    <Compile Include="Workflow.cs" />
+    <Compile Include="ImageType.cs" />
+    <Compile Include="IDStates.cs" />
+    <Compile Include="CustomizationChoice.cs" />
+    <Compile Include="CustomDialogType.cs" />
+    <Compile Include="WPIDLocale.cs" />
+    <Compile Include="AppType.cs" />
+    <Compile Include="MSApps.cs" />
+    <Compile Include="AppTileSize.cs" />
+    <Compile Include="StartLayout.cs" />
+    <Compile Include="FeatureLayout.cs" />
+    <Compile Include="IDControllerEventHandler.cs" />
+    <Compile Include="IIDControl.cs" />
+    <Compile Include="IDController.cs" />
+    <Compile Include="IDControllerEventHandlerArgs.cs" />
+    <Compile Include="ISelectable.cs" />
+    <Compile Include="WPLanguage.cs" />
+    <Compile Include="TaskID.cs" />
+    <Compile Include="BackgroundTasks.cs" />
+    <Compile Include="WPIDTask.cs" />
+    <Compile Include="AsyncWPIDTask.cs" />
+    <Compile Include="ImageSizeCalculatorTask.cs" />
+    <Compile Include="CalculateLanguageSizeTask.cs" />
+    <Compile Include="TaskStatus.cs" />
+    <Compile Include="TaskEventHandler.cs" />
+    <Compile Include="TaskWorkEventHandler.cs" />
+    <Compile Include="TaskWorkEventArgs.cs" />
+    <Compile Include="TaskEventArgs.cs" />
+    <Compile Include="UserConfig.cs" />
+    <Compile Include="ObjectPropertyChangedEventHandler.cs" />
+    <Compile Include="ObservableNotifyObjectCollection`1.cs" />
+    <Compile Include="ObjectPropertyChangedEventArgs.cs" />
+    <Compile Include="TooltipStrings.cs" />
+    <Compile Include="TooltipBehavior.cs" />
+    <Compile Include="TooltipConverter.cs" />
+    <Compile Include="BSPConfig.cs" />
+    <Compile Include="ProjectXml.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="SafeNativeMethods.cs" />
+    <Compile Include="LexicographicComparer.cs" />
+    <Compile Include="WaitCursor.cs" />
+    <Compile Include="LocalizationVM.cs" />
+    <Compile Include="WPIDLanguage.cs" />
+    <Compile Include="Resources\Strings.cs" />
+    <Compile Include="Resources\Tooltips.cs" />
+    <Compile Include="ViewModels\BuildImagePageEventHandler.cs" />
+    <Compile Include="ViewModels\IDViewModelBase.cs" />
+    <Compile Include="ViewModels\BuildImagePageVM.cs" />
+    <Compile Include="ViewModels\BuildImagePageEventArgs.cs" />
+    <Compile Include="ViewModels\BuildSuccessPageVM.cs" />
+    <Compile Include="ViewModels\ModifyImagePageVM.cs" />
+    <Compile Include="ViewModels\CustomizeOSPageVM.cs" />
+    <Compile Include="ViewModels\FlashImagePageVM.cs" />
+    <Compile Include="ViewModels\ValidationEventHandler.cs" />
+    <Compile Include="ViewModels\GettingStartedPageVM.cs" />
+    <Compile Include="ViewModels\OutputLocationOptions.cs" />
+    <Compile Include="ViewModels\PickOutputLocationPageVM.cs" />
+    <Compile Include="ViewModels\SettingUpPageVM.cs" />
+    <Compile Include="ViewModels\SelectImagePageVM.cs" />
+    <Compile Include="ViewModels\DescribeImagePageVM.cs" />
+    <Compile Include="ViewModels\LocaleInfoLookup.cs" />
+    <Compile Include="ViewModels\LocaleInfo.cs" />
+    <Compile Include="ViewModels\CustomizationChoicePageVM.cs" />
+    <Compile Include="ViewModels\SelectTemplatesPageVM.cs" />
+    <Compile Include="ViewModels\WPCustomization.cs" />
+    <Compile Include="ViewModels\ExtensionMethods.cs" />
+    <Compile Include="ViewModels\AppPartition.cs" />
+    <Compile Include="ViewModels\WPListItemBase.cs" />
+    <Compile Include="ViewModels\WPApplication.cs" />
+    <Compile Include="ViewModels\WPApplicationsGroups.cs" />
+    <Compile Include="ViewModels\WPCondition.cs" />
+    <Compile Include="ViewModels\WPDataAsset.cs" />
+    <Compile Include="ViewModels\WPDataAssetsGroup.cs" />
+    <Compile Include="ViewModels\WPCustomizationAssetType.cs" />
+    <Compile Include="ViewModels\WPDataAssetsGroups.cs" />
+    <Compile Include="ViewModels\WPImageCustomization.cs" />
+    <Compile Include="ViewModels\WPErrors.cs" />
+    <Compile Include="ViewModels\WPSetting.cs" />
+    <Compile Include="ViewModels\WPSettingAsset.cs" />
+    <Compile Include="ViewModels\WPCustomizationAssetOwner.cs" />
+    <Compile Include="ViewModels\WPSettingsAssetsGroup.cs" />
+    <Compile Include="ViewModels\WPSettings.cs" />
+    <Compile Include="ViewModels\WPSettingsAssets.cs" />
+    <Compile Include="ViewModels\WPSettingsGroups.cs" />
+    <Compile Include="ViewModels\WPSettingsPathPart.cs" />
+    <Compile Include="ViewModels\WPTarget.cs" />
+    <Compile Include="ViewModels\WPTargetState.cs" />
+    <Compile Include="ViewModels\WPVariant.cs" />
+    <Compile Include="ViewModels\CustomMessageBoxResult.cs" />
+    <Compile Include="ViewModels\CustomMessageBoxVM.cs" />
+    <Compile Include="ViewModels\CustomGetValueResult.cs" />
+    <Compile Include="ViewModels\CustomGetValueVM.cs" />
+    <Compile Include="ViewModels\CustomGetFileResult.cs" />
+    <Compile Include="ViewModels\CustomGetFileVM.cs" />
+    <Compile Include="ViewModels\TargetValuesDialogVM.cs" />
+    <Compile Include="ViewModels\ConfirmStartOverDialogVM.cs" />
+    <Compile Include="ViewModels\SaveSuccessDialogVM.cs" />
+    <Compile Include="ViewModels\PinVMBase.cs" />
+    <Compile Include="ViewModels\PinnedAppSettingsVM.cs" />
+    <Compile Include="ViewModels\AppTileSizeToWrapperConverter.cs" />
+    <Compile Include="ViewModels\MSAppsToWrapperConverter.cs" />
+    <Compile Include="ViewModels\CustomPinAttribute.cs" />
+    <Compile Include="ViewModels\LayoutAttribute.cs" />
+    <Compile Include="ViewModels\SettingAttribute.cs" />
+    <Compile Include="ViewModels\EnumStringValueAttribute.cs" />
+    <Compile Include="ViewModels\PinnedAppsVM.cs" />
+    <Compile Include="ViewModels\EnumWrapper.cs" />
+    <Compile Include="ViewModels\StartLayoutToWrapperConverter.cs" />
+    <Compile Include="ViewModels\FeatureLayoutToWrapperConverter.cs" />
+    <Compile Include="ViewModels\PinnedAppSettings.cs" />
+    <Compile Include="ViewModels\InfusedAppSettings.cs" />
+    <Compile Include="ViewModels\WebLinkSettings.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Strings.resx" />
+    <EmbeddedResource Include="Resources\Tooltips.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\featureapi\featureapi.csproj">
+      <Project>{0c6c36af-96c1-4799-91b0-9ede3ae0cd17}</Project>
+      <Name>featureapi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FFUComponents\FFUComponents.csproj">
+      <Project>{d87de86e-dfea-45a9-96e8-900c7639ac6d}</Project>
+      <Name>FFUComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PkgCommonManaged\PkgCommonManaged.csproj">
+      <Project>{37ba0760-0c2c-4d4f-993f-94be80cecf5c}</Project>
+      <Name>PkgCommonManaged</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

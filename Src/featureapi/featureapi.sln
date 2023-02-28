@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureAPI", "featureapi.csproj", "{0C6C36AF-96C1-4799-91B0-9EDE3AE0CD17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C6C36AF-96C1-4799-91B0-9EDE3AE0CD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6C36AF-96C1-4799-91B0-9EDE3AE0CD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6C36AF-96C1-4799-91B0-9EDE3AE0CD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6C36AF-96C1-4799-91B0-9EDE3AE0CD17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
