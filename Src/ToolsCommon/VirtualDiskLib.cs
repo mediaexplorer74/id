@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// VirtualDiskLib.cs
 // Type: Microsoft.WindowsPhone.ImageUpdate.Tools.Common.VirtualDiskLib
 // Assembly: ToolsCommon, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: 660CFE2F-EC6E-431A-97AF-69194F68E20E

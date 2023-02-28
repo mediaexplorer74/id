@@ -15,9 +15,9 @@
       <Border DockPanel.Dock="Left" Margin="0,5,0,0" Background="White">
         <StackPanel Orientation="Vertical">
           <TextBlock x:Name="tbPageTitle" Style="{StaticResource tbPageTitle}" Margin="10,0,0,0"
-                     Text="{x:Static res:Strings.tbPageHeader_SettingUpPage_Text}"/>
+                     Text=" x:Static res:Strings.tbPageHeader_SettingUpPage_Text "/>
           <TextBlock x:Name="tbPageDesc" Style="{StaticResource tbPageDesc}" Margin="10,0" TextWrapping="Wrap"
-                     Text="{x:Static res:Strings.tbPageDesc_SettingUpPage_Text}"/>
+                     Text=" x:Static res:Strings.tbPageDesc_SettingUpPage_Text "/>
         </StackPanel>
       </Border>
       <Image MouseLeftButtonUp="HelpButtonClick" Margin="0,0,5,0" HorizontalAlignment="Right"
@@ -41,18 +41,18 @@
       </Grid.RowDefinitions>
       <StackPanel Margin="10" Orientation="Vertical" Grid.Row="0">
         <TextBlock x:Name="tbDrvLocTitle" Margin="5,0" TextWrapping="Wrap" Style="{StaticResource tbSectionTitle}"
-                   Text="{x:Static res:Strings.tbSettingUp_HwDrvLocTitle}"/>
+                   Text=" x:Static res:Strings.tbSettingUp_HwDrvLocTitle "/>
         <TextBlock x:Name="tbDrvLocDesc" Margin="19,0" TextWrapping="Wrap" Style="{StaticResource tbSectionDesc}"
-                   Text="{x:Static res:Strings.tbSettingUp_HwDrvLocDesc}"/>
+                   Text=" x:Static res:Strings.tbSettingUp_HwDrvLocDesc "/>
         <TextBlock x:Name="tbSectionDesc" Margin="19,15,0,0" TextWrapping="Wrap"
-                   Style="{StaticResource tbSectionDesc}" Text="{x:Static res:Strings.tbSettingUp_CurrentLoc}"/>
+                   Style="{StaticResource tbSectionDesc}" Text=" x:Static res:Strings.tbSettingUp_CurrentLoc "/>
         <DockPanel>
           <TextBox MouseDoubleClick="tbBspPath_MouseDoubleClick" x:Name="tbBspPath" Margin="19,0,10,0"
                    DockPanel.Dock="Left" TextWrapping="Wrap" Background="Transparent" BorderThickness="0"
                    IsReadOnly="true" Style="{StaticResource txbSectionDesc}" Text="{Binding Path=BSPConfigFilePath}">
             <FrameworkElement.ContextMenu>
               <ContextMenu>
-                <MenuItem Click="tbBspPath_MenuItem_Click" Header="{x:Static res:Strings.miConxtextMenuCopy}"
+                <MenuItem Click="tbBspPath_MenuItem_Click" Header=" x:Static res:Strings.miConxtextMenuCopy "
                           IsEnabled="true" StaysOpenOnClick="false">
                   <MenuItem.Icon>
                     <Image Source="/ImageDesigner;component/Resources/Images/Copy.png"/>
@@ -68,11 +68,11 @@
       </StackPanel>
       <StackPanel Margin="10,15" Orientation="Vertical" Grid.Row="1">
         <TextBlock x:Name="tbOutputPathTitle" Margin="5,0" TextWrapping="Wrap" Style="{StaticResource tbSectionTitle}"
-                   Text="{x:Static res:Strings.tbSettingUp_OutputLocationTitle}"/>
+                   Text=" x:Static res:Strings.tbSettingUp_OutputLocationTitle "/>
         <TextBlock x:Name="tbOutputPathDesc" Margin="19,0" TextWrapping="Wrap" Style="{StaticResource tbSectionDesc}"
-                   Text="{x:Static res:Strings.tbSettingUp_OutputLocationDesc}"/>
+                   Text=" x:Static res:Strings.tbSettingUp_OutputLocationDesc "/>
         <TextBlock x:Name="tbCurrentOutputPath" Margin="19,15,0,0" TextWrapping="Wrap"
-                   Style="{StaticResource tbSectionDesc}" Text="{x:Static res:Strings.tbSettingUp_CurrentOutputLoc}"/>
+                   Style="{StaticResource tbSectionDesc}" Text=" x:Static res:Strings.tbSettingUp_CurrentOutputLoc "/>
         <DockPanel>
           <TextBox MouseDoubleClick="tbChangeOutputPath_MouseDoubleClick" x:Name="tbChangeOutputPath"
                    Margin="19,0,10,0" DockPanel.Dock="Left" TextWrapping="Wrap" Background="Transparent"
@@ -80,7 +80,7 @@
                    Text="{Binding Path=OutputPath}">
             <FrameworkElement.ContextMenu>
               <ContextMenu>
-                <MenuItem Click="tbChangeOutputPath_MenuItem_Click" Header="{x:Static res:Strings.miConxtextMenuCopy}"
+                <MenuItem Click="tbChangeOutputPath_MenuItem_Click" Header=" x:Static res:Strings.miConxtextMenuCopy "
                           IsEnabled="true" StaysOpenOnClick="false">
                   <MenuItem.Icon>
                     <Image Source="/ImageDesigner;component/Resources/Images/Copy.png"/>

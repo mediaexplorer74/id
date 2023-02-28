@@ -180,7 +180,7 @@ namespace FFUComponents
       this.ShowInTaskbar = false;
       this.MaximizeBox = false;
       this.MaximumSize = new Size(1, 1);
-      IntPtr num = NativeMethods.SetParent(this.Handle, (IntPtr) -3L);
+      IntPtr num = NativeMethods.SetParent(this.Handle, (IntPtr)(-3L));
       if (IntPtr.Zero == num)
         throw new Win32Exception(Marshal.GetLastWin32Error());
       this.ResumeLayout(false);

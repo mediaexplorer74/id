@@ -57,7 +57,10 @@ namespace FFUComponents
     {
       if (!fDisposing)
         return;
-      this.runningContext.MainForm.BeginInvoke((Delegate) (() => this.runningContext.MainForm.Close())).AsyncWaitHandle.WaitOne();
+
+      //RnD
+      //this.runningContext.MainForm.BeginInvoke((Delegate) (() => this.runningContext.MainForm.Close())).AsyncWaitHandle.WaitOne();
+      
       this.runningContext.ExitThread();
       this.runningContext = (ApplicationContext) null;
     }

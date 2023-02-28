@@ -1,0 +1,271 @@
+<Window x:Class="Microsoft.WindowsPhone.ImageDesigner.UI.Dialogs.PinnedAppsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.Resources;assembly=ImageDesignerCore"
+        xmlns:core="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core;assembly=ImageDesignerCore"
+        xmlns:vm="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels;assembly=ImageDesignerCore"
+        xmlns:dialogs="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Dialogs"
+        xmlns:common="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Common"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:view="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Views"
+        WindowStartupLocation="CenterScreen" Background="#FF0079A8" Width="600" Height="300" MaxWidth="700"
+        ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+        AllowsTransparency="true" ResizeMode="NoResize" Style="{DynamicResource CustomMessageBoxStyle}"
+        SizeToContent="WidthAndHeight" common:HelpProvider.HelpKeyword="AppPinning" Title="{Binding Title}">
+  <Grid Background="White">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="70*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <FrameworkElement.Resources>
+      <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+      <common:DialogTypeToVisibilityConverter x:Key="dlgToVisibilityConverter"/>
+      <vm:StartLayoutToWrapperConverter x:Key="StartLayoutToWrapperConverter"/>
+      <vm:FeatureLayoutToWrapperConverter x:Key="FeatureLayoutToWrapperConverter"/>
+      <vm:AppTileSizeToWrapperConverter x:Key="AppTileSizeToWrapperConverter"/>
+      <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type DataGridCell}">
+              <Grid Background="{TemplateBinding Control.Background}">
+                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <common:BooleanToVisibilityConverter x:Key="boolVisibilityConverter"/>
+    </FrameworkElement.Resources>
+    <Border Grid.Row="0" Margin="10,10,10,10" BorderThickness="1" BorderBrush="#00AFDB">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50*"/>
+          <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#FFC4E5F6" BorderBrush="#00AFDB"
+                BorderThickness="0,0,0,1">
+          <DockPanel>
+            <TextBlock DockPanel.Dock="Left" Margin="10,5,5,5" Foreground="Black"
+                       Text="{x:Static res:Strings.tbPinnedAppLayoutOptions}"/>
+            <Image MouseLeftButtonUp="HelpButtonClick" DockPanel.Dock="Right" Margin="20,0,5,0"
+                   HorizontalAlignment="Right" VerticalAlignment="Center" Width="25" Height="28">
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Image}">
+                  <Setter Property="Image.Source" Value="/ImageDesigner;component/Resources/Images/Help_Blue.png"/>
+                  <Style.Triggers>
+                    <Trigger Property="UIElement.IsMouseOver" Value="true">
+                      <Setter Property="Image.Source" Value="/ImageDesigner;component/Resources/Images/Help_Black.png"/>
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </FrameworkElement.Style>
+            </Image>
+          </DockPanel>
+        </Border>
+        <StackPanel Margin="5" Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+          <TextBlock x:Name="tbLayout" Grid.Row="1" Grid.Column="0" Margin="5,0,0,0" VerticalAlignment="Center"
+                     Text="{x:Static res:Strings.tbPinnedAppStartScreenLayout}"/>
+          <ComboBox x:Name="cmbLayout" Grid.Row="1" Grid.Column="1" Margin="10,5" MinWidth="120"
+                    VerticalAlignment="Center" ItemsSource="{Binding Path=StartLayoutList}"
+                    SelectedValue="{Binding Path=StartTileLayout, Converter={StaticResource StartLayoutToWrapperConverter}, Mode=TwoWay}"/>
+        </StackPanel>
+        <StackPanel Margin="5" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+          <TextBlock x:Name="tbFeaturedTileLayout" Grid.Row="1" Grid.Column="0" Margin="5,0,0,0"
+                     VerticalAlignment="Center" Text="{x:Static res:Strings.tbPinnedAppFeaturedTileLayout}" Height="14"/>
+          <ComboBox x:Name="cmbFeaturedTileLayout" Grid.Row="1" Grid.Column="1" Margin="10,10" MinWidth="120"
+                    VerticalAlignment="Center" Height="22" ItemsSource="{Binding Path=FeatureTileLayoutList}"
+                    SelectedValue="{Binding Path=FeatureTileLayout, Converter={StaticResource FeatureLayoutToWrapperConverter}, Mode=TwoWay}"/>
+        </StackPanel>
+      </Grid>
+    </Border>
+    <Separator Grid.Row="1" BorderBrush="#00AFDB" BorderThickness="2"/>
+    <Border Grid.Row="2" Margin="10,10,10,10" BorderThickness="1" BorderBrush="#00AFDB">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#FFC4E5F6" BorderBrush="#00AFDB" BorderThickness="0,0,0,1">
+          <DockPanel>
+            <TextBlock DockPanel.Dock="Left" Margin="10,5,5,5" Foreground="Black"
+                       Text="{x:Static res:Strings.tbPinnedAppTableHeader}"/>
+            <Image MouseLeftButtonUp="HelpButtonClick" DockPanel.Dock="Right" Margin="20,0,5,0"
+                   HorizontalAlignment="Right" VerticalAlignment="Center" Width="25" Height="28">
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Image}">
+                  <Setter Property="Image.Source" Value="/ImageDesigner;component/Resources/Images/Help_Blue.png"/>
+                  <Style.Triggers>
+                    <Trigger Property="UIElement.IsMouseOver" Value="true">
+                      <Setter Property="Image.Source" Value="/ImageDesigner;component/Resources/Images/Help_Black.png"/>
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </FrameworkElement.Style>
+            </Image>
+          </DockPanel>
+        </Border>
+        <DataGrid x:Name="gridPinnedApps" Grid.Row="1" Margin="0" BorderThickness="0" AutoGenerateColumns="false"
+                  CanUserAddRows="false" CellStyle="{StaticResource DataGridCellStyle}"
+                  ItemsSource="{Binding PinnedApps, Mode=TwoWay}">
+          <DataGrid.Columns>
+            <DataGridTextColumn Width="170" IsReadOnly="true" Binding="{Binding AppSettings.Name, Mode=TwoWay}">
+              <DataGridColumn.Header>
+                <TextBlock Text="{x:Static res:Strings.tbPinnedAppNameURL}" HorizontalAlignment="Center"/>
+              </DataGridColumn.Header>
+              <DataGridColumn.HeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                  <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+                </Style>
+              </DataGridColumn.HeaderStyle>
+            </DataGridTextColumn>
+            <DataGridTextColumn Width="100" IsReadOnly="true" Binding="{Binding AppSettings.LocalizedAppType}">
+              <DataGridColumn.Header>
+                <TextBlock Text="{x:Static res:Strings.chPinnedAppType}" HorizontalAlignment="Center"/>
+              </DataGridColumn.Header>
+              <DataGridColumn.HeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                  <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+                </Style>
+              </DataGridColumn.HeaderStyle>
+            </DataGridTextColumn>
+            <DataGridTemplateColumn Width="120" CanUserResize="false">
+              <DataGridColumn.Header>
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Margin="0,5,0,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="4 Column"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  <Separator Grid.Row="1" Grid.ColumnSpan="3"/>
+                  <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static res:Strings.chPinnedAppTileSize}"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  <TextBlock Grid.Row="2" Grid.Column="1" Text="X" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  <TextBlock Grid.Row="2" Grid.Column="2" Text="Y" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+              </DataGridColumn.Header>
+              <DataGridColumn.HeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                  <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+                </Style>
+              </DataGridColumn.HeaderStyle>
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="60"/>
+                      <ColumnDefinition Width="30"/>
+                      <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="{Binding AppSettings.LocalizedTileSize}"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="{Binding AppSettings.CoordinateX}"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="{Binding AppSettings.CoordinateY}"/>
+                  </Grid>
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn CanUserResize="false" Width="120">
+              <DataGridColumn.Header>
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Margin="0,5,0,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="6 Column"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  <Separator Grid.Row="1" Grid.ColumnSpan="3"/>
+                  <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static res:Strings.chPinnedAppTileSize}"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  <TextBlock Grid.Row="2" Grid.Column="1" Text="X" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  <TextBlock Grid.Row="2" Grid.Column="2" Text="Y" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+              </DataGridColumn.Header>
+              <DataGridColumn.HeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                  <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+                </Style>
+              </DataGridColumn.HeaderStyle>
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="60"/>
+                      <ColumnDefinition Width="30"/>
+                      <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="{Binding AppSettings.SixColLocalizedTileSize}"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="{Binding AppSettings.SixColCoordinateX}"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="{Binding AppSettings.SixColCoordinateY}"/>
+                  </Grid>
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="30" CanUserResize="false">
+              <DataGridColumn.Header>
+                <Image Source="/ImageDesigner;component/Resources/Images/pencil_005_16xLG.png" Stretch="None"
+                       HorizontalAlignment="Center"/>
+              </DataGridColumn.Header>
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Button Name="btEdit" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}">
+                    <Image Source="/ImageDesigner;component/Resources/Images/pencil_005_16xLG.png" Stretch="None"/>
+                  </Button>
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="30" CanUserResize="false">
+              <DataGridColumn.Header>
+                <Image Source="/ImageDesigner;component/Resources/Images/Delete_16xLG.png" Stretch="None"/>
+              </DataGridColumn.Header>
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Button Name="btRemove" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}">
+                    <Image Source="/ImageDesigner;component/Resources/Images/Delete_16xLG.png" Stretch="None"/>
+                  </Button>
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+          </DataGrid.Columns>
+        </DataGrid>
+      </Grid>
+    </Border>
+    <Separator Grid.Row="3" BorderBrush="#00AFDB" BorderThickness="2"/>
+    <DockPanel Grid.Row="4" Grid.Column="0">
+      <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" HorizontalAlignment="Center">
+        <Button Click="btAdd_Click" Margin="10" Content="{x:Static res:Strings.bPinnedAppAdd}"/>
+        <Button Click="btOk_Click" Margin="10" Content="{x:Static res:Strings.bPinnedAppOK}"/>
+        <Button Click="btCancel_Click" Margin="10" Content="{x:Static res:Strings.bPinnedAppCancel}"/>
+      </StackPanel>
+    </DockPanel>
+  </Grid>
+</Window>

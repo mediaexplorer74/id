@@ -265,7 +265,7 @@ namespace Microsoft.WindowsPhone.ImageUpdate.Tools.Common
       int error1 = OffRegNativeMethods.ORGetValue(handle, (string) null, valueName, out pdwType, (byte[]) null, ref pcbData);
       if (error1 != 0)
         throw new Win32Exception(error1);
-      byte[] pvData = new byte[(IntPtr) pcbData];
+      byte[] pvData = new byte[(int)(IntPtr) pcbData];
       int error2 = OffRegNativeMethods.ORGetValue(handle, (string) null, valueName, out pdwType, pvData, ref pcbData);
       if (error2 != 0)
         throw new Win32Exception(error2);

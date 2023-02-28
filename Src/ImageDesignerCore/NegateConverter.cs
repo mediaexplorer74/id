@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// NegateConverter.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.Core.NegateConverter
 // Assembly: ImageDesignerCore, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: A00BBFA4-FB4D-4867-990A-673A22716507
@@ -10,9 +10,13 @@ using System.Windows.Data;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.Core
 {
-  public class NegateConverter : IValueConverter
+  public partial class NegateConverter : IValueConverter
   {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => (object) !(bool) value;
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+       return (object)!(bool)value;
+    }
+         
 
     public object ConvertBack(
       object value,

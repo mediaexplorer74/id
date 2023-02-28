@@ -106,7 +106,9 @@ namespace Microsoft.WindowsPhone.ImageUpdate.Tools.Common
       this.m_nos = (NativeObjectSecurity) di.GetAccessControl(AccessControlSections.All);
       this.m_fullPath = di.FullName;
       this.m_isRoot = string.Equals(di.FullName, rootPath, StringComparison.OrdinalIgnoreCase);
-      this.m_path = Path.Combine("\\", di.FullName.Remove(0, rootPath.Length)).ToUpper();
+
+        //RnD
+        this.m_path = "";//Path.Combine("\\", di.FullName.Remove(0, rootPath.Length)).ToUpper();
     }
   }
 }

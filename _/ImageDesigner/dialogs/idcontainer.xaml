@@ -1,0 +1,162 @@
+<UserControl x:Class="Microsoft.WindowsPhone.ImageDesigner.UI.Views.IDContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Views"
+             xmlns:core="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core;assembly=ImageDesignerCore"
+             xmlns:viewModel="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels;assembly=ImageDesignerCore"
+             xmlns:res="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.Resources;assembly=ImageDesignerCore"
+             xmlns:common="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Common"
+             Loaded="IDContainer_Loaded_1" x:Name="UserControl">
+  <FrameworkElement.Resources>
+    <DataTemplate DataType="{x:Type viewModel:GettingStartedPageVM}">
+      <view:GettingStartedPage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:SettingUpPageVM}">
+      <view:SettingUpPage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:SelectImagePageVM}">
+      <view:SelectImagePage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:DescribeImagePageVM}">
+      <view:DescribeImagePage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:CustomizationChoicePageVM}">
+      <view:CustomizationChoicePage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:SelectTemplatesPageVM}">
+      <view:SelectTemplatesPage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:CustomizeOSPageVM}">
+      <view:CustomizeOSPage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:BuildImagePageVM}">
+      <view:BuildImagePage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:BuildSuccessPageVM}">
+      <view:BuildSuccessPage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:FlashImagePageVM}">
+      <view:FlashImagePage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:ModifyImagePageVM}">
+      <view:ModifyImagePage/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:PickOutputLocationPageVM}">
+      <view:PickOutputLocationPage/>
+    </DataTemplate>
+    <DataTemplate x:Key="SlideEffectTransition">
+      <FrameworkTemplate.Resources>
+        <Visibility x:Key="Visible">Visible</Visibility>
+        <Storyboard x:Key="SlideStoryboard">
+          <DoubleAnimation Storyboard.TargetName="container"
+                           Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" From="0" FillBehavior="Stop"
+                           Duration="0:0:0.5" DecelerationRatio="1.0"/>
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="a" Storyboard.TargetProperty="Visibility" Duration="0:0:0.5"
+                                         FillBehavior="Stop">
+            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource Visible}"/>
+          </ObjectAnimationUsingKeyFrames>
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="b" Storyboard.TargetProperty="Visibility" Duration="0:0:0.5"
+                                         FillBehavior="Stop">
+            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource Visible}"/>
+          </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+      </FrameworkTemplate.Resources>
+      <Grid ClipToBounds="true">
+        <FrameworkElement.Resources>
+          <core:NegateConverter x:Key="negateConverter"/>
+          <common:Negative x:Key="NegativeConverter"/>
+        </FrameworkElement.Resources>
+        <common:Transition x:Name="transition" Source="{Binding}"/>
+        <Grid Name="container">
+          <UIElement.RenderTransform>
+            <TranslateTransform X="{Binding ElementName=container, Path=ActualWidth, Converter={StaticResource NegativeConverter}}"/>
+          </UIElement.RenderTransform>
+          <ContentControl Name="a" Visibility="Hidden" Content="{Binding ElementName=transition, Path=DisplayA}"/>
+          <ContentControl Name="b" Visibility="Hidden" Content="{Binding ElementName=transition, Path=DisplayB}"/>
+        </Grid>
+      </Grid>
+      <DataTemplate.Triggers>
+        <DataTrigger Value="A" Binding="{Binding ElementName=transition, Path=State}">
+          <Setter TargetName="a" Property="UIElement.Visibility" Value="Visible"/>
+          <Setter TargetName="a" Property="UIElement.RenderTransform">
+            <Setter.Value>
+              <TranslateTransform X="{Binding ElementName=container, Path=ActualWidth}"/>
+            </Setter.Value>
+          </Setter>
+          <TriggerBase.EnterActions>
+            <BeginStoryboard Storyboard="{StaticResource SlideStoryboard}"/>
+          </TriggerBase.EnterActions>
+        </DataTrigger>
+        <DataTrigger Value="B" Binding="{Binding ElementName=transition, Path=State}">
+          <Setter TargetName="b" Property="UIElement.Visibility" Value="Visible"/>
+          <Setter TargetName="b" Property="UIElement.RenderTransform">
+            <Setter.Value>
+              <TranslateTransform X="{Binding ElementName=container, Path=ActualWidth}"/>
+            </Setter.Value>
+          </Setter>
+          <TriggerBase.EnterActions>
+            <BeginStoryboard Storyboard="{StaticResource SlideStoryboard}"/>
+          </TriggerBase.EnterActions>
+        </DataTrigger>
+      </DataTemplate.Triggers>
+    </DataTemplate>
+  </FrameworkElement.Resources>
+  <Grid x:Name="LayoutRoot" Background="White">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="639*"/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Border Background="White" Margin="10,10,9,10" Grid.Row="0">
+      <DockPanel x:Name="dbContent">
+        <ContentPresenter Content="{Binding Path=CurrentPage}"/>
+      </DockPanel>
+    </Border>
+    <Border Grid.Row="1" Margin="10,0,9,0">
+      <DockPanel>
+        <FrameworkElement.Resources>
+          <core:NegateConverter x:Key="negateConverter"/>
+          <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+        </FrameworkElement.Resources>
+        <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" HorizontalAlignment="Left">
+          <Button Click="btStartOver_Click" x:Name="btStartOver" Content="{x:Static res:Strings.btStartOver_Text}"
+                  Margin="10,10,10,10" Height="20" HorizontalAlignment="Left"
+                  IsEnabled="{Binding Path=CanMoveToStartPage}"/>
+          <Button Click="btRestartCustomization_Click" x:Name="btRestartCustomization"
+                  Content="{x:Static res:Strings.btRestartCustomization_Text}" Margin="10,10,10,10" Height="20"
+                  Padding="10,0,10,0" HorizontalAlignment="Left" Visibility="Collapsed"/>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+          <Button Click="btCancel_Click" x:Name="btCancel" Content="{x:Static res:Strings.btCancel_Text}"
+                  Margin="10,10,10,10" Height="20" HorizontalAlignment="Right"
+                  Visibility="{Binding CancelSupported, Converter={StaticResource boolToVisibilityConverter}}"
+                  IsEnabled="{Binding CanCancel}"/>
+          <Button Click="btSave_Click" x:Name="btSave" Content="{x:Static res:Strings.btSave_Text}"
+                  Margin="10,10,10,10" Height="20" HorizontalAlignment="Right"
+                  IsEnabled="{Binding Path=EnableNextButton}"
+                  Visibility="{Binding SaveSupported, Converter={StaticResource boolToVisibilityConverter}}"/>
+          <Button Click="btBuild_Click" x:Name="btBuild" Content="{x:Static res:Strings.btBuild_Text}"
+                  Margin="10,10,10,10" Height="20" HorizontalAlignment="Right" Visibility="Collapsed"
+                  IsEnabled="{Binding EnableBuildButton}"/>
+          <Button Click="btFlash_Click" x:Name="btFlash" Content="{x:Static res:Strings.btFlash_Text}"
+                  Margin="10,10,10,10" Height="20" HorizontalAlignment="Right" Visibility="Collapsed"
+                  IsEnabled="{Binding CanFlash}"/>
+          <Button Click="btNext_Click" x:Name="btNext" Content="{x:Static res:Strings.btNext_Text}"
+                  Margin="10,10,10,10" Height="20" VerticalAlignment="Center" IsDefault="true"
+                  IsEnabled="{Binding Path=EnableNextButton}"/>
+        </StackPanel>
+      </DockPanel>
+    </Border>
+    <StatusBar x:Name="sb" Grid.Row="2" Grid.ColumnSpan="2" Visibility="Collapsed">
+      <StatusBarItem>
+        <TextBlock/>
+      </StatusBarItem>
+    </StatusBar>
+  </Grid>
+</UserControl>

@@ -10,7 +10,7 @@ ImageDesignerCore.Resources
 ImageCustomization.Resources
 FFUComponents
 ToolsCommon
-FeatureAPI ?
+FeatureAPI
 featuremerger
 PkgToolBox
 MCSFOffline

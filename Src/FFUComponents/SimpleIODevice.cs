@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// SimpleIODevice.cs
 // Type: FFUComponents.SimpleIODevice
 // Assembly: FFUComponents, Version=8.0.0.0, Culture=neutral, PublicKeyToken=5d653a1a5ba069fd
 // MVID: 079409EC-FC99-4988-8EB4-20A87B1EBA8C
@@ -917,10 +917,11 @@ label_16:
       idStream.WriteByte((byte) 1);
       BinaryReader binaryReader = new BinaryReader((Stream) idStream);
       this.curPosition = binaryReader.ReadInt64();
-      Guid guid = new Guid(binaryReader.ReadBytes(sizeof (Guid)));
+      Guid guid = new Guid(binaryReader.ReadBytes(4)); // sizeof (Guid)
+
       if (Guid.Empty != guid)
         throw new Win32Exception(1167);
-      this.DeviceUniqueID = new Guid(binaryReader.ReadBytes(sizeof (Guid)));
+      this.DeviceUniqueID = new Guid(binaryReader.ReadBytes(4)); //sizeof(Guid)
       this.DeviceFriendlyName = binaryReader.ReadString();
     }
 
@@ -939,10 +940,12 @@ label_16:
               {
                 if (index > 0)
                 {
-                  using (DTSFUsbStream clearStream = new DTSFUsbStream(this.UsbDevicePath, TimeSpan.FromMilliseconds(100.0)))
+                  using (DTSFUsbStream clearStream = new DTSFUsbStream(this.UsbDevicePath, 
+                      TimeSpan.FromMilliseconds(100.0)))
                     this.ClearJunkDataFromStream(clearStream);
                 }
-                using (DTSFUsbStream idStream = new DTSFUsbStream(this.UsbDevicePath, TimeSpan.FromSeconds(2.0)))
+                using (DTSFUsbStream idStream = new DTSFUsbStream(this.UsbDevicePath, 
+                    TimeSpan.FromSeconds(2.0)))
                 {
                   this.ReadBootmeFromStream(idStream);
                   flag = true;
@@ -951,12 +954,14 @@ label_16:
               }
               catch (IOException ex)
               {
-                this.hostLogger.EventWriteReadBootmeIOException(this.DeviceUniqueID, this.DeviceFriendlyName);
+                this.hostLogger.EventWriteReadBootmeIOException(this.DeviceUniqueID, 
+                    this.DeviceFriendlyName);
                 continue;
               }
               catch (Win32Exception ex)
               {
-                this.hostLogger.EventWriteReadBootmeWin32Exception(this.DeviceUniqueID, this.DeviceFriendlyName, ex.NativeErrorCode);
+                this.hostLogger.EventWriteReadBootmeWin32Exception(this.DeviceUniqueID, 
+                    this.DeviceFriendlyName, ex.NativeErrorCode);
                 continue;
               }
               finally
@@ -982,7 +987,8 @@ label_16:
           {
             try
             {
-              using (DTSFUsbStream dtsfUsbStream = new DTSFUsbStream(this.UsbDevicePath, TimeSpan.FromSeconds(1.0)))
+              using (DTSFUsbStream dtsfUsbStream = new DTSFUsbStream(this.UsbDevicePath, 
+                  TimeSpan.FromSeconds(1.0)))
               {
                 byte[] numArray = new byte[16];
                 dtsfUsbStream.WriteByte((byte) 17);

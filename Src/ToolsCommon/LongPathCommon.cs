@@ -78,7 +78,7 @@ namespace Microsoft.WindowsPhone.ImageUpdate.Tools.Common
     public static FileAttributes GetAttributes(string path)
     {
       FileAttributes fileAttributes = NativeMethods.GetFileAttributes(LongPathCommon.NormalizeLongPath(path));
-      return fileAttributes != (FileAttributes) -1 ? fileAttributes : throw LongPathCommon.GetExceptionFromLastWin32Error();
+      return fileAttributes != (FileAttributes)(-1) ? fileAttributes : throw LongPathCommon.GetExceptionFromLastWin32Error();
     }
   }
 }

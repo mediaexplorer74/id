@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// SettingUpPage.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.UI.Views.SettingUpPage
 // Assembly: ImageDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: AACE6177-DC79-444E-B25E-2FEDC45F69E4
@@ -20,8 +20,9 @@ using System.Windows.Markup;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 {
-  public class SettingUpPage : System.Windows.Controls.UserControl, IComponentConnector
+  public partial class SettingUpPage : System.Windows.Controls.UserControl //, IComponentConnector
   {
+        /*
     internal TextBlock tbPageTitle;
     internal TextBlock tbPageDesc;
     internal TextBlock tbDrvLocTitle;
@@ -37,32 +38,47 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
     internal TextBlock tbChangeOutputPathLink;
     internal Hyperlink hlChangeOutputPath;
     private bool _contentLoaded;
+        */
 
     public SettingUpPage()
     {
       this.InitializeComponent();
-      Run run1 = new Run(Microsoft.WindowsPhone.ImageDesigner.Core.Tools.GetString("hlSettingUpChangeBSP"));
+      Run run1 = new Run(Microsoft.WindowsPhone.ImageDesigner.Core.Tools
+          .GetString("hlSettingUpChangeBSP"));
+
       this.hlChangeLocation.Inlines.Clear();
       this.hlChangeLocation.Inlines.Add((Inline) run1);
-      Run run2 = new Run(Microsoft.WindowsPhone.ImageDesigner.Core.Tools.GetString("hlSettingUpChangeOutputPath"));
+      Run run2 = new Run(Microsoft.WindowsPhone.ImageDesigner.Core.Tools
+          .GetString("hlSettingUpChangeOutputPath"));
+
       this.hlChangeOutputPath.Inlines.Clear();
       this.hlChangeOutputPath.Inlines.Add((Inline) run2);
     }
 
     private void hlChangeLocation_Click(object sender, RoutedEventArgs e)
     {
+
       if (!(this.DataContext is SettingUpPageVM dataContext))
         throw new ArgumentException("DataContext object is null");
       OpenFileDialog openFileDialog = new OpenFileDialog();
       openFileDialog.CheckFileExists = true;
       openFileDialog.Multiselect = false;
-      openFileDialog.Filter = Microsoft.WindowsPhone.ImageDesigner.Core.Tools.GetString("txtConfigFilter");
+
+      openFileDialog.Filter = Microsoft.WindowsPhone.ImageDesigner.Core.Tools
+                .GetString("txtConfigFilter");
+
       string str1 = dataContext.ComponentDriversPath;
-      if (string.IsNullOrEmpty(dataContext.ComponentDriversPath) || !Directory.Exists(dataContext.ComponentDriversPath))
+      
+      if (string.IsNullOrEmpty(dataContext.ComponentDriversPath) 
+                || !Directory.Exists(dataContext.ComponentDriversPath))
       {
         string environmentVariable = Environment.GetEnvironmentVariable("BSPROOT");
-        str1 = !Microsoft.WindowsPhone.ImageUpdate.Tools.Common.LongPathDirectory.Exists(environmentVariable) ? Environment.GetFolderPath(Environment.SpecialFolder.MyComputer) : environmentVariable;
+        str1 = !Microsoft.WindowsPhone.ImageUpdate.Tools.Common
+                    .LongPathDirectory.Exists(environmentVariable) 
+                    ? Environment.GetFolderPath(Environment.SpecialFolder.MyComputer)
+                    : environmentVariable;
       }
+
       openFileDialog.InitialDirectory = str1;
       if (openFileDialog.ShowDialog() != DialogResult.OK)
         return;
@@ -80,8 +96,14 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
         string str2 = ex.Message;
         if (ex.InnerException != null)
           str2 = str2 + Environment.NewLine + ex.InnerException.Message;
-        string message = string.Format(Microsoft.WindowsPhone.ImageDesigner.Core.Tools.GetString("txtInvalidBspConfigError"), (object) str2);
-        CustomMessageBox.ShowMessage(Microsoft.WindowsPhone.ImageDesigner.Core.Tools.GetString("txtError"), message);
+
+        string message = string.Format(
+            Microsoft.WindowsPhone.ImageDesigner.Core.Tools.GetString("txtInvalidBspConfigError"), 
+            (object) str2);
+
+        CustomMessageBox.ShowMessage(
+            Microsoft.WindowsPhone.ImageDesigner.Core.Tools.GetString("txtError"), 
+            message);
       }
     }
 
@@ -91,7 +113,12 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
       folderBrowserDialog.ShowNewFolderButton = true;
       if (!(this.DataContext is SettingUpPageVM dataContext))
         throw new ArgumentException("DataContext object is null");
-      folderBrowserDialog.SelectedPath = string.IsNullOrEmpty(dataContext.OutputPath) || !Microsoft.WindowsPhone.ImageUpdate.Tools.Common.LongPathDirectory.Exists(dataContext.OutputPath) ? Constants.DEFAULT_OUTPUT_ROOT : dataContext.OutputPath;
+      folderBrowserDialog.SelectedPath = string.IsNullOrEmpty(dataContext.OutputPath) 
+                || !Microsoft.WindowsPhone.ImageUpdate.Tools.Common
+                .LongPathDirectory.Exists(dataContext.OutputPath) 
+                ? Constants.DEFAULT_OUTPUT_ROOT 
+                : dataContext.OutputPath;
+
       if (folderBrowserDialog.ShowDialog() != DialogResult.OK)
         return;
       dataContext.OutputPath = folderBrowserDialog.SelectedPath;
@@ -107,6 +134,7 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 
     private void HelpButtonClick(object sender, MouseButtonEventArgs e) => Microsoft.WindowsPhone.ImageDesigner.UI.Common.HelpProvider.ShowHelp();
 
+        /*
     [GeneratedCode("PresentationBuildTasks", "4.0.0.0")]
     [DebuggerNonUserCode]
     public void InitializeComponent()
@@ -184,5 +212,6 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
           break;
       }
     }
+        */
   }
 }

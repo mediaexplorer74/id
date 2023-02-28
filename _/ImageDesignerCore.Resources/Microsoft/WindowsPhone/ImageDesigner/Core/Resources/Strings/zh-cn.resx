@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnDefineMacros" xml:space="preserve">
+    <value>定义宏</value>
+  </data>
+  <data name="tbCOSSettingValue" xml:space="preserve">
+    <value>值:</value>
+  </data>
+  <data name="tbCOSSettingsGroupsList" xml:space="preserve">
+    <value>设置组</value>
+  </data>
+  <data name="tbPageDesc_DescribeImagePage_Text_2" xml:space="preserve">
+    <value>我们还需要一些信息才能开始。</value>
+  </data>
+  <data name="tbPageDesc_CustomizeOSPage_Text" xml:space="preserve">
+    <value>开始自定义您的 Windows Phone 图像，使其独一无二。</value>
+  </data>
+  <data name="tbPageHeader_BuildSuccessPage_Text" xml:space="preserve">
+    <value>成功!</value>
+  </data>
+  <data name="ttDataAssetsSource" xml:space="preserve">
+    <value>可通过指定某个文件逐个选择资产，也可通过指定某个目录，以组的形式选择资产。</value>
+  </data>
+  <data name="tbCOSSettingsGroupPath" xml:space="preserve">
+    <value>路径:</value>
+  </data>
+  <data name="msgCOSErrors" xml:space="preserve">
+    <value>错误: {0}</value>
+  </data>
+  <data name="msgCOSAddFileDuplicateNameErrorTitle" xml:space="preserve">
+    <value>名称重复</value>
+  </data>
+  <data name="eMSAppsCalculator" xml:space="preserve">
+    <value>计算器</value>
+  </data>
+  <data name="dlgHdrCOSAddNewVariant" xml:space="preserve">
+    <value>添加新变量</value>
+  </data>
+  <data name="txtCustomMessageBoxYesNoInstructions" xml:space="preserve">
+    <value>单击“是”继续操作，或单击“否”留在此处。</value>
+  </data>
+  <data name="tbPageHeader_DescribeImagePage_Text" xml:space="preserve">
+    <value>描述图像</value>
+  </data>
+  <data name="tbCOSSettingAssetOwner" xml:space="preserve">
+    <value>所有者:</value>
+  </data>
+  <data name="btBuildImageOpenOutputFolder" xml:space="preserve">
+    <value>打开输出文件夹</value>
+  </data>
+  <data name="msgCOSAddNewSettingsTitle" xml:space="preserve">
+    <value>添加新设置</value>
+  </data>
+  <data name="tbPinnedAppFeaturedTileLayout" xml:space="preserve">
+    <value>精选磁贴布局:</value>
+  </data>
+  <data name="txtInvalidArgument" xml:space="preserve">
+    <value>在“-Environment”之后以 (var1=value1;var2=value2;..) 形式提供环境变量</value>
+  </data>
+  <data name="tbSettingsPathPartDefault" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="ttCOSMapData1" xml:space="preserve">
+    <value>映射数据资产是预填充到用户存储中的预定义目录的映射文件。</value>
+  </data>
+  <data name="tbPageHeader_SelectImagePage_Text" xml:space="preserve">
+    <value>选择图像类型</value>
+  </data>
+  <data name="ttCOSSettingValueEnumeration" xml:space="preserve">
+    <value>类型: 选项
+有效值:
+{0}</value>
+  </data>
+  <data name="msgCOSRemovetVariantAreYouSureTitle" xml:space="preserve">
+    <value>删除变量</value>
+  </data>
+  <data name="txtCOSStaticVariantName" xml:space="preserve">
+    <value>默认值</value>
+  </data>
+  <data name="dlgInstructionsCOSAddNewVariant" xml:space="preserve">
+    <value>指定名称及至少一个目标状态条件</value>
+  </data>
+  <data name="rbSelectOption_RetailImage_Text" xml:space="preserve">
+    <value>零售</value>
+  </data>
+  <data name="msgCOSAddNewTargetConditionTitle" xml:space="preserve">
+    <value>添加新条件</value>
+  </data>
+  <data name="tbCOSStep2Instructions" xml:space="preserve">
+    <value>步骤 2: 选择自定义设置</value>
+  </data>
+  <data name="rbSelectOption_TestImage_Text" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="eFeatureLayoutOffice" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="txtMacroStillContainsTildeCharacter" xml:space="preserve">
+    <value>宏值不能包含 "~" 字符。请重试。</value>
+  </data>
+  <data name="tbCOSSettingValueNumber" xml:space="preserve">
+    <value>值(数字):</value>
+  </data>
+  <data name="tbSelectOption_MMOSImage_Text" xml:space="preserve">
+    <value>制造测试(MMOS)图像包括制造操作系统，该操作系统已经过优化，可帮助厂家进行 MMI 测试。</value>
+  </data>
+  <data name="tbSelectOption_BuildImage" xml:space="preserve">
+    <value>如果选择此选项，将跳过所有自定义设置，直接生成您的 Windows Phone 图像。如果这样做，则可能无法为该图像正确配置网络功能。</value>
+  </data>
+  <data name="msgCOSAddVariantDuplicateConditionsErrorTitle" xml:space="preserve">
+    <value>条件重复</value>
+  </data>
+  <data name="eMSAppsSettings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="eMSAppsMaps" xml:space="preserve">
+    <value>地图</value>
+  </data>
+  <data name="txtWPIDFilter" xml:space="preserve">
+    <value>Windows Phone Image Designer Project Files|*.wpid.xml</value>
+  </data>
+  <data name="tbSettingUp_HwDrvLocDesc" xml:space="preserve">
+    <value>确认已作为 BSP 工具包的一部分下载的硬件组件驱动程序的位置。这些驱动程序包含 BSP 和硬件组件包。此位置由 BSP 工具包安装文件夹下的 BSP.Config.XML 文件标识。</value>
+  </data>
+  <data name="txtRetailManufacturingImageLabel" xml:space="preserve">
+    <value>制造零售</value>
+  </data>
+  <data name="strCOSAddNewApplicationSourceOrProvXML" xml:space="preserve">
+    <value>&lt;源\ProvXML&gt;</value>
+  </data>
+  <data name="txtMissingPackages" xml:space="preserve">
+    <value>缺少数据包</value>
+  </data>
+  <data name="bCOSAddTargets" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="tbCOSSettingSample" xml:space="preserve">
+    <value>示例:</value>
+  </data>
+  <data name="tbPinnedAppSettings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="strCOSDefaultVariantName" xml:space="preserve">
+    <value>&lt;名称&gt;</value>
+  </data>
+  <data name="btSave_Text" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="chkCustomMessageNoShowAgain" xml:space="preserve">
+    <value>不再显示此对话框。</value>
+  </data>
+  <data name="txtCOSTargetName" xml:space="preserve">
+    <value>目标 {0}</value>
+  </data>
+  <data name="tbPageDesc_PickOutputLocationPage_Text" xml:space="preserve">
+    <value>您希望将新图像保存到何处?</value>
+  </data>
+  <data name="txtApplicationFilter" xml:space="preserve">
+    <value>应用程序(*.xap, *.appx)|*.xap;*.appx</value>
+  </data>
+  <data name="eFeatureLayoutMusicVideos" xml:space="preserve">
+    <value>音乐\视频</value>
+  </data>
+  <data name="tbCOSTargetStateList" xml:space="preserve">
+    <value>目标状态条件</value>
+  </data>
+  <data name="gbCustomize" xml:space="preserve">
+    <value>是否要自定义您的手机图像?</value>
+  </data>
+  <data name="txtMMOSImageLabel" xml:space="preserve">
+    <value>制造测试</value>
+  </data>
+  <data name="txtRestartCustomizationText" xml:space="preserve">
+    <value>要返回到操作系统自定义部分的开头吗? 
+所有未保存的自定义设置都将丢失。</value>
+  </data>
+  <data name="tbUserInterfaceLanguages" xml:space="preserve">
+    <value>用户界面语言</value>
+  </data>
+  <data name="rbSelectOption_FlashImage_Text" xml:space="preserve">
+    <value>将 Windows Phone 图像刷写到您的手机上</value>
+  </data>
+  <data name="btFlash" xml:space="preserve">
+    <value>闪光灯</value>
+  </data>
+  <data name="bPinnedAppOK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="tbPathHasUndefinedMacro" xml:space="preserve">
+    <value>此设置路径是一个模板，用于通过替换路径中的宏值来创建其他设置。单击下面的按钮可定义宏，并创建新的设置路径。</value>
+  </data>
+  <data name="gCOSAddTargetStateCondition" xml:space="preserve">
+    <value>目标状态条件</value>
+  </data>
+  <data name="tbPageDesc_SelectImagePage_Text" xml:space="preserve">
+    <value>Windows Phone 支持多种图像类型，并且在手机开发生命周期内，每种类型都用于特定用途。请选取最能满足您需要的图像类型。</value>
+  </data>
+  <data name="txtGIFFilter" xml:space="preserve">
+    <value>GIF (*.gif)|*.gif</value>
+  </data>
+  <data name="ttCOSSettingsGroupAtomic" xml:space="preserve">
+    <value>设置是可替代默认值和更改图像特征的值。必须设置此路径下的所有设置。</value>
+  </data>
+  <data name="msgCOSAddFileDuplicateFilenameErrorTitle" xml:space="preserve">
+    <value>文件名重复</value>
+  </data>
+  <data name="msgCOSAddFileDuplicateFilenameError" xml:space="preserve">
+    <value>文件名“{0}”已定义。请选择其他文件名。</value>
+  </data>
+  <data name="eStartLayoutFull" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="txtTestImageLabel" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="msgCOSAddNewTargetCondition" xml:space="preserve">
+    <value>指定条件名称和值</value>
+  </data>
+  <data name="tbCOSStep3Instructions" xml:space="preserve">
+    <value>步骤 3: 编辑自定义设置</value>
+  </data>
+  <data name="tbPinnedAppMediumLargeIcon" xml:space="preserve">
+    <value>中大图标</value>
+  </data>
+  <data name="eAppTileSizeMedium" xml:space="preserve">
+    <value>中</value>
+  </data>
+  <data name="tbPageDesc_CustomizationChoicePage_Text" xml:space="preserve">
+    <value>Windows Phone 支持各种操作系统功能自定义设置，可帮助您使自己的手机与众不同，例如添加自定义壁纸、应用程序和铃声，以及修改网络设置。</value>
+  </data>
+  <data name="bCOSAddDataAssetsGroup" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="tbImageLoc_Text" xml:space="preserve">
+    <value>该图像位于此处:</value>
+  </data>
+  <data name="tbSelectedImage" xml:space="preserve">
+    <value>选定的图像</value>
+  </data>
+  <data name="txtInvalidBspConfigError" xml:space="preserve">
+    <value>所选的 BSP 配置文件无效。请选择有效的 BSP 配置文件以继续。
+
+错误: {0} </value>
+  </data>
+  <data name="hlPinApplicationsToStart" xml:space="preserve">
+    <value>将应用程序固定到“开始”屏幕</value>
+  </data>
+  <data name="tbPickOutputLoc_Replace_Text" xml:space="preserve">
+    <value>覆盖位于当前位置的任何图像。</value>
+  </data>
+  <data name="tbSelectOption_selectTemplates" xml:space="preserve">
+    <value>如果选择此选项，将允许您选取多个自定义模板作为起始点。</value>
+  </data>
+  <data name="txtBadArgumentTitle" xml:space="preserve">
+    <value>无效参数</value>
+  </data>
+  <data name="msgCOSAddFileDuplicateFileNotFoundError" xml:space="preserve">
+    <value>找不到文件名“{0}”。请选择其他现有文件名。</value>
+  </data>
+  <data name="tbPinnedAppWebLinkURL" xml:space="preserve">
+    <value>Web 链接 URL</value>
+  </data>
+  <data name="msgCOSEditTargetStateNoConditionSetError" xml:space="preserve">
+    <value>您必须设置目标状态条件。</value>
+  </data>
+  <data name="bPinnedAppAdd" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="txtWarning" xml:space="preserve">
+    <value>警告!</value>
+  </data>
+  <data name="tbCOSVariantName" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="rbSelectOption_ProductionImage_Text" xml:space="preserve">
+    <value>生产</value>
+  </data>
+  <data name="txtNotAdminTitle" xml:space="preserve">
+    <value>管理员权限</value>
+  </data>
+  <data name="strCOSAddNewSettingAssetDefaultSource" xml:space="preserve">
+    <value>&lt;源&gt;</value>
+  </data>
+  <data name="tbCOSHighlightingInstructionColor1" xml:space="preserve">
+    <value>蓝色</value>
+  </data>
+  <data name="tbCOSHighlightingInstructionColor2" xml:space="preserve">
+    <value>- 自定义设置已修改但未保存</value>
+  </data>
+  <data name="msgCOSEditTargetStateNoConditionSetErrorTitle" xml:space="preserve">
+    <value>不存在目标状态</value>
+  </data>
+  <data name="msgCOSAddVariantNoConditionsSetError" xml:space="preserve">
+    <value>您必须至少设置一个目标状态条件。</value>
+  </data>
+  <data name="msgCOSAddFileDuplicateFileNotFoundErrorTitle" xml:space="preserve">
+    <value>找不到文件</value>
+  </data>
+  <data name="tbSelectOption_TestImage_Text" xml:space="preserve">
+    <value>您可以使用测试图像测试手机上的操作系统和驱动程序的功能。此图像未锁定，并且不包含安全强制设置。它包括 Microsoft 和 Qualcomm 测试内容。</value>
+  </data>
+  <data name="ttCOSDataAssetsGroups" xml:space="preserve">
+    <value>数据资产组是一组预填充到用户存储中按类型预定义的公用位置的文件。</value>
+  </data>
+  <data name="eMSAppsKidsCorner" xml:space="preserve">
+    <value>儿童乐园</value>
+  </data>
+  <data name="txtSaveSuccessDlgHeader" xml:space="preserve">
+    <value>成功!</value>
+  </data>
+  <data name="eAppTileSizeSmall" xml:space="preserve">
+    <value>小</value>
+  </data>
+  <data name="tbPinnedAppStartScreenLayout" xml:space="preserve">
+    <value>“开始”屏幕布局:</value>
+  </data>
+  <data name="eAppTileSizeLarge" xml:space="preserve">
+    <value>大</value>
+  </data>
+  <data name="msgCOSCantRemoveDefaultVariant" xml:space="preserve">
+    <value>无法删除默认变量，但可以清除其值，使其失效。是否要清除其当前设置?</value>
+  </data>
+  <data name="tbPageHeader_GettingStartedPage_Text" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="rbSelectOption_BuildImage" xml:space="preserve">
+    <value>不。我想生成自己的图像。</value>
+  </data>
+  <data name="txtStartOverMessageHeader" xml:space="preserve">
+    <value>确定吗？</value>
+  </data>
+  <data name="gpSelectImageType" xml:space="preserve">
+    <value>选择图像类型</value>
+  </data>
+  <data name="txtCOSApplications" xml:space="preserve">
+    <value>应用程序</value>
+  </data>
+  <data name="msgCOSAddVariantNameDuplicateErrorTitle" xml:space="preserve">
+    <value>变量名称重复</value>
+  </data>
+  <data name="txtFlashSuccess" xml:space="preserve">
+    <value>恭喜! 已将所选的图像成功刷写到您的设备上。</value>
+  </data>
+  <data name="txtCOSSettings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="msgCOSBadPolicyPackagesError" xml:space="preserve">
+    <value>在此图像中找到错误的策略包({0})。包:
+{1}</value>
+  </data>
+  <data name="txtWindowTitle" xml:space="preserve">
+    <value>Windows Phone 图像设计器</value>
+  </data>
+  <data name="tbSelectTemplates_SelectTemplate_Text2" xml:space="preserve">
+    <value>您必须按照优先顺序添加模板。</value>
+  </data>
+  <data name="tbInstr_Text" xml:space="preserve">
+    <value>按照找到的说明操作</value>
+  </data>
+  <data name="tbCOSSettingsAssets" xml:space="preserve">
+    <value>资产</value>
+  </data>
+  <data name="msgCOSCantRemoveDefaultVariantTitle" xml:space="preserve">
+    <value>无法删除默认值</value>
+  </data>
+  <data name="txtMultipleInstancesTitle" xml:space="preserve">
+    <value>抱歉!</value>
+  </data>
+  <data name="msgCOSAddNewSettingMacro" xml:space="preserve">
+    <value>需要宏替换。请为宏“{0}”指定值:</value>
+  </data>
+  <data name="msgCOSAddNewSettingAsset" xml:space="preserve">
+    <value>指定源</value>
+  </data>
+  <data name="msgCOSAddNewSettingError" xml:space="preserve">
+    <value>此图像中定义的策略无法识别设置路径。找不到设置。</value>
+  </data>
+  <data name="tbFlashTxt_Text" xml:space="preserve">
+    <value>将此图像刷写到连接的手机上:</value>
+  </data>
+  <data name="tbSelectTemplates_Selected" xml:space="preserve">
+    <value>所选模板</value>
+  </data>
+  <data name="msgCOSAddNewSettingTitle" xml:space="preserve">
+    <value>添加新设置</value>
+  </data>
+  <data name="msgCOSAddVariantConditionNameDuplicateError" xml:space="preserve">
+    <value>多次定义了条件“{0}”</value>
+  </data>
+  <data name="gCOSErrorsTitle" xml:space="preserve">
+    <value>{1} 的错误 {0}</value>
+  </data>
+  <data name="txtWpdkContentRootNotSet" xml:space="preserve">
+    <value>环境变量 WPDKCONTENTROOT 未设置。如果您从非提升的命令窗口启动 ImageDesigner，可能会发生此情况。
+
+请执行以下操作之一来修复此问题：
+
+从提升的命令提示启动
+
+或者
+
+通过以下面的格式在命令行中显式设置变量进行启动：
+    ImageDesigner.exe -Environment WPDKCONTENTROOT=&lt;value&gt;</value>
+  </data>
+  <data name="tbSelectOption_FlashImage_Text" xml:space="preserve">
+    <value>是否想了解您的 Windows Phone 图像在实际手机上的显示情况? 请刷写该图像以进行查看。</value>
+  </data>
+  <data name="tbCOSApplicationsList" xml:space="preserve">
+    <value>应用程序</value>
+  </data>
+  <data name="msgCOSAddNewApplication" xml:space="preserve">
+    <value>指定源</value>
+  </data>
+  <data name="bCOSRemoveVariant" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="msgCOSAddNewSettingMacroTitle" xml:space="preserve">
+    <value>为新设置定义宏</value>
+  </data>
+  <data name="hlCOSShowAll" xml:space="preserve">
+    <value>全部显示</value>
+  </data>
+  <data name="txtCOSTargets" xml:space="preserve">
+    <value>目标</value>
+  </data>
+  <data name="tbPinnedAppSmallIcon" xml:space="preserve">
+    <value>小图标</value>
+  </data>
+  <data name="tbPinnedAppTableHeader" xml:space="preserve">
+    <value>固定的应用程序/Web 链接</value>
+  </data>
+  <data name="msgCOSAddVariantConditionNameDuplicateErrorTitle" xml:space="preserve">
+    <value>条件重复</value>
+  </data>
+  <data name="msgCOSEditConditionsNoConditionsSetError" xml:space="preserve">
+    <value>您必须设置目标状态条件。</value>
+  </data>
+  <data name="tbPageDesc_SelectTemplatesPage_Text" xml:space="preserve">
+    <value>选择自定义模板可快速开始您的操作系统自定义工作。我们找到了多个可供您使用的模板。您可以在下一步中覆盖模板中指定的任何值。</value>
+  </data>
+  <data name="bCOSRemoveSettings" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="hlFlashImageChangeImageLink" xml:space="preserve">
+    <value>更改</value>
+  </data>
+  <data name="msgCOSAddNewSettingAssetTitle" xml:space="preserve">
+    <value>添加新的设置资产</value>
+  </data>
+  <data name="tbPageHeader_ModifyImagePage_Text" xml:space="preserve">
+    <value>修改图像</value>
+  </data>
+  <data name="txtApplicationAndProvXMLFilter" xml:space="preserve">
+    <value>应用程序(*.xap, *.appx)|*.xap;*.appx| ProvXML (*.provxml, *.xml)|*.provxml;*.xml</value>
+  </data>
+  <data name="msgCOSFailedToSaveTitle" xml:space="preserve">
+    <value>发现错误</value>
+  </data>
+  <data name="tbFlashImageDevices" xml:space="preserve">
+    <value>闪存设备:</value>
+  </data>
+  <data name="msgCOSAddNewDataAsset" xml:space="preserve">
+    <value>指定源</value>
+  </data>
+  <data name="btBuildImageClearLog" xml:space="preserve">
+    <value>清除日志</value>
+  </data>
+  <data name="bCOSAddApplications" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="ttCOSSettingValueDefaultNone" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="txtConfigFilter" xml:space="preserve">
+    <value>BSP 配置文件|*bsp.config.xml</value>
+  </data>
+  <data name="tbPageDesc_BuildSuccessPage_Text" xml:space="preserve">
+    <value>您的图像现已准备就绪。是否要将其刷写到与您的计算机相连接的手机上?</value>
+  </data>
+  <data name="bCOSAddSettingsAssets" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="txtSaveSuccessDlgText" xml:space="preserve">
+    <value>您的设置已保存。</value>
+  </data>
+  <data name="bCOSAddDataAssetsGroups" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="txtImageTypeSize" xml:space="preserve">
+    <value>(大小: {0})</value>
+  </data>
+  <data name="bCOSAddSettingsGroups" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="msgCOSRemovetVariantAreYouSure" xml:space="preserve">
+    <value>是否确实要删除此变量及其所有自定义设置?</value>
+  </data>
+  <data name="txtRetailImageLabel" xml:space="preserve">
+    <value>零售</value>
+  </data>
+  <data name="tbCOSApplicationLicense" xml:space="preserve">
+    <value>许可证:</value>
+  </data>
+  <data name="bPinnedAppCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="tbCOSApplicationTargetPartition" xml:space="preserve">
+    <value>分区:</value>
+  </data>
+  <data name="tbCOSTargetName" xml:space="preserve">
+    <value>名称:</value>
+  </data>
+  <data name="msgCOSAddNewDataAssetsGroupNoMoreTypeErrorTitle" xml:space="preserve">
+    <value>不存在更多可用类型</value>
+  </data>
+  <data name="btNext_Text" xml:space="preserve">
+    <value>下一步 &gt;&gt;</value>
+  </data>
+  <data name="tbCOSDataAssetsGroupsList" xml:space="preserve">
+    <value>数据资产组</value>
+  </data>
+  <data name="ttCOSSettingValueEnumerationDefaultItem" xml:space="preserve">
+    <value>{0} (默认值)</value>
+  </data>
+  <data name="tbCOSAddVariantClickOKorCancel" xml:space="preserve">
+    <value>单击“确定”保存，或者单击“取消”丢弃。</value>
+  </data>
+  <data name="tbSettingUp_CurrentOutputLoc" xml:space="preserve">
+    <value>当前输出位置设置为:</value>
+  </data>
+  <data name="tbCOSSettingAssetTargetFileName" xml:space="preserve">
+    <value>目标:</value>
+  </data>
+  <data name="txtProductionImageLabel" xml:space="preserve">
+    <value>生产</value>
+  </data>
+  <data name="hlBuildSuccessViewLog" xml:space="preserve">
+    <value>查看日志</value>
+  </data>
+  <data name="txtFlashErrorDetail" xml:space="preserve">
+    <value>请更正以下错误，然后重试:
+{0}</value>
+  </data>
+  <data name="btBuildImageViewInNotepad" xml:space="preserve">
+    <value>在记事本中查看</value>
+  </data>
+  <data name="ttCOSSettingValueBinary" xml:space="preserve">
+    <value>类型: 二进制
+默认值: {0}</value>
+  </data>
+  <data name="eMSAppsOffice" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="eAppTypeOEMApplication" xml:space="preserve">
+    <value>OEM 应用程序</value>
+  </data>
+  <data name="rbSelectOption_ModifyImage_Text" xml:space="preserve">
+    <value>修改 Windows Phone 图像</value>
+  </data>
+  <data name="txtUnexpectedArgument" xml:space="preserve">
+    <value>意外参数“{0}”</value>
+  </data>
+  <data name="tbPickOutputLoc_NewLoc_Text" xml:space="preserve">
+    <value>选取要将图像保存到的位置。</value>
+  </data>
+  <data name="hlBuildSuccessViewImageOptionsSummary" xml:space="preserve">
+    <value>此处</value>
+  </data>
+  <data name="txtAdminStr" xml:space="preserve">
+    <value>(管理员)</value>
+  </data>
+  <data name="msgCOSAddNewSetting" xml:space="preserve">
+    <value>指定名称</value>
+  </data>
+  <data name="hlSettingUpChangeOutputPath" xml:space="preserve">
+    <value>更改</value>
+  </data>
+  <data name="msgCOSBadPolicyPackagesErrorHeader" xml:space="preserve">
+    <value>策略错误</value>
+  </data>
+  <data name="bCOSRemoveApplications" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="rbPickOutputLoc_Replace_Text" xml:space="preserve">
+    <value>替换当前图像</value>
+  </data>
+  <data name="ttCOSSettingValueNumber" xml:space="preserve">
+    <value>类型: 数字
+默认值: {0}
+最小值: {1}
+最大值: {2}</value>
+  </data>
+  <data name="btCustomMessageBoxOK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="btCustomMessageBoxNo" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="eStartLayoutFeatured" xml:space="preserve">
+    <value>精选</value>
+  </data>
+  <data name="tbCOSDataAssetsList" xml:space="preserve">
+    <value>数据资产</value>
+  </data>
+  <data name="tbSelectOption_RetailManufacturingImage_Text" xml:space="preserve">
+    <value>制造零售图像包括完整的操作系统，该操作系统已经过优化，可帮助厂家对零售设备进行标记和设置。所有内容，包括包、二进制文件和应用程序，都必须由 Microsoft 进行签名，才能生成此图像。单击帮助图标可了解厂家如何进行 MMI 测试。</value>
+  </data>
+  <data name="tbCOSDataAssetsGroupType" xml:space="preserve">
+    <value>类型:</value>
+  </data>
+  <data name="txtFlashError" xml:space="preserve">
+    <value>抱歉! 无法将所选的图像刷写到您的设备上。</value>
+  </data>
+  <data name="msgCOSAddNewDataAssetTitle" xml:space="preserve">
+    <value>添加新数据资产</value>
+  </data>
+  <data name="tbSettingUp_OutputLocationTitle" xml:space="preserve">
+    <value>2. 输出位置</value>
+  </data>
+  <data name="msgCOSAddNewDataAssetGroup" xml:space="preserve">
+    <value>指定类型</value>
+  </data>
+  <data name="tbPinnedAppTileSize" xml:space="preserve">
+    <value>磁贴大小</value>
+  </data>
+  <data name="eFeatureLayoutGames" xml:space="preserve">
+    <value>游戏</value>
+  </data>
+  <data name="strCOSAddNewDataAssetSource" xml:space="preserve">
+    <value>&lt;源&gt;</value>
+  </data>
+  <data name="tbSettingUp_HwDrvLocTitle" xml:space="preserve">
+    <value>1. 硬件组件驱动程序</value>
+  </data>
+  <data name="tbSettingUp_CurrentLoc" xml:space="preserve">
+    <value>我们已在此处找到硬件组件:</value>
+  </data>
+  <data name="tbSelectTemplates_SelectTemplate_Text2_ToolTip" xml:space="preserve">
+    <value>优先级较高的模板将覆盖优先级较低的模板中定义的任何设置。</value>
+  </data>
+  <data name="rbSelectOption_CreateImage_Text" xml:space="preserve">
+    <value>创建新 Windows Phone 图像</value>
+  </data>
+  <data name="msgCOSAddNewSettings" xml:space="preserve">
+    <value>选择路径</value>
+  </data>
+  <data name="txtProvXMLFilter" xml:space="preserve">
+    <value>设置 XML (*.provxml)|*.provxml</value>
+  </data>
+  <data name="eMSAppsCalendar" xml:space="preserve">
+    <value>日历</value>
+  </data>
+  <data name="eAppTypeWebLink" xml:space="preserve">
+    <value>Web 链接</value>
+  </data>
+  <data name="tbPinnedAppAppType" xml:space="preserve">
+    <value>应用程序类型</value>
+  </data>
+  <data name="tbPageHeader_CustomizeOSPage_Text" xml:space="preserve">
+    <value>自定义操作系统(OS)功能</value>
+  </data>
+  <data name="ttCOSSettingsGroup" xml:space="preserve">
+    <value>设置是可替代默认值和更改图像特征的值。</value>
+  </data>
+  <data name="eMSAppsCamera" xml:space="preserve">
+    <value>相机</value>
+  </data>
+  <data name="bCOSAddVariant" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="tbPickLanguage_text" xml:space="preserve">
+    <value>选择要包括的语言:</value>
+  </data>
+  <data name="tbCOSApplicationSource" xml:space="preserve">
+    <value>源:</value>
+  </data>
+  <data name="txtCOSDataAssetsGroups" xml:space="preserve">
+    <value>数据资产组</value>
+  </data>
+  <data name="tbPageHeader_SettingUpPage_Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="eMSAppsAlarms" xml:space="preserve">
+    <value>闹钟</value>
+  </data>
+  <data name="tbTotalImageSize" xml:space="preserve">
+    <value>图像总大小</value>
+  </data>
+  <data name="tbCOSApplicationProvXML" xml:space="preserve">
+    <value>ProvXML:</value>
+  </data>
+  <data name="hlCOSHideUnset" xml:space="preserve">
+    <value>隐藏未设置的项目</value>
+  </data>
+  <data name="tbKeyboardLanguages" xml:space="preserve">
+    <value>键盘语言</value>
+  </data>
+  <data name="tbPageHeader_PickOutputLocationPage_Text" xml:space="preserve">
+    <value>选取输出位置</value>
+  </data>
+  <data name="tbPinnedAppLayoutOptions" xml:space="preserve">
+    <value>布局选项</value>
+  </data>
+  <data name="tbSettingUp_OutputLocationDesc" xml:space="preserve">
+    <value>确认您希望手机图像设计器将图像和相关配置文件保存到的位置。您稍后可以从此位置返回到以前生成的图像并对其进行修改。</value>
+  </data>
+  <data name="txtIncludeAllAssetsInDirectory" xml:space="preserve">
+    <value>可以按文件逐个选择资产，也可以按目录，以组的形式选择资产。是否要包括此目录中的所有资产?</value>
+  </data>
+  <data name="tbCOSDataAssetSource" xml:space="preserve">
+    <value>源:</value>
+  </data>
+  <data name="tbGetFileDlgFileName" xml:space="preserve">
+    <value>源:</value>
+  </data>
+  <data name="bCOSPreviousError" xml:space="preserve">
+    <value>上一个</value>
+  </data>
+  <data name="tbLanguagesSize" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="chkAutoScroll" xml:space="preserve">
+    <value>自动滚动</value>
+  </data>
+  <data name="tbCOSSettingValueText" xml:space="preserve">
+    <value>值(文本):</value>
+  </data>
+  <data name="tbSelectOption_CreateImage_Text" xml:space="preserve">
+    <value>如果您以前从未创建过 Windows Phone 图像或想要从头开始创建新图像，请从此处开始。</value>
+  </data>
+  <data name="bCOSRemoveDataAssetsGroup" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="txtLicenseFilter" xml:space="preserve">
+    <value>应用程序许可证(*.lic, *.xml)|*.lic;*.xml</value>
+  </data>
+  <data name="miViewTemplate" xml:space="preserve">
+    <value>查看模板</value>
+  </data>
+  <data name="txtIncludeAllAssetsInDirectoryTitle" xml:space="preserve">
+    <value>全部包括</value>
+  </data>
+  <data name="tbCOSStep1Instructions" xml:space="preserve">
+    <value>步骤 1: 选择变量</value>
+  </data>
+  <data name="msgCOSAddNewSettingNoMoreError" xml:space="preserve">
+    <value>不存在更多可用于此设置组的设置。</value>
+  </data>
+  <data name="bCOSAddTarget" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="msgCOSWarnings" xml:space="preserve">
+    <value>警告: {0}</value>
+  </data>
+  <data name="msgCOSAddNewSettingNoMoreErrorTitle" xml:space="preserve">
+    <value>不存在更多可用设置</value>
+  </data>
+  <data name="tbPageDesc_GettingStartedPage_Text" xml:space="preserve">
+    <value>使用手机图像设计器创建、自定义或刷写 Windows Phone 图像轻而易举。</value>
+  </data>
+  <data name="eFeatureLayoutOneNote" xml:space="preserve">
+    <value>OneNote</value>
+  </data>
+  <data name="hlSettingUpChangeBSP" xml:space="preserve">
+    <value>更改</value>
+  </data>
+  <data name="txtMissingEnvironmentVariableTitle" xml:space="preserve">
+    <value>环境变量未设置</value>
+  </data>
+  <data name="eMSAppsDataSense" xml:space="preserve">
+    <value>流量管理</value>
+  </data>
+  <data name="btRestartCustomization_Text" xml:space="preserve">
+    <value>重新启动自定义</value>
+  </data>
+  <data name="eMSAppsWallet" xml:space="preserve">
+    <value>钱夹</value>
+  </data>
+  <data name="hlModifyImageChange" xml:space="preserve">
+    <value>更改</value>
+  </data>
+  <data name="txtDefaultImageDescription" xml:space="preserve">
+    <value>用于 Arm.fre 版本的 Windows Phone 8.1 {0} {1} 图像，创建于 {2}，{3}</value>
+  </data>
+  <data name="txtMacroPathAlreadyExists" xml:space="preserve">
+    <value>未添加设置，因为宏替换生成了已定义的路径。请尝试使用其他宏替换值。</value>
+  </data>
+  <data name="msgCOSAddNewApplicationTitle" xml:space="preserve">
+    <value>添加新应用程序</value>
+  </data>
+  <data name="txtJPEGFilter" xml:space="preserve">
+    <value>JEPG (*.jpeg)|*.jpeg</value>
+  </data>
+  <data name="bCOSNextError" xml:space="preserve">
+    <value>下一个</value>
+  </data>
+  <data name="txtBuildImageCommandLabel" xml:space="preserve">
+    <value>命令:</value>
+  </data>
+  <data name="rbPickOutputLoc_NewLoc_Text" xml:space="preserve">
+    <value>保存到其他输出位置</value>
+  </data>
+  <data name="msgCOSAddNewSettingsNoMorePathError" xml:space="preserve">
+    <value>不存在更多可用于此变量的路径。</value>
+  </data>
+  <data name="msgCOSAddVariantNoConditionsSetErrorTitle" xml:space="preserve">
+    <value>未设置条件</value>
+  </data>
+  <data name="tbModifyImage_ExistingProjectLoc" xml:space="preserve">
+    <value>与您使用手机图像设计器创建的上一个图像关联的项目文件位于此处:</value>
+  </data>
+  <data name="btStartOver_Text" xml:space="preserve">
+    <value>重新开始</value>
+  </data>
+  <data name="tbPinnedAppCoordinates" xml:space="preserve">
+    <value>坐标</value>
+  </data>
+  <data name="gCOSCommonConditions" xml:space="preserve">
+    <value>公用目标状态条件</value>
+  </data>
+  <data name="tbSelectTemplates_Available" xml:space="preserve">
+    <value>可用模板</value>
+  </data>
+  <data name="tbNoteText_Text" xml:space="preserve">
+    <value>如果您要生成零售图像，则需要将图像目录文件发送给 Microsoft 进行零售签名。</value>
+  </data>
+  <data name="tbPinnedAppNameURL" xml:space="preserve">
+    <value>应用程序名称/URL</value>
+  </data>
+  <data name="tbCOSSettingDescription" xml:space="preserve">
+    <value>描述:</value>
+  </data>
+  <data name="tbSelectOption_RetailImage_Text" xml:space="preserve">
+    <value>零售图像是一种可刷写到终极零售手机上的图像。所有内容，包括包、二进制文件和应用程序，都必须由 Microsoft 进行签名，才能生成此图像。单击帮助图标可了解操作方式。</value>
+  </data>
+  <data name="txtCalculatingPackages" xml:space="preserve">
+    <value>计算</value>
+  </data>
+  <data name="txtCustomGetValueDialogInstructions" xml:space="preserve">
+    <value>单击“确定”进行保存，或单击“取消”不保存。</value>
+  </data>
+  <data name="tbCOSSettingAssetSource" xml:space="preserve">
+    <value>源:</value>
+  </data>
+  <data name="tbDIBootLanguage" xml:space="preserve">
+    <value>启动语言:</value>
+  </data>
+  <data name="txtNoHelpDoc" xml:space="preserve">
+    <value>找不到帮助文档</value>
+  </data>
+  <data name="hlPickOutputLocationSelect" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="tbBaseImageSize" xml:space="preserve">
+    <value>基础图像大小</value>
+  </data>
+  <data name="txtMapDataFilter" xml:space="preserve">
+    <value>映射数据(*.map)|*.map</value>
+  </data>
+  <data name="ttCOSSettingAssetTargetFileName" xml:space="preserve">
+    <value>设备上的目标文件名。可选择用于重命名文件。</value>
+  </data>
+  <data name="txtApplicationSourceOrProvxmlRequired" xml:space="preserve">
+    <value>&lt;错误: 需要源或 Provxml&gt;</value>
+  </data>
+  <data name="tbPageHeader_CustomizationChoicePage_Text" xml:space="preserve">
+    <value>是否要自定义操作系统(OS)功能?</value>
+  </data>
+  <data name="txtApplicationSourceRequired" xml:space="preserve">
+    <value>&lt;错误: 需要源&gt;</value>
+  </data>
+  <data name="msgCOSAddVariantConditionNameCantBeEmptyError" xml:space="preserve">
+    <value>其他目标状态条件必须设置了名称和值。值为“{0}”，但名称未设置。</value>
+  </data>
+  <data name="btFlash_Text" xml:space="preserve">
+    <value>闪光灯</value>
+  </data>
+  <data name="rbSelectOption_customizeOS" xml:space="preserve">
+    <value>(高级)是。我想配置自己的自定义设置。</value>
+  </data>
+  <data name="txtImageTypeSizeCalculating" xml:space="preserve">
+    <value>(正在计算大小...)</value>
+  </data>
+  <data name="msgCOSAddNewDataAssetGroupTitle" xml:space="preserve">
+    <value>添加新数据资产组</value>
+  </data>
+  <data name="tbCOSHighlightingInstructionBold1" xml:space="preserve">
+    <value>粗体</value>
+  </data>
+  <data name="tbCOSHighlightingInstructionBold2" xml:space="preserve">
+    <value>- 自定义设置已应用于图像</value>
+  </data>
+  <data name="msgCOSAddNewSettingErrorTitle" xml:space="preserve">
+    <value>无法识别设置路径</value>
+  </data>
+  <data name="bCOSRemoveTargets" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="txtWMAFilter" xml:space="preserve">
+    <value>Windows Media (*.wma)|*.wma</value>
+  </data>
+  <data name="txtNotAdminMessage" xml:space="preserve">
+    <value>此应用程序需要管理员权限才能正常运行。</value>
+  </data>
+  <data name="txtError" xml:space="preserve">
+    <value>错误!</value>
+  </data>
+  <data name="tbPageHeader_FlashImagePage_Text" xml:space="preserve">
+    <value>将图像刷写到您的手机上</value>
+  </data>
+  <data name="txtAllFilesFilter" xml:space="preserve">
+    <value>所有文件(*.*)|*.*</value>
+  </data>
+  <data name="tbSelectOption_ProductionImage_Text" xml:space="preserve">
+    <value>生产图像类似于终极零售图像，但未锁定，并且不含安全强制设置。此图像不包括 Microsoft 和 Qualcomm 测试内容。您可以将此图像用于工程工作，以及移动运营商试用和其他认证过程。</value>
+  </data>
+  <data name="eFeatureLayoutDataSense" xml:space="preserve">
+    <value>流量管理</value>
+  </data>
+  <data name="txtBMPFilter" xml:space="preserve">
+    <value>位图(*.bmp)|*.bmp</value>
+  </data>
+  <data name="ttCOSApplications" xml:space="preserve">
+    <value>应用程序提供与首次引导时安装的应用程序有关的信息。</value>
+  </data>
+  <data name="tbPageDesc_BuildImagePage_Text" xml:space="preserve">
+    <value>恭喜! 您已完成图像的配置和自定义。现在，让我们来生成它吧。</value>
+  </data>
+  <data name="txtCOSDefaultImageCustomizationName" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="tbPinnedAppBackgroundColor" xml:space="preserve">
+    <value>背景色</value>
+  </data>
+  <data name="ttCOSSettingsAssetFileTypes" xml:space="preserve">
+    <value>允许使用以下文件类型:
+{0}</value>
+  </data>
+  <data name="bCOSRemoveDataAssetsGroups" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="tbPinnedAppTitle" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="rbSelectOption_selectTemplates" xml:space="preserve">
+    <value>是。我想从选择多个自定义模板开始。</value>
+  </data>
+  <data name="bCOSRemoveSettingsAssets" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="eMSAppsOneNote" xml:space="preserve">
+    <value>OneNote</value>
+  </data>
+  <data name="msgCOSAddVariantConditionNameOrValueCantBeEmptyErrorMsgTitle" xml:space="preserve">
+    <value>必须设置名称和值</value>
+  </data>
+  <data name="btCustomGetValueDialogOK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="eAppTypeMSApplication" xml:space="preserve">
+    <value>MS 应用程序</value>
+  </data>
+  <data name="msgCOSEditConditionsNoConditionsSetErrorTitle" xml:space="preserve">
+    <value>未设置条件</value>
+  </data>
+  <data name="eMSAppsFamilyRoom" xml:space="preserve">
+    <value>家庭空间</value>
+  </data>
+  <data name="bSelectTemplates_Add_Text" xml:space="preserve">
+    <value>添加 &gt;&gt;</value>
+  </data>
+  <data name="tbSpeechLanguages" xml:space="preserve">
+    <value>语音语言</value>
+  </data>
+  <data name="ttCOSSettingSample" xml:space="preserve">
+    <value>上述字段中的条目的示例</value>
+  </data>
+  <data name="msgCOSFailedToSave" xml:space="preserve">
+    <value>无法保存。请修复错误，然后重试。</value>
+  </data>
+  <data name="bCOSAddVariantCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="tbNote_Text" xml:space="preserve">
+    <value>注意:</value>
+  </data>
+  <data name="bSelectTemplates_Remove_Text" xml:space="preserve">
+    <value>&lt;&lt; 删除</value>
+  </data>
+  <data name="txtMultipleInstancesMessage" xml:space="preserve">
+    <value>ImageDesigner 的另一个实例已在运行中。</value>
+  </data>
+  <data name="tbPageDesc_FlashImagePage_Text" xml:space="preserve">
+    <value>准备好查看您手机上正在工作的新 Windows Phone 图像了吗?</value>
+  </data>
+  <data name="txtRestartCustomizationHeader" xml:space="preserve">
+    <value>要重新开始自定义吗?</value>
+  </data>
+  <data name="strCOSAddNewApplicationSource" xml:space="preserve">
+    <value>&lt;源&gt;</value>
+  </data>
+  <data name="txtNoDeviceFoundError" xml:space="preserve">
+    <value>未找到闪存设备</value>
+  </data>
+  <data name="txtPNGFilter" xml:space="preserve">
+    <value>PNG (*.png)|*.png</value>
+  </data>
+  <data name="ttEditSettingsAssetDisplayName" xml:space="preserve">
+    <value>可选</value>
+  </data>
+  <data name="tbPinnedAppApplication" xml:space="preserve">
+    <value>应用程序</value>
+  </data>
+  <data name="bCOSRemoveSettingsGroups" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="tbPageHeader_BuildImagePage_Text" xml:space="preserve">
+    <value>生成图像</value>
+  </data>
+  <data name="tbDescribe2_text" xml:space="preserve">
+    <value>此描述将不显示在您的手机上。</value>
+  </data>
+  <data name="tbPageDesc_SettingUpPage_Text" xml:space="preserve">
+    <value>在此处确认某些路径，以便我们可以设置手机图像设计器。</value>
+  </data>
+  <data name="msgCOSAddNewApplicationWithProvXML" xml:space="preserve">
+    <value>指定源\ProvXML</value>
+  </data>
+  <data name="tbCOSTargetsList" xml:space="preserve">
+    <value>目标</value>
+  </data>
+  <data name="txtFFUFilter" xml:space="preserve">
+    <value>WP 图像文件|*.FFU</value>
+  </data>
+  <data name="txtStartOverMessage" xml:space="preserve">
+    <value>任何未保存的设置都将丢失</value>
+  </data>
+  <data name="bCOSAddVariantOK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="tbCOSTargetValue" xml:space="preserve">
+    <value>值:</value>
+  </data>
+  <data name="tbDescribe1_text" xml:space="preserve">
+    <value>输入图像的简短描述:</value>
+  </data>
+  <data name="tbSelectOption_ModifyImage_Text" xml:space="preserve">
+    <value>如果您需要对已创建的 Windows Phone 图像进行修改(更改图像类型或更新自定义设置)，请从此处开始。</value>
+  </data>
+  <data name="tbPageDesc_ModifyImagePage_Text" xml:space="preserve">
+    <value>如果您需要对以前创建的 Windows Phone 图像进行修改，则可以从此处开始。首先，我们需要找到您以前的图像配置文件。</value>
+  </data>
+  <data name="hlViewMergedTemplates" xml:space="preserve">
+    <value>查看合并的模板</value>
+  </data>
+  <data name="tbSelectOption_customizeOS" xml:space="preserve">
+    <value>如果选择此选项，将允许您从头开始自定义您的手机。</value>
+  </data>
+  <data name="ttCOSTarget" xml:space="preserve">
+    <value>目标是一组要对其应用变量的条件。</value>
+  </data>
+  <data name="eFeatureLayoutFamilyRoom" xml:space="preserve">
+    <value>家庭空间</value>
+  </data>
+  <data name="ttCOSMapData" xml:space="preserve">
+    <value>映射数据资产是预填充到用户存储中的预定义目录的映射文件。</value>
+  </data>
+  <data name="msgCOSAddVariantNameDuplicateError" xml:space="preserve">
+    <value>变量“{0}”已定义。请选择其他名称。</value>
+  </data>
+  <data name="btBuildImage" xml:space="preserve">
+    <value>构建图像</value>
+  </data>
+  <data name="msgCOSAddVariantConditionValueCantBeEmptyError" xml:space="preserve">
+    <value>其他目标状态条件必须设置了名称和值。名称为“{0}”，但值未设置。</value>
+  </data>
+  <data name="msgCOSAddFileDuplicateNameError" xml:space="preserve">
+    <value>名称“{0}”已定义。请选择其他名称。</value>
+  </data>
+  <data name="btBuild_Text" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="bCOSRemoveTarget" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="txtJPGFilter" xml:space="preserve">
+    <value>JPG (*.jpg)|*.jpg</value>
+  </data>
+  <data name="gpWhatToDoToday" xml:space="preserve">
+    <value>今天您想做什么？</value>
+  </data>
+  <data name="msgCOSAddNewDataAssetsGroupNoMoreTypeError" xml:space="preserve">
+    <value>所有类型当前均已使用。请将数据资产添加到现有组中。</value>
+  </data>
+  <data name="msgCOSAddVariantDuplicateConditionsError" xml:space="preserve">
+    <value>条件“{0}”已定义。请选择其他条件。</value>
+  </data>
+  <data name="chPinnedAppType" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="ttCOSSettingValueText" xml:space="preserve">
+    <value>类型: 文本
+默认值: {0}</value>
+  </data>
+  <data name="bCOSAddSettings" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="tbGetFileDlgDisplayName" xml:space="preserve">
+    <value>显示名称:</value>
+  </data>
+  <data name="tbPageDesc_DescribeImagePage_Text" xml:space="preserve">
+    <value>您似乎想要生成某种类型的图像</value>
+  </data>
+  <data name="txtSizesApprox" xml:space="preserve">
+    <value>* 所有大小仅为约数</value>
+  </data>
+  <data name="miConxtextMenuCopy" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="tbCOSSettingValueBinary" xml:space="preserve">
+    <value>值(二进制):</value>
+  </data>
+  <data name="tbSelectTemplates_SelectTemplate_Text" xml:space="preserve">
+    <value>选择要包括在图像中的自定义模板。</value>
+  </data>
+  <data name="btCancel_Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="chPinnedAppTileSize" xml:space="preserve">
+    <value>磁贴大小</value>
+  </data>
+  <data name="tbPageHeader_SelectTemplatesPage_Text" xml:space="preserve">
+    <value>选择自定义模板</value>
+  </data>
+  <data name="hlViewImageOptionsSummary" xml:space="preserve">
+    <value>查看选定图像选项的总结</value>
+  </data>
+  <data name="tbDIBootLocale" xml:space="preserve">
+    <value>启动区域设置:</value>
+  </data>
+  <data name="gCOSOtherConditions" xml:space="preserve">
+    <value>其他目标状态条件</value>
+  </data>
+  <data name="tbEditSettingAssetDisplayName" xml:space="preserve">
+    <value>显示名称:</value>
+  </data>
+  <data name="msgCOSAddNewSettingsNoMorePathErrorTitle" xml:space="preserve">
+    <value>不存在更多可用路径</value>
+  </data>
+  <data name="tbCOSSettingsList" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="btCustomMessageBoxYes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="btCustomGetValueDialogCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="txtXMLFilter" xml:space="preserve">
+    <value>XML (*.xml)|*.xml</value>
+  </data>
+</root>

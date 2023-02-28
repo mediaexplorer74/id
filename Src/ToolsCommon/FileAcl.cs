@@ -99,7 +99,8 @@ namespace Microsoft.WindowsPhone.ImageUpdate.Tools.Common
       this.m_fi = fi != null ? fi : throw new ArgumentNullException(nameof (fi));
       this.m_nos = (NativeObjectSecurity) fi.GetAccessControl(AccessControlSections.All);
       this.m_fullPath = fi.FullName;
-      this.m_path = Path.Combine("\\", this.m_fullPath.Remove(0, rootPath.Length)).ToUpper();
+        //RnD
+        this.m_path = "";//Path.Combine("\\", this.m_fullPath.Remove(0, rootPath.Length)).ToUpper();
     }
   }
 }

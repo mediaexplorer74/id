@@ -50,13 +50,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ToolsCommon\ToolsCommon.csproj">
-      <Project>{0629527f-e933-4a3e-b8e2-681c9a92ae82}</Project>
-      <Name>ToolsCommon</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\ToolsCommon\ToolsCommon.csproj">
+      <Project>{8c557c1f-7df5-4d2d-a723-85731e959c19}</Project>
+      <Name>ToolsCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

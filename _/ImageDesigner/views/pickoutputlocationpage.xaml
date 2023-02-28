@@ -1,0 +1,79 @@
+<UserControl x:Class="Microsoft.WindowsPhone.ImageDesigner.UI.Views.PickOutputLocationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:core="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core;assembly=ImageDesignerCore"
+             xmlns:vm="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels;assembly=ImageDesignerCore"
+             xmlns:res="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.Resources;assembly=ImageDesignerCore">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <DockPanel Grid.Row="0">
+      <Border Background="White" DockPanel.Dock="Left">
+        <StackPanel Orientation="Vertical">
+          <TextBlock x:Name="tbPageTitle" Style="{StaticResource tbPageTitle}" Margin="10,0,0,0"
+                     Text="{x:Static res:Strings.tbPageHeader_PickOutputLocationPage_Text}"/>
+          <TextBlock x:Name="tbPageDesc" Style="{StaticResource tbPageDesc}" Margin="10,0" TextWrapping="Wrap"
+                     Text="{x:Static res:Strings.tbPageDesc_PickOutputLocationPage_Text}" Visibility="Collapsed"/>
+        </StackPanel>
+      </Border>
+      <Image MouseLeftButtonUp="HelpButtonClick" Margin="0,0,5,0" HorizontalAlignment="Right"
+             VerticalAlignment="Top" DockPanel.Dock="Right" Width="25" Height="28">
+        <FrameworkElement.Style>
+          <Style TargetType="{x:Type Image}">
+            <Setter Property="Image.Source" Value="/ImageDesigner;component/Resources/Images/Help_Blue.png"/>
+            <Style.Triggers>
+              <Trigger Property="UIElement.IsMouseOver" Value="true">
+                <Setter Property="Image.Source" Value="/ImageDesigner;component/Resources/Images/Help_Black.png"/>
+              </Trigger>
+            </Style.Triggers>
+          </Style>
+        </FrameworkElement.Style>
+      </Image>
+    </DockPanel>
+    <Border Margin="10,10,10,10" Visibility="Collapsed" Grid.Row="1"/>
+    <GroupBox Grid.Row="2" Margin="10,15,10,0"
+              Header="{x:Static res:Strings.tbPageDesc_PickOutputLocationPage_Text}">
+      <StackPanel Margin="10,15" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <FrameworkElement.Resources>
+          <core:EnumToBooleanConverter x:Key="enumToBooleanConverter"/>
+        </FrameworkElement.Resources>
+        <RadioButton x:Name="rbPickOutputLoc_NewLoc" Margin="5" GroupName="SelectOption"
+                     Content="{x:Static res:Strings.rbPickOutputLoc_NewLoc_Text}"
+                     IsChecked="{Binding Path=SelectedOption, Converter={StaticResource enumToBooleanConverter}, ConverterParameter={x:Static vm:OutputLocationOptions.NewLocation}}"/>
+        <TextBlock x:Name="tbPickOutputLoc_NewLoc" Margin="25,0,5,0" TextWrapping="Wrap"
+                   Style="{StaticResource tbSectionDesc}" Text="{x:Static res:Strings.tbPickOutputLoc_NewLoc_Text}"/>
+        <StackPanel Orientation="Horizontal">
+          <TextBox MouseDoubleClick="tbCurrentOutputLoc_MouseDoubleClick" x:Name="tbCurrentOutputLoc"
+                   Margin="25,0,10,0" TextWrapping="Wrap" Background="Transparent" BorderThickness="0"
+                   IsReadOnly="true" Style="{StaticResource txbSectionDesc}"
+                   Text="{Binding Path=OutputLocation, Mode=TwoWay}">
+            <FrameworkElement.ContextMenu>
+              <ContextMenu>
+                <MenuItem Click="tbCurrentOutputLoc_MenuItem_Click" Header="{x:Static res:Strings.miConxtextMenuCopy}"
+                          IsEnabled="true" StaysOpenOnClick="false">
+                  <MenuItem.Icon>
+                    <Image Source="/ImageDesigner;component/Resources/Images/Copy.png"/>
+                  </MenuItem.Icon>
+                </MenuItem>
+              </ContextMenu>
+            </FrameworkElement.ContextMenu>
+          </TextBox>
+          <TextBlock x:Name="tbChangeOutputLoc" Margin="0,3,0,0">
+            <Hyperlink Click="hlChangeOutputLoc_Click" x:Name="hlChangeOutputLoc" Style="{StaticResource hyperLink}"
+                       IsEnabled="{Binding Path=SelectedOption, Converter={StaticResource enumToBooleanConverter}, ConverterParameter={x:Static vm:OutputLocationOptions.NewLocation}}">Select</Hyperlink>
+          </TextBlock>
+        </StackPanel>
+        <RadioButton x:Name="rbPickOutputLoc_Overwrite" Margin="5,20,5,5" GroupName="SelectOption"
+                     Content="{x:Static res:Strings.rbPickOutputLoc_Replace_Text}"
+                     IsChecked="{Binding Path=SelectedOption, Converter={StaticResource enumToBooleanConverter}, ConverterParameter={x:Static vm:OutputLocationOptions.ReplaceExisting}}"/>
+        <TextBlock x:Name="tbPickOutputLoc_Overwrite" Margin="25,0,5,0" TextWrapping="Wrap"
+                   Style="{StaticResource tbSectionDesc}" Text="{x:Static res:Strings.tbPickOutputLoc_Replace_Text}"/>
+      </StackPanel>
+    </GroupBox>
+  </Grid>
+</UserControl>
