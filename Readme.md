@@ -9,9 +9,9 @@ ImageDesigner decomp.
 
 ## About 
 
-I found Microsoft WPID (or id, in short) and RnD it a little. :)
+I found [Microsoft WPID](https://androiddatahost.com/wpidd) (or **id**, in short) and RnD it a little. :)
 
-My idea to learn Image Fleashing deals for something great .
+My idea to learn Image Flashing deals for something great .
 
 I hope that this project can be useful for WP/W10M retromans, and os modders too :)
 
