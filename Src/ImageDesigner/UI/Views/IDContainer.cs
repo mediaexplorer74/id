@@ -17,27 +17,13 @@ using System.Windows.Markup;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 {
-  public partial class IDContainer : System.Windows.Controls.UserControl//, IComponentConnector
+  public partial class IDContainer : System.Windows.Controls.UserControl
   {
     private IDController _control;
     
-    /*
-    internal IDContainer UserControl;
-    internal Grid LayoutRoot;
-    internal DockPanel dbContent;
-    internal Button btStartOver;
-    internal Button btRestartCustomization;
-    internal Button btCancel;
-    internal Button btSave;
-    internal Button btBuild;
-    internal Button btFlash;
-    internal Button btNext;
-    internal StatusBar sb;
-    private bool _contentLoaded;
-    */
-
     public IDContainer() => this.InitializeComponent();
 
+        //RnD
     private void IDContainer_Loaded_1(object sender, RoutedEventArgs e)
     {
       this._control = this.DataContext as IDController;
@@ -47,57 +33,61 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
       this._control.OnStateExit += new IDControllerEventHandler(this._control_OnStateExit);
       if (!(this._control.GetVM(IDStates.BuildImage) is BuildImagePageVM vm))
         return;
-      this.btBuild.DataContext = (object) vm;
+      //this.btBuild.DataContext = (object) vm;
     }
 
+        // RnD
     private void _control_OnStateExit(object sender, IDControllerEventHandlerArgs e)
     {
       object dataContext = this.DataContext;
       if (e.currentState != IDStates.CustomizeOS)
         return;
-      this.btRestartCustomization.Visibility = Visibility.Collapsed;
+      //this.btRestartCustomization.Visibility = Visibility.Collapsed;
     }
 
+        //RnD ; fix it
     private void control_OnStateEntry(object sender, IDControllerEventHandlerArgs e)
     {
       object dataContext = this.DataContext;
       switch (e.currentState)
       {
         case IDStates.CustomizeOS:
-          this.btRestartCustomization.Visibility = Visibility.Visible;
+          //this.btRestartCustomization.Visibility = Visibility.Visible;
           break;
         case IDStates.BuildImage:
-          this.btNext.Visibility = Visibility.Collapsed;
-          this.btFlash.Visibility = Visibility.Collapsed;
-          this.btBuild.Visibility = Visibility.Visible;
+          //this.btNext.Visibility = Visibility.Collapsed;
+          //this.btFlash.Visibility = Visibility.Collapsed;
+          //this.btBuild.Visibility = Visibility.Visible;
           break;
         case IDStates.BuildSuccess:
-          this.btNext.Visibility = Visibility.Collapsed;
-          this.btBuild.Visibility = Visibility.Collapsed;
-          this.btFlash.Visibility = Visibility.Visible;
+          //this.btNext.Visibility = Visibility.Collapsed;
+          //this.btBuild.Visibility = Visibility.Collapsed;
+          //this.btFlash.Visibility = Visibility.Visible;
           if (!(this._control.GetVM(IDStates.BuildSuccess) is BuildSuccessPageVM vm1))
             break;
-          this.btFlash.DataContext = (object) vm1;
+          //this.btFlash.DataContext = (object) vm1;
           break;
         case IDStates.FlashImage:
-          this.btNext.Visibility = Visibility.Collapsed;
-          this.btBuild.Visibility = Visibility.Collapsed;
-          this.btFlash.Visibility = Visibility.Visible;
+          //this.btNext.Visibility = Visibility.Collapsed;
+          //this.btBuild.Visibility = Visibility.Collapsed;
+          //this.btFlash.Visibility = Visibility.Visible;
           if (!(this._control.GetVM(IDStates.FlashImage) is FlashImagePageVM vm2))
             break;
-          this.btFlash.DataContext = (object) vm2;
+          //this.btFlash.DataContext = (object) vm2;
           break;
         default:
-          this.btNext.Visibility = Visibility.Visible;
-          this.btBuild.Visibility = Visibility.Collapsed;
-          this.btFlash.Visibility = Visibility.Collapsed;
+          //this.btNext.Visibility = Visibility.Visible;
+          //this.btBuild.Visibility = Visibility.Collapsed;
+          //this.btFlash.Visibility = Visibility.Collapsed;
           break;
       }
     }
 
-    private void btNext_Click(object sender, RoutedEventArgs e) => this._control.MoveToNextCommand.Execute((object) this);
+    private void btNext_Click(object sender, RoutedEventArgs e) 
+            => this._control.MoveToNextCommand.Execute((object) this);
 
-    private void btBuild_Click(object sender, RoutedEventArgs e) => (this._control.GetVM(IDStates.BuildImage) as BuildImagePageVM).BuildImageCommand.Execute((object) this);
+    private void btBuild_Click(object sender, RoutedEventArgs e) 
+            => (this._control.GetVM(IDStates.BuildImage) as BuildImagePageVM).BuildImageCommand.Execute((object) this);
 
     private void btFlash_Click(object sender, RoutedEventArgs e)
     {

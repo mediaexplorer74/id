@@ -48,11 +48,14 @@
           <RowDefinition Height="Auto"/>
           <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
+          
         <FrameworkElement.Resources>
-          <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
-          <common:DialogTypeToVisibilityConverter x:Key="dlgToVisibilityConverter"/>
-          <vm:AppTileSizeToWrapperConverter x:Key="AppTileSizeToWrapperConverter"/>
-          <vm:MSAppsToWrapperConverter x:Key="MSAppsToWrapperConverter"/>
+            
+          <!--common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/-->
+          <!--common:DialogTypeToVisibilityConverter x:Key="dlgToVisibilityConverter"/-->
+          <!--vm:AppTileSizeToWrapperConverter x:Key="AppTileSizeToWrapperConverter"/-->
+          <!--vm:MSAppsToWrapperConverter x:Key="MSAppsToWrapperConverter"/-->
+            
           <DataTemplate DataType="{x:Type vm:InfusedAppSettings}">
             <Grid>
               <Grid.RowDefinitions>
@@ -63,7 +66,7 @@
                 <ColumnDefinition/>
               </Grid.ColumnDefinitions>
               <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,10" VerticalAlignment="Center"
-                         Text="{x:Static res:Strings.tbPinnedAppApplication}"/>
+                         Text=" x:Static res:Strings.tbPinnedAppApplication "/>
               <ComboBox Grid.Row="0" Grid.Column="1" Margin="10,10" ItemsSource="{Binding AvailableApps}"
                         SelectedValue="{Binding Name, Mode=TwoWay}" SelectedIndex="{Binding SelectedAppIndex, Mode=TwoWay}"/>
             </Grid>
@@ -77,42 +80,54 @@
                 <RowDefinition/>
                 <RowDefinition/>
               </Grid.RowDefinitions>
+                
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition/>
               </Grid.ColumnDefinitions>
+                
               <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,10" VerticalAlignment="Center"
-                         Text="{x:Static res:Strings.tbPinnedAppWebLinkURL}"/>
-              <TextBox Grid.Row="0" Grid.Column="1" Margin="10,10" VerticalAlignment="Center" Text="{Binding WeblinkURL}"/>
+                         Text=" x:Static res:Strings.tbPinnedAppWebLinkURL "/>
+              <TextBox Grid.Row="0" Grid.Column="1" Margin="10,10" VerticalAlignment="Center" 
+                       Text="{Binding WeblinkURL}"/>
               <TextBlock Grid.Row="1" Grid.Column="0" Margin="10,10" VerticalAlignment="Center"
-                         Text="{x:Static res:Strings.tbPinnedAppTitle}"/>
-              <TextBox Grid.Row="1" Grid.Column="1" Margin="10,10" VerticalAlignment="Center" Text="{Binding Title}"/>
-              <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,10" VerticalAlignment="Center" TextWrapping="Wrap"
-                         Text="{x:Static res:Strings.tbPinnedAppBackgroundColor}"/>
+                         Text=" x:Static res:Strings.tbPinnedAppTitle "/>
+              <TextBox Grid.Row="1" Grid.Column="1" Margin="10,10" VerticalAlignment="Center"
+                       Text="{Binding Title}"/>
+              <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,10" VerticalAlignment="Center"
+                         TextWrapping="Wrap"
+                         Text=" x:Static res:Strings.tbPinnedAppBackgroundColor "/>
               <TextBox Grid.Row="2" Grid.Column="1" Margin="10,10" VerticalAlignment="Center"
                        Text="{Binding BackgroundColor}"/>
-              <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,10" VerticalAlignment="Center" TextWrapping="Wrap"
-                         Text="{x:Static res:Strings.tbPinnedAppSmallIcon}"/>
+              <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,10" VerticalAlignment="Center" 
+                         TextWrapping="Wrap"
+                         Text=" x:Static res:Strings.tbPinnedAppSmallIcon "/>
               <Grid Row="3" Column="1" Margin="10,10">
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="85*"/>
                   <ColumnDefinition Width="15*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="tbSmallIcon" VerticalAlignment="Center" IsReadOnly="true" Grid.Column="0"
+                <TextBox x:Name="tbSmallIcon" VerticalAlignment="Center" IsReadOnly="true" 
+                         Grid.Column="0"
                          Text="{Binding WebLinkSmallIconDisplay}"/>
-                <Image x:Name="bBrowseSmallIcon" Margin="2,0,0,0" Width="Auto" Stretch="None" Grid.Column="1"
+                <Image x:Name="bBrowseSmallIcon" Margin="2,0,0,0" Width="Auto"
+                       Stretch="None" 
+                       Grid.Column="1"
                        Source="/ImageDesigner;component/Resources/Images/Control_OpenFileDialog.bmp"/>
               </Grid>
-              <TextBlock Grid.Row="4" Grid.Column="0" Margin="10,10" VerticalAlignment="Center" TextWrapping="Wrap"
-                         Text="{x:Static res:Strings.tbPinnedAppMediumLargeIcon}"/>
+              <TextBlock Grid.Row="4" Grid.Column="0" Margin="10,10" VerticalAlignment="Center"
+                         TextWrapping="Wrap"
+                         Text=" x:Static res:Strings.tbPinnedAppMediumLargeIcon "/>
               <Grid Row="4" Column="1" Margin="10,10">
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="85*"/>
                   <ColumnDefinition Width="15*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="tbMediumLargeIcon" VerticalAlignment="Center" IsReadOnly="true" Grid.Column="0"
+                <TextBox x:Name="tbMediumLargeIcon" VerticalAlignment="Center" IsReadOnly="true"
+                         Grid.Column="0"
                          Text="{Binding WebLinkMediumLargeIconDisplay}"/>
-                <Image x:Name="bBrowseMediumLargeIcon" Margin="2,0,0,0" Width="Auto" Stretch="None" Grid.Column="1"
+                <Image x:Name="bBrowseMediumLargeIcon" Margin="2,0,0,0" Width="Auto" 
+                       Stretch="None" Grid.Column="1"
                        Source="/ImageDesigner;component/Resources/Images/Control_OpenFileDialog.bmp"/>
               </Grid>
             </Grid>
@@ -139,29 +154,41 @@
                   <ColumnDefinition Width="100"/>
                   <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Name="tbCoordinates" Grid.Row="0" Grid.Column="0" Margin="10,12" VerticalAlignment="Center"
-                           Text="{x:Static res:Strings.tbPinnedAppCoordinates}" Height="14"/>
+                <TextBlock x:Name="tbCoordinates" Grid.Row="0" Grid.Column="0" Margin="10,12" 
+                           VerticalAlignment="Center"
+                           Text=" x:Static res:Strings.tbPinnedAppCoordinates " Height="14"/>
                 <DockPanel Grid.Row="0" Grid.Column="1">
                   <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
-                    <TextBlock x:Name="tbCoordinateX" Margin="10,10" VerticalAlignment="Center" HorizontalAlignment="Left"
+                    <TextBlock x:Name="tbCoordinateX" Margin="10,10" VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
                                Text="X"/>
-                    <TextBox GotFocus="tboxCoordinateX_GotFocus_1" PreviewTextInput="NumericTextBox_PreviewTextInput"
-                             DataObject.Pasting="NumericTextBox_Pasting" x:Name="tboxCoordinateX" Margin="3,10"
-                             VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="40"
+                    <TextBox GotFocus="tboxCoordinateX_GotFocus_1" 
+                             PreviewTextInput="NumericTextBox_PreviewTextInput"
+                             DataObject.Pasting="NumericTextBox_Pasting"
+                             x:Name="tboxCoordinateX" Margin="3,10"
+                             VerticalAlignment="Center" 
+                             HorizontalContentAlignment="Center" Width="40"
                              Text="{Binding Path=AppSettings.CoordinateX, Mode=TwoWay}"/>
                   </StackPanel>
-                  <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock x:Name="tbCoordinateY" Margin="3,10" VerticalAlignment="Center" HorizontalAlignment="Right"
+                  <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" 
+                              HorizontalAlignment="Right">
+                    <TextBlock x:Name="tbCoordinateY" Margin="3,10"
+                               VerticalAlignment="Center" HorizontalAlignment="Right"
                                Text="Y"/>
-                    <TextBox GotFocus="tboxCoordinateY_GotFocus_1" PreviewTextInput="NumericTextBox_PreviewTextInput"
-                             DataObject.Pasting="NumericTextBox_Pasting" x:Name="tboxCoordinateY" Margin="10,10"
+                    <TextBox GotFocus="tboxCoordinateY_GotFocus_1" 
+                             PreviewTextInput="NumericTextBox_PreviewTextInput"
+                             DataObject.Pasting="NumericTextBox_Pasting" 
+                             x:Name="tboxCoordinateY" Margin="10,10"
                              VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="40"
                              Text="{Binding Path=AppSettings.CoordinateY, Mode=TwoWay}"/>
                   </StackPanel>
                 </DockPanel>
-                <TextBlock x:Name="tbTileSize" Grid.Row="1" Grid.Column="0" Margin="10,10" VerticalAlignment="Center"
-                           Text="{x:Static res:Strings.tbPinnedAppTileSize}" Height="14"/>
-                <ComboBox x:Name="cmbTileSize" Grid.Row="1" Grid.Column="1" Margin="10,6" VerticalAlignment="Center"
+                <TextBlock x:Name="tbTileSize" Grid.Row="1" Grid.Column="0" Margin="10,10" 
+                           VerticalAlignment="Center"
+                           Text=" x:Static res:Strings.tbPinnedAppTileSize " 
+                           Height="14"/>
+                <ComboBox x:Name="cmbTileSize" Grid.Row="1" Grid.Column="1" Margin="10,6"
+                          VerticalAlignment="Center"
                           Height="22" ItemsSource="{Binding AppTileSizeList}"
                           SelectedValue="{Binding AppSettings.TileSize, Converter={StaticResource AppTileSizeToWrapperConverter}, Mode=TwoWay}"/>
               </Grid>

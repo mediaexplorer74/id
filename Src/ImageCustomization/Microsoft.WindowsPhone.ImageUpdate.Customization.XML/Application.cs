@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
@@ -77,8 +78,11 @@ namespace Microsoft.WindowsPhone.ImageUpdate.Customization.XML
 
 		private string _targetPartition;
 
-		//RnD ;  fix it
-        public static object Current;
+        //RnD ;  fix it
+        public static class Current
+        {
+            public static Window MainWindow;
+        }
 
         [XmlIgnore]
 		public string DefinedInFile { get; set; }

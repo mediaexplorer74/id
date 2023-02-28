@@ -28,25 +28,13 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Markup;
 
+using Application = Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Application;
+//using Application = System.Net.Mime.MediaTypeNames.Application;
+
 namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 {
   public partial class CustomizeOSPage : UserControl//, IComponentConnector, IStyleConnector
   {
-        /*
-    internal TextBlock tbPageTitle;
-    internal TextBlock tbPageDesc;
-    internal Button bPreviousError;
-    internal Button bNextError;
-    internal Image iError;
-    internal Image iWarning;
-    internal ListBox lbVariants;
-    internal Button bAddVariant;
-    internal Button bRemoveVariant;
-    internal TextBlock tbShowAllLink;
-    internal Hyperlink hlShowAll;
-    internal TreeView tvCustomizations;
-    private bool _contentLoaded;
-        */
 
     public CustomizeOSPage()
     {
@@ -707,14 +695,17 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
       WPApplicationsGroups currentItem = currentPage.CurrentItem as WPApplicationsGroups;
       List<Application> configuredOEMApps = new List<Application>();
       if (currentItem.GetPreviewItem(false, 0) is List<Applications> previewItem)
-        configuredOEMApps.AddRange(((IEnumerable<Application>) previewItem[0].Items).Where<Application>(
+        configuredOEMApps.AddRange(((IEnumerable<Application>) previewItem[0].Items).Where<Application>
+            (
             (Func<Application, bool>) (a => 
             a.TargetPartition.Equals(PkgConstants.c_strMainOsPartition))));
-    
+     
       currentPage.CurrentItem.CurrentVariant.SettingsGroup.LoadPolicy();
       PinnedAppsVM pinnedAppsVm = new PinnedAppsVM(configuredOEMApps);
       PinnedAppsDialog pinnedAppsDialog = new PinnedAppsDialog();
+
       pinnedAppsDialog.Owner = Application.Current.MainWindow;
+      
       pinnedAppsDialog.DataContext = (object) pinnedAppsVm;
       pinnedAppsDialog.ShowDialog();
     }

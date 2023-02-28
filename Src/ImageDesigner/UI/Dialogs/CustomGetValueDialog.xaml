@@ -4,60 +4,83 @@
         xmlns:common="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Common"
         xmlns:core="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core;assembly=ImageDesignerCore"
         xmlns:view="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Views"
-        xmlns:res="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.Resources;assembly=ImageDesignerCore"
+        xmlns:res="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.Resources;assembly=ImageDesignerCore" 
+        xmlns:viewmodels="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels;assembly=ImageDesignerCore" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        
         Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Background="#FF0079A8" MinWidth="100"
         MinHeight="100" Width="300" Height="250" ScrollViewer.VerticalScrollBarVisibility="Auto"
         ScrollViewer.HorizontalScrollBarVisibility="Auto" AllowsTransparency="true" ResizeMode="NoResize"
-        Style="{DynamicResource CustomMessageBoxStyle}" SizeToContent="WidthAndHeight"
+        SizeToContent="WidthAndHeight"
         Title="{Binding Title}">
-  <Grid Background="White">
+    <!--
+    d:DataContext="{d:DesignInstance Type=viewmodels:WPCustomizationAssetOwner}"
+    Style="{DynamicResource CustomMessageBoxStyle}" -->
+
+        <Grid Background="White">
     <Grid.RowDefinitions>
       <RowDefinition/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
+            
     <FrameworkElement.Resources>
-      <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
-      <common:DialogTypeToVisibilityConverter x:Key="dlgToVisibilityConverter"/>
-    </FrameworkElement.Resources>
-    <DockPanel Margin="10,7,10,5" Grid.Row="0" VerticalAlignment="Stretch">
+            <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+            <common:DialogTypeToVisibilityConverter x:Key="dlgToVisibilityConverter"/>
+        </FrameworkElement.Resources>
+    
+     <DockPanel Margin="10,7,10,5" Grid.Row="0" VerticalAlignment="Stretch">
       <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" DockPanel.Dock="Top">
         <StackPanel Orientation="Horizontal">
-          <Image Source="/ImageDesigner;component/Resources/Images/Information_blue_6227.ico" Width="25" Height="30"
+          <Image Source="/ImageDesigner;component/Resources/Images/Information_blue_6227.ico" 
+                 Width="25" Height="30"
                  Visibility="Collapsed"/>
-          <TextBlock x:Name="tbPageTitle" Style="{StaticResource mboxHeader}" TextAlignment="Left"
+                    <TextBlock x:Name="tbPageTitle" Style="{StaticResource mboxHeader}" TextAlignment="Left"
                      VerticalAlignment="Center" Text="{Binding Header}"
                      Visibility="{Binding ShowHeader, Converter={StaticResource boolToVisibilityConverter}}"/>
-        </StackPanel>
+
+                </StackPanel>
         <Separator/>
         <TextBlock x:Name="tbPageInstructions" Style="{StaticResource mboxMessage}" TextWrapping="Wrap" Height="Auto"
                    MaxWidth="250" Text="{Binding Instructions}"/>
-        <TextBox x:Name="tbPageEdit" TextWrapping="Wrap" Height="Auto" MaxWidth="250" Text="{Binding Value}"
+                <TextBox x:Name="tbPageEdit" TextWrapping="Wrap" 
+                         Height="Auto"
+                         MaxWidth="250" 
+                         Text="{Binding Value}"
                  Visibility="{Binding DialogType, Converter={StaticResource dlgToVisibilityConverter}, ConverterParameter={x:Static core:CustomDialogType.GetValueEditBoxDialog}}"/>
-        <ComboBox x:Name="cbPageValue" Height="Auto" MaxWidth="250" SelectedItem="{Binding Value, Mode=TwoWay}"
+
+                <ComboBox x:Name="cbPageValue" 
+                          Height="Auto" 
+                          MaxWidth="250" 
+                          SelectedItem="{Binding Value, Mode=TwoWay}"
                   ItemsSource="{Binding ValueList, Mode=TwoWay}"
-                  Visibility="{Binding DialogType, Converter={StaticResource dlgToVisibilityConverter}, ConverterParameter={x:Static core:CustomDialogType.GetValueComboBoxDialog}}"/>
+                 Visibility="{Binding DialogType, Converter={StaticResource dlgToVisibilityConverter}, ConverterParameter={x:Static core:CustomDialogType.GetValueComboBoxDialog}}"/>
       </StackPanel>
     </DockPanel>
     <DockPanel Margin="0,10,0,0" Grid.Row="1">
       <FrameworkElement.Resources>
-        <core:NegateConverter x:Key="negateConverter"/>
-        <common:BooleanToVisibilityConverter x:Key="boolToVisConverter"/>
-      </FrameworkElement.Resources>
+                <core:NegateConverter x:Key="negateConverter"/>
+                <common:BooleanToVisibilityConverter x:Key="boolToVisConverter"/>
+            </FrameworkElement.Resources>
       <Separator DockPanel.Dock="Top"/>
       <TextBlock x:Name="tb1" Margin="20,5,20,0" Style="{StaticResource mboxInfo}" TextWrapping="Wrap" Height="Auto"
-                 MaxWidth="250" Text="{x:Static res:Strings.txtCustomGetValueDialogInstructions}"
+                 MaxWidth="250" Text=" x:Static res:Strings.txtCustomGetValueDialogInstructions "
                  DockPanel.Dock="Top"/>
-      <Separator DockPanel.Dock="Bottom"/>
-      <StackPanel Margin="20,0,20,0" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Bottom">
-        <Button Click="btOK_Click" x:Name="btOK" Content="{x:Static res:Strings.btCustomGetValueDialogOK}"
+      
+        <Separator DockPanel.Dock="Bottom"/>
+      
+        <StackPanel Margin="20,0,20,0" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Bottom">
+
+                <Button Click="btOK_Click" x:Name="btOK" Content=" x:Static res:Strings.btCustomGetValueDialogOK "
                 Margin="10,10,20,10" Height="23" HorizontalAlignment="Left"
-                BorderBrush="{DynamicResource {x:Static JetSystemColors.InactiveCaptionBrushKey}}"
+                BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"
                 Visibility="{Binding ShowOKButton, Converter={StaticResource boolToVisibilityConverter}}"/>
-        <Button Click="btCancel_Click" x:Name="btCancel"
-                Content="{x:Static res:Strings.btCustomGetValueDialogCancel}" Margin="20,10,10,10" Height="23"
+
+                <Button Click="btCancel_Click" x:Name="btCancel"
+                Content=" x:Static res:Strings.btCustomGetValueDialogCancel " 
+                Margin="20,10,10,10" Height="23"
                 HorizontalAlignment="Right" IsDefault="true" BorderBrush="#FF009DCB"
                 Visibility="{Binding ShowCancelButton, Converter={StaticResource boolToVisibilityConverter}}"/>
-      </StackPanel>
+            </StackPanel>
     </DockPanel>
   </Grid>
 </Window>

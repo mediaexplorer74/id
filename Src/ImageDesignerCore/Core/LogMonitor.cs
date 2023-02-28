@@ -30,8 +30,10 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
 
     private void Initialize()
     {
-      this.Path = Path.GetDirectoryName(this._fileName);
-      this.Filter = Path.GetFileName(this._fileName);
+        // RnD ; fix it
+        this.Path = this._fileName;//Path.GetDirectoryName(this._fileName);
+        this.Filter = this._fileName;//Path.GetFileName(this._fileName);
+
       this.NotifyFilter = NotifyFilters.Size | NotifyFilters.LastWrite;
       this.EnableRaisingEvents = true;
       this._fs = new FileStream(this._fileName, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite);

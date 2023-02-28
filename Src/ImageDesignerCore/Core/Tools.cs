@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// Tools.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.Core.Tools
 // Assembly: ImageDesignerCore, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: A00BBFA4-FB4D-4867-990A-673A22716507
@@ -56,7 +56,16 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
       string empty = string.Empty;
       ResourceManager resourceManager = Microsoft.WindowsPhone.ImageDesigner.Core.Tools.ResourceManager;
       if (resourceManager != null)
-        empty = resourceManager.GetString(key);
+      {
+        try
+        {
+            empty = resourceManager.GetString(key);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine("[ex] Resource Manager GetString ex. : " + ex.Message);
+        }
+      }
       return empty;
     }
 
@@ -66,7 +75,9 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
     {
       if (a == null)
         return;
-            if (Application.Current != null)
+
+           //RnD; fix it
+            if (true)//(Application.Current != null)
             {
                 //RnD
                 //Application.Current.Dispatcher.Invoke((Delegate)a);
@@ -79,10 +90,11 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
     {
       T obj = default (T);
 
-    if (f != null)
-        obj = Application.Current == null
-                    ? f()
-                    : default;//(T) Application.Current.Dispatcher.Invoke((Delegate) f);
+    // RnD ; fix it
+    //   if (f != null)
+    //    obj = Application.Current == null
+    //                ? f()
+    //                : (T) Application.Current.Dispatcher.Invoke((Action) f);
       return obj;
     }
 
@@ -575,14 +587,19 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
       }
       catch (UnauthorizedAccessException ex)
       {
+        Debug.WriteLine("[ex] " + ex.Message);
         folder1 = false;
       }
       return folder1;
     }
 
-    public static bool InUIMode() => Application.Current != null;
+        public static bool InUIMode()
+        {
+            //RnD; fix it
+            return true;//Application.Current != null;
+        }
 
-    public enum FileFilterType
+        public enum FileFilterType
     {
       Application,
       License,

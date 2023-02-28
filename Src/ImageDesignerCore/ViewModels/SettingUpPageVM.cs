@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// SettingUpPageVM.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels.SettingUpPageVM
 // Assembly: ImageDesignerCore, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: A00BBFA4-FB4D-4867-990A-673A22716507

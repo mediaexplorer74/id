@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// WPApplicationsGroups.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels.WPApplicationsGroups
 // Assembly: ImageDesignerCore, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: A00BBFA4-FB4D-4867-990A-673A22716507
@@ -11,13 +11,18 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using Application = Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Application;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
 {
   public class WPApplicationsGroups : WPListItemBase
   {
     public List<Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Applications> Applications;
-    public static readonly DependencyProperty EnableAppPinningProperty = DependencyProperty.Register(nameof (EnableAppPinning), typeof (bool), typeof (WPApplicationsGroups), new PropertyMetadata((object) false));
+
+    public static readonly DependencyProperty EnableAppPinningProperty 
+            = DependencyProperty.Register(nameof (EnableAppPinning),
+                typeof (bool), typeof (WPApplicationsGroups),
+                new PropertyMetadata((object) false));
 
     public WPApplicationsGroups(
       List<Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Applications> applications,
@@ -28,11 +33,15 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
       this.Applications = applications;
       this.IsIncludedInOutput = isIncludedInOutput;
       this.ToolTip = Tools.GetString("ttCOSApplications");
+
       ObservableCollection<WPListItemBase> collection = new ObservableCollection<WPListItemBase>();
-      foreach (Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Applications application1 in applications)
+
+      foreach (Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Applications application1 
+                in applications)
       {
         foreach (Application application2 in application1.Items)
-          collection.Add((WPListItemBase) new WPApplication(application2, isIncludedInOutput, (WPListItemBase) this));
+          collection.Add((WPListItemBase) new WPApplication(application2, 
+              isIncludedInOutput, (WPListItemBase) this));
       }
       this.Children = new ObservableCollection<WPListItemBase>((IEnumerable<WPListItemBase>) collection);
       this.EnableAppPinning = this.CurrentVariant.IsStaticVariant;

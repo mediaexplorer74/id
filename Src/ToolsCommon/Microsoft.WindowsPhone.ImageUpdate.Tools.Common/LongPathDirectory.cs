@@ -41,7 +41,12 @@ namespace Microsoft.WindowsPhone.ImageUpdate.Tools.Common
         LongPathDirectory.Delete(path);
     }
 
-    public static bool Exists(string path) => NativeMethods.IU_DirectoryExists(path);
+    public static bool Exists(string path)
+    {
+        //RnD
+        //return NativeMethods.IU_DirectoryExists(path);
+        return Directory.Exists(path);
+    }
 
     public static FileAttributes GetAttributes(string path)
     {

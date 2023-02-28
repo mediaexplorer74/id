@@ -5,6 +5,7 @@
 // Assembly location: C:\Users\Admin\Desktop\ImageDesigner\64\ImageDesigner\ImageDesigner.exe
 
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -26,6 +27,7 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
       }
       catch (Exception ex)
       {
+         Debug.WriteLine("[ex] " + ex.Message);
       }
     }
   }

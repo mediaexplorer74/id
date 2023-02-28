@@ -15,10 +15,12 @@
       <RowDefinition/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
+      
     <FrameworkElement.Resources>
       <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
       <common:DialogTypeToVisibilityConverter x:Key="dlgToVisibilityConverter"/>
     </FrameworkElement.Resources>
+      
     <DockPanel Margin="10,7,10,5" Grid.Row="0" VerticalAlignment="Stretch">
       <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" DockPanel.Dock="Top">
         <StackPanel Orientation="Horizontal">
@@ -31,11 +33,11 @@
         <Separator/>
         <TextBlock x:Name="tbPageInstructions" Style="{StaticResource mboxMessage}" TextWrapping="Wrap" Height="Auto"
                    MaxWidth="250" Text="{Binding Instructions}"/>
-        <TextBlock Text="{x:Static res:Strings.tbCOSVariantName}"
+        <TextBlock Text=" x:Static res:Strings.tbCOSVariantName "
                    Visibility="{Binding DialogType, Converter={StaticResource dlgToVisibilityConverter}, ConverterParameter={x:Static core:CustomDialogType.NewVariantDialog}}"/>
         <TextBox x:Name="tbName" TextWrapping="Wrap" Height="Auto" MaxWidth="250" Text="{Binding Name}"
                  Visibility="{Binding DialogType, Converter={StaticResource dlgToVisibilityConverter}, ConverterParameter={x:Static core:CustomDialogType.NewVariantDialog}}"/>
-        <GroupBox Header="{x:Static res:Strings.gCOSCommonConditions}" Margin="5"
+        <GroupBox Header=" x:Static res:Strings.gCOSCommonConditions " Margin="5"
                   Visibility="{Binding ShowCommon1, Converter={StaticResource boolToVisibilityConverter}}">
           <StackPanel>
             <Grid>
@@ -118,14 +120,16 @@
       </FrameworkElement.Resources>
       <Separator DockPanel.Dock="Top"/>
       <TextBlock x:Name="tb1" Margin="20,5,20,0" Style="{StaticResource mboxInfo}" TextWrapping="Wrap" Height="Auto"
-                 MaxWidth="250" Text="{x:Static res:Strings.tbCOSAddVariantClickOKorCancel}" DockPanel.Dock="Top"/>
+                 MaxWidth="250" Text=" x:Static res:Strings.tbCOSAddVariantClickOKorCancel " DockPanel.Dock="Top"/>
       <Separator DockPanel.Dock="Bottom"/>
       <StackPanel Margin="20,0,20,0" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Bottom">
-        <Button Click="btOK_Click" x:Name="btOK" Content="{x:Static res:Strings.bCOSAddVariantOK}"
+        <Button Click="btOK_Click" x:Name="btOK" Content=" x:Static res:Strings.bCOSAddVariantOK "
                 Margin="10,10,20,10" Height="23" HorizontalAlignment="Left"
-                BorderBrush="{DynamicResource {x:Static JetSystemColors.InactiveCaptionBrushKey}}"
+                BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"
                 Visibility="{Binding ShowOKButton, Converter={StaticResource boolToVisibilityConverter}}"/>
-        <Button Click="btCancel_Click" x:Name="btCancel" Content="{x:Static res:Strings.bCOSAddVariantCancel}"
+        
+          <Button Click="btCancel_Click" x:Name="btCancel" 
+                Content=" x:Static res:Strings.bCOSAddVariantCancel "
                 Margin="20,10,10,10" Height="23" HorizontalAlignment="Right" IsDefault="true"
                 BorderBrush="#FF009DCB"
                 Visibility="{Binding ShowCancelButton, Converter={StaticResource boolToVisibilityConverter}}"/>

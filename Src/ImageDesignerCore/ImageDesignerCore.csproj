@@ -8,7 +8,6 @@
     <AssemblyName>ImageDesignerCore</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
-    <ApplicationVersion>8.0.0.0</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Microsoft.WindowsPhone.ImageDesigner.Core</RootNamespace>
   </PropertyGroup>
@@ -33,88 +32,117 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDContext.cs" />
-    <Compile Include="PackageMetadata.cs" />
-    <Compile Include="Constants.cs" />
-    <Compile Include="DeviceFlasherEventHandler.cs" />
-    <Compile Include="DeviceFlasherProgressEventHandler.cs" />
-    <Compile Include="FlashingResult.cs" />
-    <Compile Include="DeviceFlasher.cs" />
-    <Compile Include="DeviceMonitorEventHandler.cs" />
-    <Compile Include="DeviceMonitor.cs" />
-    <Compile Include="ImageBuilderEventHandler.cs" />
-    <Compile Include="ImageBuilder.cs" />
-    <Compile Include="ImageBuilderEventArgs.cs" />
-    <Compile Include="LogEntry.cs" />
-    <Compile Include="ConsoleLogSettings.cs" />
-    <Compile Include="PidConsoleWriter.cs" />
-    <Compile Include="LogMonitorEventHandler.cs" />
-    <Compile Include="LogMonitor.cs">
+    <Compile Include="Core\IDContext.cs" />
+    <Compile Include="Core\PackageMetadata.cs" />
+    <Compile Include="Core\Constants.cs" />
+    <Compile Include="Core\DeviceFlasherEventHandler.cs" />
+    <Compile Include="Core\DeviceFlasherProgressEventHandler.cs" />
+    <Compile Include="Core\FlashingResult.cs" />
+    <Compile Include="Core\DeviceFlasher.cs" />
+    <Compile Include="Core\DeviceMonitorEventHandler.cs" />
+    <Compile Include="Core\DeviceMonitor.cs" />
+    <Compile Include="Core\ImageBuilderEventHandler.cs" />
+    <Compile Include="Core\ImageBuilder.cs" />
+    <Compile Include="Core\ImageBuilderEventArgs.cs" />
+    <Compile Include="Core\LogEntry.cs" />
+    <Compile Include="Core\ConsoleLogSettings.cs" />
+    <Compile Include="Core\PidConsoleWriter.cs" />
+    <Compile Include="Core\LogMonitorEventHandler.cs" />
+    <Compile Include="Core\LogMonitor.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LogMonitorEventArgs.cs" />
-    <Compile Include="WPIDException.cs" />
-    <Compile Include="IIDState.cs" />
+    <Compile Include="Core\LogMonitorEventArgs.cs" />
+    <Compile Include="Resources\Strings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Tooltips1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tooltips1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\WPIDException.cs" />
+    <Compile Include="Core\IIDState.cs" />
     <Compile Include="Core\EnumToBooleanConverter.cs" />
-    <Compile Include="FileExistsConverter.cs" />
+    <Compile Include="Core\FileExistsConverter.cs" />
     <Compile Include="Core\NegateConverter.cs" />
-    <Compile Include="IIDCommand.cs" />
-    <Compile Include="DelegateCommand.cs" />
-    <Compile Include="Workflow.cs" />
-    <Compile Include="ImageType.cs" />
-    <Compile Include="IDStates.cs" />
-    <Compile Include="CustomizationChoice.cs" />
-    <Compile Include="CustomDialogType.cs" />
-    <Compile Include="WPIDLocale.cs" />
-    <Compile Include="AppType.cs" />
-    <Compile Include="MSApps.cs" />
-    <Compile Include="AppTileSize.cs" />
-    <Compile Include="StartLayout.cs" />
-    <Compile Include="FeatureLayout.cs" />
-    <Compile Include="IDControllerEventHandler.cs" />
-    <Compile Include="IIDControl.cs" />
-    <Compile Include="IDController.cs" />
-    <Compile Include="IDControllerEventHandlerArgs.cs" />
-    <Compile Include="ISelectable.cs" />
-    <Compile Include="WPLanguage.cs" />
-    <Compile Include="TaskID.cs" />
-    <Compile Include="BackgroundTasks.cs" />
-    <Compile Include="WPIDTask.cs" />
-    <Compile Include="AsyncWPIDTask.cs" />
-    <Compile Include="ImageSizeCalculatorTask.cs" />
-    <Compile Include="CalculateLanguageSizeTask.cs" />
-    <Compile Include="TaskStatus.cs" />
-    <Compile Include="TaskEventHandler.cs" />
-    <Compile Include="TaskWorkEventHandler.cs" />
-    <Compile Include="TaskWorkEventArgs.cs" />
-    <Compile Include="TaskEventArgs.cs" />
-    <Compile Include="UserConfig.cs" />
-    <Compile Include="ObjectPropertyChangedEventHandler.cs" />
-    <Compile Include="ObservableNotifyObjectCollection.cs" />
-    <Compile Include="ObjectPropertyChangedEventArgs.cs" />
-    <Compile Include="TooltipStrings.cs" />
-    <Compile Include="TooltipBehavior.cs" />
-    <Compile Include="TooltipConverter.cs" />
-    <Compile Include="BSPConfig.cs" />
-    <Compile Include="ProjectXml.cs" />
-    <Compile Include="Tools.cs" />
-    <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="SafeNativeMethods.cs" />
-    <Compile Include="LexicographicComparer.cs" />
-    <Compile Include="WaitCursor.cs" />
-    <Compile Include="LocalizationVM.cs" />
-    <Compile Include="WPIDLanguage.cs" />
+    <Compile Include="Core\IIDCommand.cs" />
+    <Compile Include="Core\DelegateCommand.cs" />
+    <Compile Include="Core\Workflow.cs" />
+    <Compile Include="Core\ImageType.cs" />
+    <Compile Include="Core\IDStates.cs" />
+    <Compile Include="Core\CustomizationChoice.cs" />
+    <Compile Include="Core\CustomDialogType.cs" />
+    <Compile Include="Core\WPIDLocale.cs" />
+    <Compile Include="Core\AppType.cs" />
+    <Compile Include="Core\MSApps.cs" />
+    <Compile Include="Core\AppTileSize.cs" />
+    <Compile Include="Core\StartLayout.cs" />
+    <Compile Include="Core\FeatureLayout.cs" />
+    <Compile Include="Core\IDControllerEventHandler.cs" />
+    <Compile Include="Core\IIDControl.cs" />
+    <Compile Include="Core\IDController.cs" />
+    <Compile Include="Core\IDControllerEventHandlerArgs.cs" />
+    <Compile Include="Core\ISelectable.cs" />
+    <Compile Include="Core\WPLanguage.cs" />
+    <Compile Include="Core\TaskID.cs" />
+    <Compile Include="Core\BackgroundTasks.cs" />
+    <Compile Include="Core\WPIDTask.cs" />
+    <Compile Include="Core\AsyncWPIDTask.cs" />
+    <Compile Include="Core\ImageSizeCalculatorTask.cs" />
+    <Compile Include="Core\CalculateLanguageSizeTask.cs" />
+    <Compile Include="Core\TaskStatus.cs" />
+    <Compile Include="Core\TaskEventHandler.cs" />
+    <Compile Include="Core\TaskWorkEventHandler.cs" />
+    <Compile Include="Core\TaskWorkEventArgs.cs" />
+    <Compile Include="Core\TaskEventArgs.cs" />
+    <Compile Include="Core\UserConfig.cs" />
+    <Compile Include="Core\ObjectPropertyChangedEventHandler.cs" />
+    <Compile Include="Core\ObservableNotifyObjectCollection.cs" />
+    <Compile Include="Core\ObjectPropertyChangedEventArgs.cs" />
+    <Compile Include="Core\TooltipStrings.cs" />
+    <Compile Include="Core\TooltipBehavior.cs" />
+    <Compile Include="Core\TooltipConverter.cs" />
+    <Compile Include="Core\BSPConfig.cs" />
+    <Compile Include="Core\ProjectXml.cs" />
+    <Compile Include="Core\Tools.cs" />
+    <Compile Include="Core\ExtensionMethods.cs" />
+    <Compile Include="Core\SafeNativeMethods.cs" />
+    <Compile Include="Core\LexicographicComparer.cs" />
+    <Compile Include="Core\WaitCursor.cs" />
+    <Compile Include="Core\LocalizationVM.cs" />
+    <Compile Include="Core\WPIDLanguage.cs" />
     <Compile Include="Resources\Strings.cs" />
     <Compile Include="Resources\Tooltips.cs" />
     <Compile Include="ViewModels\BuildImagePageEventHandler.cs" />
@@ -187,8 +215,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Strings.resx" />
-    <EmbeddedResource Include="Resources\Tooltips.resx" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+    <EmbeddedResource Include="Resources\Strings1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tooltips1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Tooltips1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\featureapi\FeatureAPI.csproj">

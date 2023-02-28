@@ -12,6 +12,7 @@ using System.CodeDom.Compiler;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.Remoting.Contexts;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -23,28 +24,9 @@ using System.Windows.Media;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
 {
-  public partial class BuildImagePage : UserControl//, IComponentConnector
+  public partial class BuildImagePage : UserControl
   {
-        /*
-    internal BuildImagePage BuildImageUserControl;
-    internal TextBlock tbPageTitle;
-    internal TextBlock tbPageDesc;
-    internal TextBlock tbSummaryLink;
-    internal Hyperlink hlViewImageOptionsSummary;
-    internal Button btBuildImage;
-    internal GroupBox gb;
-    internal CheckBox cbAutoScroll;
-    internal Button btViewLog;
-    internal Button btClearLog;
-    internal Button btOpenOutputFolder;
-    internal ProgressBar pbBuild;
-    internal StackPanel spCmdLine;
-    internal TextBlock txtLabelCmdLine;
-    internal TextBox txtCmdLine;
-    internal ListView lv;
-    private bool _contentLoaded;
-        */
-
+      
     public BuildImagePage()
     {
       this.InitializeComponent();
@@ -95,28 +77,42 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
     {
       BuildImagePageVM vm = sender as BuildImagePageVM;
       string propertyName = e.PropertyName;
-      if (e.PropertyName.Equals("EnableBuildButton"))
-        this.Dispatcher.BeginInvoke((Delegate) 
-            (() => this.btBuildImage.IsEnabled = vm.EnableBuildButton));
+            
+            if (e.PropertyName.Equals("EnableBuildButton"))
+            {
+                //RnD ; fix it 
+                //this.Dispatcher.BeginInvoke((Delegate)
+                 //   (() => this.btBuildImage.IsEnabled = vm.EnableBuildButton));
+            }
 
       if (e.PropertyName.Equals("BuildInProgress"))
       {
         bool workInProgress = vm.BuildInProgress || vm.CancelInProgress;
-        if (vm.BuildInProgress)
-        {
-          this.Dispatcher.BeginInvoke((Delegate) (
-              () => this.LogEntries.Clear()));
+                if (vm.BuildInProgress)
+                {
+                    this.Dispatcher.BeginInvoke((Action)
+                        (
+                        () => { this.LogEntries.Clear(); }
+                        ));
 
-          this.Dispatcher.BeginInvoke((Delegate) (
-              () => this.cbAutoScroll.IsChecked = new bool?(true)));
-          this.Dispatcher.BeginInvoke((Delegate) (() => (
+
+
+                    this.Dispatcher.BeginInvoke((Action)
+                    (
+                      () => 
+                      { this.cbAutoScroll.IsChecked = new bool?(true); }
+                    ));
+
+
+          this.Dispatcher.BeginInvoke((Action) (() => (
           (Panel) this.pbBuild.Template.FindName("Animation", 
           (FrameworkElement) this.pbBuild)).Background = (Brush) Brushes.LightBlue));
         }
         else
-          this.Dispatcher.BeginInvoke((Delegate) (
+          this.Dispatcher.BeginInvoke((Action) (
               () => this.cbAutoScroll.IsChecked = new bool?(false)));
-        this.Dispatcher.BeginInvoke((Delegate) (
+
+        this.Dispatcher.BeginInvoke((Action) (
             () => this.pbBuild.Visibility = workInProgress 
             ? Visibility.Visible 
             : Visibility.Collapsed));
@@ -126,13 +122,16 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
       bool workInProgress1 = vm.BuildInProgress || vm.CancelInProgress;
       if (vm.CancelInProgress)
       {
-        this.Dispatcher.BeginInvoke((Delegate) (
+        this.Dispatcher.BeginInvoke((Action) (
             () => this.cbAutoScroll.IsChecked = new bool?(false)));
-        this.Dispatcher.BeginInvoke((Delegate) (
-            () => ((Panel) this.pbBuild.Template.FindName("Animation", (FrameworkElement) this.pbBuild)).Background = (Brush) Brushes.DarkRed));
+        this.Dispatcher.BeginInvoke((Action) (
+            () => ((Panel) this.pbBuild.Template.FindName("Animation", 
+            (FrameworkElement) this.pbBuild)).Background = (Brush) Brushes.DarkRed));
       }
-      this.Dispatcher.BeginInvoke((Delegate) (
-          () => this.pbBuild.Visibility = workInProgress1 ? Visibility.Visible : Visibility.Collapsed));
+      this.Dispatcher.BeginInvoke((Action) (
+          () => this.pbBuild.Visibility = workInProgress1
+          ? Visibility.Visible 
+          : Visibility.Collapsed));
     }
 
     private void ItemContainerGenerator_StatusChanged(object sender, EventArgs e)
@@ -150,7 +149,7 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Views
       foreach (LogEntry logEntry in (Collection<LogEntry>) e.logEntries)
       {
         LogEntry le = logEntry;
-        this.Dispatcher.BeginInvoke((Delegate) (() => this.LogEntries.Add(le)));
+        this.Dispatcher.BeginInvoke((Action) (() => this.LogEntries.Add(le)));
       }
     }
 

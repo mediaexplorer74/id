@@ -28,9 +28,15 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
 
     public bool HasWarnings => ((IEnumerable<CustomizationError>) this.Warnings).Count<CustomizationError>() > 0;
 
-    public List<CustomizationError> Errors => ((IEnumerable<CustomizationError>) this.Issues).Where<CustomizationError>((Func<CustomizationError, bool>) (issue => issue.Severity == 1)).ToList<CustomizationError>();
+        //RnD
+    public List<CustomizationError> Errors => ((IEnumerable<CustomizationError>) this.Issues)
+            .Where<CustomizationError>((Func<CustomizationError, bool>)
+        (issue => issue.Severity == (CustomizationErrorSeverity)1)).ToList<CustomizationError>();
 
-    public List<CustomizationError> Warnings => ((IEnumerable<CustomizationError>) this.Issues).Where<CustomizationError>((Func<CustomizationError, bool>) (issue => issue.Severity == 0)).ToList<CustomizationError>();
+        //RnD
+    public List<CustomizationError> Warnings => ((IEnumerable<CustomizationError>) this.Issues)
+            .Where<CustomizationError>((Func<CustomizationError, bool>)
+        (issue => issue.Severity == (CustomizationErrorSeverity)0)).ToList<CustomizationError>();
 
     public string WarningsMessage
     {

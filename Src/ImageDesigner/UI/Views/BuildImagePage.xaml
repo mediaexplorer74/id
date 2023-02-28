@@ -27,11 +27,11 @@
         </Setter.Value>
       </Setter>
     </Style>
-    <DataTemplate DataType="{x:Type core:LogEntry}">
+    <!--DataTemplate DataType="{x:Type core:LogEntry}">
       <Grid IsSharedSizeScope="true">
         <TextBlock TextWrapping="Wrap" Text="{Binding Message}"/>
       </Grid>
-    </DataTemplate>
+    </DataTemplate-->
   </FrameworkElement.Resources>
   <DockPanel>
     <Grid Loaded="Grid_Loaded_1" DockPanel.Dock="Top">
@@ -47,9 +47,9 @@
         <Border DockPanel.Dock="Left" Background="White">
           <StackPanel Orientation="Vertical">
             <TextBlock x:Name="tbPageTitle" Style="{StaticResource tbPageTitle}" Margin="10,0,0,0"
-                       Text="{x:Static res:Strings.tbPageHeader_BuildImagePage_Text}"/>
+                       Text=" x:Static res:Strings.tbPageHeader_BuildImagePage_Text "/>
             <TextBlock x:Name="tbPageDesc" Style="{StaticResource tbPageDesc}" Margin="10,0" TextWrapping="Wrap"
-                       Text="{x:Static res:Strings.tbPageDesc_BuildImagePage_Text}"/>
+                       Text=" x:Static res:Strings.tbPageDesc_BuildImagePage_Text "/>
           </StackPanel>
         </Border>
         <Image MouseLeftButtonUp="HelpButtonClick" Margin="0,0,5,0" HorizontalAlignment="Right"
@@ -76,7 +76,8 @@
               View a summary of the selected image options
             </Hyperlink>
           </TextBlock>
-          <Button Click="btBuildImage_Click_1" x:Name="btBuildImage" Content="{x:Static res:Strings.btBuildImage}"
+          <Button Click="btBuildImage_Click_1" x:Name="btBuildImage" 
+                  Content=" x:Static res:Strings.btBuildImage "
                   Margin="20,0,0,0" Height="20" Visibility="Hidden"/>
         </DockPanel>
       </Border>
@@ -86,16 +87,16 @@
         <DockPanel Dock="Top">
           <DockPanel Dock="Top">
             <CheckBox x:Name="cbAutoScroll" DockPanel.Dock="Left" Margin="10" IsChecked="True"
-                      Content="{x:Static res:Strings.chkAutoScroll}" VerticalAlignment="Center"
+                      Content=" x:Static res:Strings.chkAutoScroll " VerticalAlignment="Center"
                       FontStretch="SemiCondensed"/>
             <Button Click="btViewLog_Click_1" x:Name="btViewLog"
-                    Content="{x:Static res:Strings.btBuildImageViewInNotepad}" Margin="20,0,0,0" Padding="5,0,5,0"
+                    Content=" x:Static res:Strings.btBuildImageViewInNotepad " Margin="20,0,0,0" Padding="5,0,5,0"
                     Height="20" IsEnabled="{Binding ElementName=lv, Path=Items.Count}"/>
             <Button Click="btClearLog_Click_1" x:Name="btClearLog"
-                    Content="{x:Static res:Strings.btBuildImageClearLog}" Margin="20,0,0,0" Height="20"
+                    Content=" x:Static res:Strings.btBuildImageClearLog " Margin="20,0,0,0" Height="20"
                     IsEnabled="{Binding ElementName=lv, Path=Items.Count}"/>
             <Button Click="btOpenFolder_Click_1" x:Name="btOpenOutputFolder"
-                    Content="{x:Static res:Strings.btBuildImageOpenOutputFolder}" Margin="20,0,0,0" Padding="5,0,5,0"
+                    Content=" x:Static res:Strings.btBuildImageOpenOutputFolder " Margin="20,0,0,0" Padding="5,0,5,0"
                     Height="20"/>
             <ProgressBar x:Name="pbBuild" Margin="20,0,0,0" IsIndeterminate="false" Minimum="0" Maximum="700" Value="0"
                          Height="20" Orientation="Horizontal" DockPanel.Dock="Right" Visibility="Hidden"/>
@@ -108,7 +109,7 @@
                   <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="txtLabelCmdLine" Margin="5" Grid.Column="0"
-                           Text="{x:Static res:Strings.txtBuildImageCommandLabel}"/>
+                           Text=" x:Static res:Strings.txtBuildImageCommandLabel "/>
                 <TextBox TargetUpdated="txtCmdLine_TargetUpdated"
                          PreviewMouseDoubleClick="txtCmdLine_PreviewMouseDoubleClick" x:Name="txtCmdLine" Margin="5"
                          Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Background="Transparent"
@@ -116,7 +117,7 @@
                          Text="{Binding Path=BuildCommandLine, UpdateSourceTrigger=PropertyChanged, NotifyOnTargetUpdated=true}">
                   <FrameworkElement.ContextMenu>
                     <ContextMenu>
-                      <MenuItem Click="txtCmdLine_MenuItem_Click" Header="{x:Static res:Strings.miConxtextMenuCopy}"
+                      <MenuItem Click="txtCmdLine_MenuItem_Click" Header=" x:Static res:Strings.miConxtextMenuCopy "
                                 IsEnabled="true" StaysOpenOnClick="false">
                         <MenuItem.Icon>
                           <Image Source="/ImageDesigner;component/Resources/Images/Copy.png"/>

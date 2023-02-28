@@ -1,53 +1,68 @@
 <Window x:Class="Microsoft.WindowsPhone.ImageDesigner.UI.CustomGetFileDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:common="using:Microsoft.WindowsPhone.ImageDesigner.UI.Common"
+        xmlns:common="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Common"
         xmlns:res="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.Resources;assembly=ImageDesignerCore"
         xmlns:core="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core;assembly=ImageDesignerCore"
-        xmlns:view="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Views" xmlns:viewmodels="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels;assembly=ImageDesignerCore" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d:DataContext="{d:DesignInstance Type=viewmodels:SettingUpPageVM}"
+        xmlns:view="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Views" 
+        xmlns:viewmodels="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels;assembly=ImageDesignerCore" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        
         Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Background="#FF0079A8" MinWidth="100"
         MinHeight="100" Width="300" Height="250" ScrollViewer.VerticalScrollBarVisibility="Auto"
         ScrollViewer.HorizontalScrollBarVisibility="Auto" AllowsTransparency="true" ResizeMode="NoResize"
         SizeToContent="WidthAndHeight"
-        Title="{Binding Title}">
-    <!--Style="{DynamicResource CustomMessageBoxStyle}" -->
+        Title="{Binding Title}"
+        Style="{DynamicResource CustomMessageBoxStyle}"
+        >
+    <!--
+    d:DataContext="{d:DesignInstance Type=viewmodels:SettingUpPageVM}"
+    Style="{DynamicResource CustomMessageBoxStyle}" 
+    -->
 
    <Grid Background="White">
     <Grid.RowDefinitions>
       <RowDefinition/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
+       
     <FrameworkElement.Resources>
       <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
       <common:DialogTypeToVisibilityConverter x:Key="dlgToVisibilityConverter"/>
     </FrameworkElement.Resources>
+       
     <DockPanel Margin="10,7,10,5" 
                Grid.Row="0"
                VerticalAlignment="Stretch">
-      <StackPanel Orientation="Vertical" 
+     
+        <StackPanel Orientation="Vertical" 
                   VerticalAlignment="Stretch" DockPanel.Dock="Top">
         <StackPanel Orientation="Horizontal">
           <Image Source="/Resources/Images/Information_blue_6227.ico" Width="25" Height="30"
                  Visibility="Collapsed"/>
-          <TextBlock x:Name="tbPageTitle" Style="{StaticResource mboxHeader}" TextAlignment="Left"
+                    <TextBlock x:Name="tbPageTitle" Style="{StaticResource mboxHeader}" TextAlignment="Left"
                      VerticalAlignment="Center" 
                      Text="{Binding Header}"
                      Visibility="{Binding ShowHeader, Converter={StaticResource boolToVisibilityConverter}}"/>
-        </StackPanel>
-        <Separator/>
-        <TextBlock x:Name="tbPageInstructions" 
+                </StackPanel>
+       
+          <Separator/>
+       
+          <TextBlock x:Name="tbPageInstructions" 
                    Style="{StaticResource mboxMessage}" 
                    TextWrapping="Wrap" 
                    Height="Auto"
                    MaxWidth="250"
                    Margin="10" 
                    Text="{Binding Instructions}"/>
-        <TextBlock x:Name="tbPageDisplayNameLabel" Style="{StaticResource mboxMessage}" 
+       
+          <TextBlock x:Name="tbPageDisplayNameLabel" Style="{StaticResource mboxMessage}" 
                    Height="Auto" 
                    MaxWidth="200"
              Text=" x:Static res:Strings.tbGetFileDlgDisplayName "
              Visibility="{Binding ShowDisplayName, Converter={StaticResource boolToVisibilityConverter}}"/>
-        <TextBox x:Name="tbPageDisplayName" 
+       
+          <TextBox x:Name="tbPageDisplayName" 
                  Height="Auto" 
                  Width="200" Text="{Binding DisplayName}"
              Visibility="{Binding ShowDisplayName, Converter={StaticResource boolToVisibilityConverter}}"/>
@@ -66,11 +81,13 @@
         </StackPanel>
       </StackPanel>
     </DockPanel>
+       
     <DockPanel Margin="0,10,0,0" Grid.Row="1">
-      <FrameworkElement.Resources>
+      <!--FrameworkElement.Resources>
         <core:NegateConverter x:Key="negateConverter"/>
         <common:BooleanToVisibilityConverter x:Key="boolToVisConverter"/>
-      </FrameworkElement.Resources>
+      </FrameworkElement.Resources-->
+        
       <Separator DockPanel.Dock="Top"/>
       <TextBlock x:Name="tb1" Margin="20,5,20,0" Style="{StaticResource mboxInfo}" 
                  TextWrapping="Wrap" Height="Auto"
@@ -95,5 +112,6 @@
                 Visibility="{Binding ShowCancelButton, Converter={StaticResource boolToVisibilityConverter}}"/>
       </StackPanel>
     </DockPanel>
+       
   </Grid>
 </Window>

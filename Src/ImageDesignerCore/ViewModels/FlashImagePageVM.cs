@@ -42,18 +42,29 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
 
     private void _devicemon_OnDeviceArrival(object sender, EventArgs e)
     {
-      if (Application.Current != null)
-        Application.Current.Dispatcher.Invoke((Delegate) (() => this.GetConnectedDevicesCommand.Execute((object) this)));
-      else
-        this.GetConnectedDevicesCommand.Execute((object) this);
+            //RnD
+
+            if (Application.Current != null)
+            {
+                // fix it
+               // Application.Current.Dispatcher.Invoke((Delegate)
+               //     (() => this.GetConnectedDevicesCommand.Execute((object)this)));
+            }
+            else
+                this.GetConnectedDevicesCommand.Execute((object)this);
     }
 
     private void _devicemon_OnDeviceRemoval(object sender, EventArgs e)
     {
-      if (Application.Current != null)
-        Application.Current.Dispatcher.Invoke((Delegate) (() => this.GetConnectedDevicesCommand.Execute((object) this)));
-      else
-        this.GetConnectedDevicesCommand.Execute((object) this);
+            //RnD
+            if (Application.Current != null)
+            {
+                // fix it
+                //Application.Current.Dispatcher.Invoke((Delegate)
+                //    (() => this.GetConnectedDevicesCommand.Execute((object)this)));
+            }
+            else
+                this.GetConnectedDevicesCommand.Execute((object)this);
     }
 
     private void OnProgressChange(object sender, ProgressChangedEventArgs e)
@@ -62,8 +73,9 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
         return;
       if (Application.Current != null)
       {
-        Application.Current.Dispatcher.Invoke((Delegate) (() => this.FlashProgress = (double) e.UserState));
-        Application.Current.Dispatcher.Invoke((Delegate) (() => this.ProgressText = string.Format("{0,2:0}", (object) this.FlashProgress)));
+                //RnD ; fix it
+        //Application.Current.Dispatcher.Invoke((Delegate) (() => this.FlashProgress = (double) e.UserState));
+        //Application.Current.Dispatcher.Invoke((Delegate) (() => this.ProgressText = string.Format("{0,2:0}", (object) this.FlashProgress)));
       }
       else
       {

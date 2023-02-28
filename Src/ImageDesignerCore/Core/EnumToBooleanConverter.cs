@@ -12,9 +12,13 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
 {
   public partial class EnumToBooleanConverter : IValueConverter
   {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => (object) value.Equals(parameter);
+        public object Convert(object value, Type targetType, object parameter,
+            CultureInfo culture)
+        {
+            return (object)value.Equals(parameter);
+        }
 
-    public object ConvertBack(
+        public object ConvertBack(
       object value,
       Type targetType,
       object parameter,

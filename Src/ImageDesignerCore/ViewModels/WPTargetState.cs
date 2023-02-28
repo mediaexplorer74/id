@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// WPTargetState.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels.WPTargetState
 // Assembly: ImageDesignerCore, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: A00BBFA4-FB4D-4867-990A-673A22716507
@@ -100,12 +100,16 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
       string format = Tools.GetString("txtCOSTargetName");
       int num2 = num1;
       int num3 = num2 + 1;
+
       // ISSUE: variable of a boxed type
-      __Boxed<int> local = (ValueType) num2;
+      //__Boxed<int> 
+      ValueType local = (ValueType) num2;
+      
       string newName = string.Format(format, (object) local);
       if (parent.Children != null && parent.Children.Count<WPListItemBase>() != 0)
       {
-        while (parent.Children.ToList<WPListItemBase>().Find((Predicate<WPListItemBase>) (child => child.DisplayText.Equals(newName))) != null)
+        while (parent.Children.ToList<WPListItemBase>().Find((Predicate<WPListItemBase>) 
+            (child => child.DisplayText.Equals(newName))) != null)
           newName = string.Format(Tools.GetString("txtCOSTargetName"), (object) num3++);
       }
       WPTargetState newItem = new WPTargetState(targetState, isIncludedInOutput, newName, parent);

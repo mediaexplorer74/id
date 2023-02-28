@@ -9,6 +9,7 @@
              xmlns:res="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.Core.Resources;assembly=ImageDesignerCore"
              xmlns:common="clr-namespace:Microsoft.WindowsPhone.ImageDesigner.UI.Common"
              Loaded="IDContainer_Loaded_1" x:Name="UserControl">
+    
   <FrameworkElement.Resources>
     <DataTemplate DataType="{x:Type viewModel:GettingStartedPageVM}">
       <view:GettingStartedPage/>
@@ -51,15 +52,24 @@
         <Visibility x:Key="Visible">Visible</Visibility>
         <Storyboard x:Key="SlideStoryboard">
           <DoubleAnimation Storyboard.TargetName="container"
-                           Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" From="0" FillBehavior="Stop"
-                           Duration="0:0:0.5" DecelerationRatio="1.0"/>
-          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="a" Storyboard.TargetProperty="Visibility" Duration="0:0:0.5"
+                           Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" 
+                           From="0" 
+                           FillBehavior="Stop"
+                           Duration="0:0:0.5" 
+                           DecelerationRatio="1.0"/>
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="a" 
+                                         Storyboard.TargetProperty="Visibility" 
+                                         Duration="0:0:0.5"
                                          FillBehavior="Stop">
             <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource Visible}"/>
           </ObjectAnimationUsingKeyFrames>
-          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="b" Storyboard.TargetProperty="Visibility" Duration="0:0:0.5"
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="b" 
+                                         Storyboard.TargetProperty="Visibility" 
+                                         Duration="0:0:0.5"
                                          FillBehavior="Stop">
-            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource Visible}"/>
+            <DiscreteObjectKeyFrame KeyTime="0:0:0" 
+                                    Value="{StaticResource Visible}"/>
+              
           </ObjectAnimationUsingKeyFrames>
         </Storyboard>
       </FrameworkTemplate.Resources>
@@ -68,13 +78,17 @@
           <core:NegateConverter x:Key="negateConverter"/>
           <common:Negative x:Key="NegativeConverter"/>
         </FrameworkElement.Resources>
+          
         <common:Transition x:Name="transition" Source="{Binding}"/>
+          
         <Grid Name="container">
           <UIElement.RenderTransform>
             <TranslateTransform X="{Binding ElementName=container, Path=ActualWidth, Converter={StaticResource NegativeConverter}}"/>
           </UIElement.RenderTransform>
-          <ContentControl Name="a" Visibility="Hidden" Content="{Binding ElementName=transition, Path=DisplayA}"/>
-          <ContentControl Name="b" Visibility="Hidden" Content="{Binding ElementName=transition, Path=DisplayB}"/>
+          <ContentControl Name="a" Visibility="Hidden" 
+                          Content="{Binding ElementName=transition, Path=DisplayA}"/>
+          <ContentControl Name="b" Visibility="Hidden" 
+                          Content="{Binding ElementName=transition, Path=DisplayB}"/>
         </Grid>
       </Grid>
       <DataTemplate.Triggers>
@@ -103,6 +117,7 @@
       </DataTemplate.Triggers>
     </DataTemplate>
   </FrameworkElement.Resources>
+    
   <Grid x:Name="LayoutRoot" Background="White">
     <Grid.RowDefinitions>
       <RowDefinition Height="*"/>
@@ -120,34 +135,34 @@
     </Border>
     <Border Grid.Row="1" Margin="10,0,9,0">
       <DockPanel>
-        <FrameworkElement.Resources>
+        <!--FrameworkElement.Resources>
           <core:NegateConverter x:Key="negateConverter"/>
           <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter"/>
-        </FrameworkElement.Resources>
+        </FrameworkElement.Resources-->
         <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" HorizontalAlignment="Left">
-          <Button Click="btStartOver_Click" x:Name="btStartOver" Content="{x:Static res:Strings.btStartOver_Text}"
+          <Button Click="btStartOver_Click" x:Name="btStartOver" Content=" x:Static res:Strings.btStartOver_Text "
                   Margin="10,10,10,10" Height="20" HorizontalAlignment="Left"
                   IsEnabled="{Binding Path=CanMoveToStartPage}"/>
           <Button Click="btRestartCustomization_Click" x:Name="btRestartCustomization"
-                  Content="{x:Static res:Strings.btRestartCustomization_Text}" Margin="10,10,10,10" Height="20"
+                  Content=" x:Static res:Strings.btRestartCustomization_Text " Margin="10,10,10,10" Height="20"
                   Padding="10,0,10,0" HorizontalAlignment="Left" Visibility="Collapsed"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
-          <Button Click="btCancel_Click" x:Name="btCancel" Content="{x:Static res:Strings.btCancel_Text}"
+          <Button Click="btCancel_Click" x:Name="btCancel" Content=" x:Static res:Strings.btCancel_Text "
                   Margin="10,10,10,10" Height="20" HorizontalAlignment="Right"
                   Visibility="{Binding CancelSupported, Converter={StaticResource boolToVisibilityConverter}}"
                   IsEnabled="{Binding CanCancel}"/>
-          <Button Click="btSave_Click" x:Name="btSave" Content="{x:Static res:Strings.btSave_Text}"
+          <Button Click="btSave_Click" x:Name="btSave" Content=" x:Static res:Strings.btSave_Text "
                   Margin="10,10,10,10" Height="20" HorizontalAlignment="Right"
                   IsEnabled="{Binding Path=EnableNextButton}"
                   Visibility="{Binding SaveSupported, Converter={StaticResource boolToVisibilityConverter}}"/>
-          <Button Click="btBuild_Click" x:Name="btBuild" Content="{x:Static res:Strings.btBuild_Text}"
+          <Button Click="btBuild_Click" x:Name="btBuild" Content=" x:Static res:Strings.btBuild_Text "
                   Margin="10,10,10,10" Height="20" HorizontalAlignment="Right" Visibility="Collapsed"
                   IsEnabled="{Binding EnableBuildButton}"/>
-          <Button Click="btFlash_Click" x:Name="btFlash" Content="{x:Static res:Strings.btFlash_Text}"
+          <Button Click="btFlash_Click" x:Name="btFlash" Content=" x:Static res:Strings.btFlash_Text "
                   Margin="10,10,10,10" Height="20" HorizontalAlignment="Right" Visibility="Collapsed"
                   IsEnabled="{Binding CanFlash}"/>
-          <Button Click="btNext_Click" x:Name="btNext" Content="{x:Static res:Strings.btNext_Text}"
+          <Button Click="btNext_Click" x:Name="btNext" Content=" x:Static res:Strings.btNext_Text "
                   Margin="10,10,10,10" Height="20" VerticalAlignment="Center" IsDefault="true"
                   IsEnabled="{Binding Path=EnableNextButton}"/>
         </StackPanel>

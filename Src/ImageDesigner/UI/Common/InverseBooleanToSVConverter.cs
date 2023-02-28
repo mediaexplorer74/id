@@ -23,7 +23,8 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Common
       CultureInfo culture)
     {
       ScrollBarVisibility scrollBarVisibility = (ScrollBarVisibility) value;
-      return (object) (bool) (scrollBarVisibility == ScrollBarVisibility.Visible ? 0 : (scrollBarVisibility != ScrollBarVisibility.Auto ? 1 : 0));
+      return (object) (scrollBarVisibility == ScrollBarVisibility.Visible 
+                ? 0 : (scrollBarVisibility != ScrollBarVisibility.Auto ? 1 : 0));
     }
   }
 }

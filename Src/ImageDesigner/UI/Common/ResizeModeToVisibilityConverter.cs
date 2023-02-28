@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// ResizeModeToVisibilityConverter.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.UI.Common.ResizeModeToVisibilityConverter
 // Assembly: ImageDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: AACE6177-DC79-444E-B25E-2FEDC45F69E4
@@ -14,7 +14,9 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Common
   [ValueConversion(typeof (ResizeMode), typeof (Visibility))]
   public class ResizeModeToVisibilityConverter : IValueConverter
   {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => (ResizeMode) value == ResizeMode.NoResize ? (object) Visibility.Collapsed : (object) Visibility.Visible;
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) 
+            => (ResizeMode) value == ResizeMode.NoResize ? (object) Visibility.Collapsed 
+            : (object) Visibility.Visible;
 
     public object ConvertBack(
       object value,
@@ -22,7 +24,9 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Common
       object parameter,
       CultureInfo culture)
     {
-      return (Visibility) value == Visibility.Collapsed ? (object) ResizeMode.NoResize : (object) ResizeMode.CanResize;
+      return (Visibility) value == Visibility.Collapsed 
+                ? (object) ResizeMode.NoResize 
+                : (object) ResizeMode.CanResize;
     }
   }
 }

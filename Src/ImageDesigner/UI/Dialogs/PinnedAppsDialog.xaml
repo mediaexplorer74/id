@@ -58,7 +58,7 @@
                 BorderThickness="0,0,0,1">
           <DockPanel>
             <TextBlock DockPanel.Dock="Left" Margin="10,5,5,5" Foreground="Black"
-                       Text="{x:Static res:Strings.tbPinnedAppLayoutOptions}"/>
+                       Text=" x:Static res:Strings.tbPinnedAppLayoutOptions "/>
             <Image MouseLeftButtonUp="HelpButtonClick" DockPanel.Dock="Right" Margin="20,0,5,0"
                    HorizontalAlignment="Right" VerticalAlignment="Center" Width="25" Height="28">
               <FrameworkElement.Style>
@@ -76,14 +76,14 @@
         </Border>
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
           <TextBlock x:Name="tbLayout" Grid.Row="1" Grid.Column="0" Margin="5,0,0,0" VerticalAlignment="Center"
-                     Text="{x:Static res:Strings.tbPinnedAppStartScreenLayout}"/>
+                     Text=" x:Static res:Strings.tbPinnedAppStartScreenLayout "/>
           <ComboBox x:Name="cmbLayout" Grid.Row="1" Grid.Column="1" Margin="10,5" MinWidth="120"
                     VerticalAlignment="Center" ItemsSource="{Binding Path=StartLayoutList}"
                     SelectedValue="{Binding Path=StartTileLayout, Converter={StaticResource StartLayoutToWrapperConverter}, Mode=TwoWay}"/>
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
           <TextBlock x:Name="tbFeaturedTileLayout" Grid.Row="1" Grid.Column="0" Margin="5,0,0,0"
-                     VerticalAlignment="Center" Text="{x:Static res:Strings.tbPinnedAppFeaturedTileLayout}" Height="14"/>
+                     VerticalAlignment="Center" Text=" x:Static res:Strings.tbPinnedAppFeaturedTileLayout" Height="14"/>
           <ComboBox x:Name="cmbFeaturedTileLayout" Grid.Row="1" Grid.Column="1" Margin="10,10" MinWidth="120"
                     VerticalAlignment="Center" Height="22" ItemsSource="{Binding Path=FeatureTileLayoutList}"
                     SelectedValue="{Binding Path=FeatureTileLayout, Converter={StaticResource FeatureLayoutToWrapperConverter}, Mode=TwoWay}"/>
@@ -100,7 +100,7 @@
         <Border Grid.Row="0" Background="#FFC4E5F6" BorderBrush="#00AFDB" BorderThickness="0,0,0,1">
           <DockPanel>
             <TextBlock DockPanel.Dock="Left" Margin="10,5,5,5" Foreground="Black"
-                       Text="{x:Static res:Strings.tbPinnedAppTableHeader}"/>
+                       Text=" x:Static res:Strings.tbPinnedAppTableHeader "/>
             <Image MouseLeftButtonUp="HelpButtonClick" DockPanel.Dock="Right" Margin="20,0,5,0"
                    HorizontalAlignment="Right" VerticalAlignment="Center" Width="25" Height="28">
               <FrameworkElement.Style>
@@ -122,7 +122,7 @@
           <DataGrid.Columns>
             <DataGridTextColumn Width="170" IsReadOnly="true" Binding="{Binding AppSettings.Name, Mode=TwoWay}">
               <DataGridColumn.Header>
-                <TextBlock Text="{x:Static res:Strings.tbPinnedAppNameURL}" HorizontalAlignment="Center"/>
+                <TextBlock Text=" x:Static res:Strings.tbPinnedAppNameURL " HorizontalAlignment="Center"/>
               </DataGridColumn.Header>
               <DataGridColumn.HeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -132,7 +132,7 @@
             </DataGridTextColumn>
             <DataGridTextColumn Width="100" IsReadOnly="true" Binding="{Binding AppSettings.LocalizedAppType}">
               <DataGridColumn.Header>
-                <TextBlock Text="{x:Static res:Strings.chPinnedAppType}" HorizontalAlignment="Center"/>
+                <TextBlock Text=" x:Static res:Strings.chPinnedAppType " HorizontalAlignment="Center"/>
               </DataGridColumn.Header>
               <DataGridColumn.HeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -156,7 +156,7 @@
                   <TextBlock Margin="0,5,0,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="4 Column"
                              HorizontalAlignment="Center" VerticalAlignment="Center"/>
                   <Separator Grid.Row="1" Grid.ColumnSpan="3"/>
-                  <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static res:Strings.chPinnedAppTileSize}"
+                  <TextBlock Grid.Row="2" Grid.Column="0" Text=" x:Static res:Strings.chPinnedAppTileSize "
                              HorizontalAlignment="Center" VerticalAlignment="Center"/>
                   <TextBlock Grid.Row="2" Grid.Column="1" Text="X" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                   <TextBlock Grid.Row="2" Grid.Column="2" Text="Y" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -201,7 +201,7 @@
                   <TextBlock Margin="0,5,0,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="6 Column"
                              HorizontalAlignment="Center" VerticalAlignment="Center"/>
                   <Separator Grid.Row="1" Grid.ColumnSpan="3"/>
-                  <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static res:Strings.chPinnedAppTileSize}"
+                  <TextBlock Grid.Row="2" Grid.Column="0" Text=" x:Static res:Strings.chPinnedAppTileSize "
                              HorizontalAlignment="Center" VerticalAlignment="Center"/>
                   <TextBlock Grid.Row="2" Grid.Column="1" Text="X" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                   <TextBlock Grid.Row="2" Grid.Column="2" Text="Y" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -262,9 +262,9 @@
     <Separator Grid.Row="3" BorderBrush="#00AFDB" BorderThickness="2"/>
     <DockPanel Grid.Row="4" Grid.Column="0">
       <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" HorizontalAlignment="Center">
-        <Button Click="btAdd_Click" Margin="10" Content="{x:Static res:Strings.bPinnedAppAdd}"/>
-        <Button Click="btOk_Click" Margin="10" Content="{x:Static res:Strings.bPinnedAppOK}"/>
-        <Button Click="btCancel_Click" Margin="10" Content="{x:Static res:Strings.bPinnedAppCancel}"/>
+        <Button Click="btAdd_Click" Margin="10" Content=" x:Static res:Strings.bPinnedAppAdd "/>
+        <Button Click="btOk_Click" Margin="10" Content=" x:Static res:Strings.bPinnedAppOK "/>
+        <Button Click="btCancel_Click" Margin="10" Content=" x:Static res:Strings.bPinnedAppCancel "/>
       </StackPanel>
     </DockPanel>
   </Grid>

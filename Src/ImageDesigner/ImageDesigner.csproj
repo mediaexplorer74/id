@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -47,12 +65,12 @@
     <Compile Include="UI\Common\FlashImageCmdHandler.cs" />
     <Compile Include="UI\Common\IDCommandLine.cs" />
     <Compile Include="ImageDesignerMain.cs" />
-    <Compile Include="ImageDesigner.cs" />
+    <Compile Include="ImageDesigner.xaml.cs" />
     <Compile Include="UI\Dialogs\CustomMessageBox.cs" />
     <Compile Include="UI\Dialogs\CustomGetValueDialog.cs" />
     <Compile Include="UI\Dialogs\CustomGetFileDialog.cs" />
     <Compile Include="UI\Dialogs\TargetValuesDialog.cs" />
-    <Compile Include="App.cs" />
+    <Compile Include="App.xaml.cs" />
     <Compile Include="UI\Common\InverseBooleanToSVConverter.cs" />
     <Compile Include="UI\Common\BooleanToVisibilityConverter.cs" />
     <Compile Include="UI\Common\DialogTypeToVisibilityConverter.cs" />
@@ -80,34 +98,34 @@
     <Compile Include="UI\Dialogs\PinnedAppSettingsDialog.cs" />
     <Compile Include="UI\Dialogs\PinnedAppsDialog.cs" />
     <Compile Include="UI\Controls\CheckListBox.cs" />
-    <Compile Include="UI\Resources\Resources.cs" />
+    <Compile Include="Resources\Resources1.cs" />
     <Compile Include="UI\Properties\Settings.cs" />
-    <Compile Include="UI\Resources\GeneratedInternalTypeHelper.cs" />
+    <Compile Include="Resources\GeneratedInternalTypeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="UI\Resources\Images\Application_32xmd.png" />
-    <Resource Include="UI\Resources\Images\Arrow_down_16xlg.png" />
-    <Resource Include="UI\Resources\Images\Arrow_up_16xlg.png" />
-    <Resource Include="UI\Resources\Images\Conditions_5855.png" />
-    <Resource Include="UI\Resources\Images\Control_openfiledialog.bmp" />
-    <Resource Include="UI\Resources\Images\Copy.png" />
-    <Resource Include="UI\Resources\Images\CustomizationTemplatesLeftArrow.jpg" />
-    <Resource Include="UI\Resources\Images\CustomizationTemplatesRightArrow.jpg" />
-    <Resource Include="UI\Resources\Images\Delete_16xlg.png" />
-    <Resource Include="UI\Resources\Images\Error_Red_16x16_Cyan.png" />
-    <Resource Include="UI\Resources\Images\Folder_Closed_32xmd.png" />
-    <Resource Include="UI\Resources\Images\Gear_32xmd.png" />
-    <Resource Include="UI\Resources\Images\Help_Black.png" />
-    <Resource Include="UI\Resources\Images\Help_Blue.png" />
-    <Resource Include="UI\Resources\Images\ImageDesignerSplash.png" />
-    <Resource Include="UI\Resources\Images\MapTileLayer_32x.png" />
-    <Resource Include="UI\Resources\Images\Pencil_005_16xlg.png" />
-    <Resource Include="UI\Resources\Images\Properties_16xmd.png" />
-    <Resource Include="UI\Resources\Images\Refresh_16xlg.png" />
-    <Resource Include="UI\Resources\Images\Resource_32xmd.png" />
-    <Resource Include="UI\Resources\Images\StatusAnnotations_Warning_32xsm_Color.png" />
-    <Resource Include="UI\Resources\Images\WPLogoWhite.png" />
+    <Resource Include="Resources\Images\Application_32xmd.png" />
+    <Resource Include="Resources\Images\Arrow_down_16xlg.png" />
+    <Resource Include="Resources\Images\Arrow_up_16xlg.png" />
+    <Resource Include="Resources\Images\Conditions_5855.png" />
+    <Resource Include="Resources\Images\Control_openfiledialog.bmp" />
+    <Resource Include="Resources\Images\Copy.png" />
+    <Resource Include="Resources\Images\CustomizationTemplatesLeftArrow.jpg" />
+    <Resource Include="Resources\Images\CustomizationTemplatesRightArrow.jpg" />
+    <Resource Include="Resources\Images\Delete_16xlg.png" />
+    <Resource Include="Resources\Images\Error_Red_16x16_Cyan.png" />
+    <Resource Include="Resources\Images\Folder_Closed_32xmd.png" />
+    <Resource Include="Resources\Images\Gear_32xmd.png" />
+    <Resource Include="Resources\Images\Help_Black.png" />
+    <Resource Include="Resources\Images\Help_Blue.png" />
+    <Resource Include="Resources\Images\ImageDesignerSplash.png" />
+    <Resource Include="Resources\Images\MapTileLayer_32x.png" />
+    <Resource Include="Resources\Images\Pencil_005_16xlg.png" />
+    <Resource Include="Resources\Images\Properties_16xmd.png" />
+    <Resource Include="Resources\Images\Refresh_16xlg.png" />
+    <Resource Include="Resources\Images\Resource_32xmd.png" />
+    <Resource Include="Resources\Images\StatusAnnotations_Warning_32xsm_Color.png" />
+    <Resource Include="Resources\Images\WPLogoWhite.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />
@@ -133,7 +151,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\Dialogs\IDContainer.xaml">
+    <Page Include="UI\Views\IDContainer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -206,7 +224,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Images\Control_OpenFileDialog.bmp" />
     <Content Include="Resources\Images\Information_blue_6227.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// WPCustomizationAssetOwner.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels.WPCustomizationAssetOwner
 // Assembly: ImageDesignerCore, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: A00BBFA4-FB4D-4867-990A-673A22716507
@@ -14,15 +14,20 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
   {
     public CustomizationAssetOwner Value;
 
-    public WPCustomizationAssetOwner(CustomizationAssetOwner value)
-      : base((WPListItemBase) null)
+    public WPCustomizationAssetOwner(CustomizationAssetOwner value) : base((WPListItemBase) null)
     {
       this.Value = value;
     }
 
-    public override string DisplayText => Enum.GetName(typeof (CustomizationAssetOwner), (object) this.Value);
+    public override string DisplayText
+    {
+        get
+        {
+            return Enum.GetName(typeof(CustomizationAssetOwner), (object)this.Value);
+        }
+    }
 
-    public static ObservableCollection<string> GetListNames()
+        public static ObservableCollection<string> GetListNames()
     {
       ObservableCollection<string> listNames = new ObservableCollection<string>();
       foreach (string name in Enum.GetNames(typeof (CustomizationAssetOwner)))
@@ -30,8 +35,7 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
       return listNames;
     }
 
-    public ObservableCollection<WPCustomizationAssetOwner> GetList(
-      CustomizationAssetOwner selectedValue)
+    public ObservableCollection<WPCustomizationAssetOwner> GetList(CustomizationAssetOwner selectedValue)
     {
       ObservableCollection<WPCustomizationAssetOwner> list = new ObservableCollection<WPCustomizationAssetOwner>();
       foreach (CustomizationAssetOwner customizationAssetOwner1 in Enum.GetValues(typeof (CustomizationAssetOwner)))

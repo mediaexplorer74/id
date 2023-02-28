@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
+using Application = Microsoft.WindowsPhone.ImageUpdate.Customization.XML.Application;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.Core
 {
@@ -79,8 +80,13 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
       {
         SettingUpPageVM vm = this._stateMap[IDStates.SettingUp] as SettingUpPageVM;
         string empty = string.Empty;
-        string outputDir = Application.Current == null ? vm.OutputPath : Application.Current.Dispatcher.Invoke((Delegate) (() => vm.OutputPath)) as string;
-        if (string.IsNullOrWhiteSpace(outputDir))
+
+                //RnD ; fix it
+                string outputDir = ""; // Application.Current == null
+                           // ? vm.OutputPath
+                          //  : Application.Current.Dispatcher.Invoke((Action) (() => vm.OutputPath)) as string;
+      
+         if (string.IsNullOrWhiteSpace(outputDir))
           outputDir = Constants.DEFAULT_OUTPUT_FOLDER;
         return outputDir;
       }
@@ -93,7 +99,11 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
       {
         BuildImagePageVM vm = this._stateMap[IDStates.BuildImage] as BuildImagePageVM;
         string empty = string.Empty;
-        return Application.Current == null ? vm.FFUPath : Application.Current.Dispatcher.Invoke((Delegate) (() => vm.FFUPath)) as string;
+
+                //RnD ; fix it
+                return /*Application.Current == */default; 
+            //? vm.FFUPath 
+            //: default;//Application.Current.Dispatcher.Invoke((Delegate) (() => vm.FFUPath)) as string;
       }
     }
 
@@ -122,8 +132,11 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
     {
       get
       {
+                //RnD
         SelectImagePageVM vm = this._stateMap[IDStates.SelectImageType] as SelectImagePageVM;
-        return Application.Current == null ? vm.SelectedOEMInput : Application.Current.Dispatcher.Invoke((Delegate) (() => vm.SelectedOEMInput)) as OEMInput;
+                return default; //Application.Current == null
+                       //     ? vm.SelectedOEMInput
+                       //     : default;//Application.Current.Dispatcher.Invoke((Delegate) (() => vm.SelectedOEMInput)) as OEMInput;
       }
       internal set => (this._stateMap[IDStates.SelectImageType] as SelectImagePageVM).SelectedOEMInput = value;
     }
@@ -140,7 +153,9 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
       {
         SelectImagePageVM vm = this._stateMap[IDStates.SelectImageType] as SelectImagePageVM;
         string empty = string.Empty;
-        return Application.Current == null ? vm.MicrosoftPhoneFMFile : Microsoft.WindowsPhone.ImageDesigner.Core.Tools.DispatcherExec<string>((Func<string>) (() => vm.MicrosoftPhoneFMFile));
+
+                //RnD ; fix it
+        return default;//Application.Current == null ? vm.MicrosoftPhoneFMFile : Microsoft.WindowsPhone.ImageDesigner.Core.Tools.DispatcherExec<string>((Func<string>) (() => vm.MicrosoftPhoneFMFile));
       }
     }
 
@@ -150,7 +165,9 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core
       {
         SelectImagePageVM vm = this._stateMap[IDStates.SelectImageType] as SelectImagePageVM;
         string empty = string.Empty;
-        return Application.Current == null ? vm.MMOSFMFile : Microsoft.WindowsPhone.ImageDesigner.Core.Tools.DispatcherExec<string>((Func<string>) (() => vm.MMOSFMFile));
+
+        // RnD ; fix it
+        return default; //Application.Current == null ? vm.MMOSFMFile : Microsoft.WindowsPhone.ImageDesigner.Core.Tools.DispatcherExec<string>((Func<string>) (() => vm.MMOSFMFile));
       }
     }
 

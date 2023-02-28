@@ -7,5 +7,7 @@
         ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
         AllowsTransparency="true" ResizeMode="NoResize" Style="{DynamicResource MetroWindowStyle}"
         Icon="Resources/Images/WPLogoWhite.png">
+    
   <view:IDContainer/>
+
 </Window>

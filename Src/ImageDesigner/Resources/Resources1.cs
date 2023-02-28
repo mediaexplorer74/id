@@ -16,12 +16,12 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Resources
   [GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
   [CompilerGenerated]
   [DebuggerNonUserCode]
-  internal class Resources
+  internal class Resources1
   {
     private static ResourceManager resourceMan;
     private static CultureInfo resourceCulture;
 
-    internal Resources()
+    internal Resources1()
     {
     }
 
@@ -30,17 +30,17 @@ namespace Microsoft.WindowsPhone.ImageDesigner.UI.Resources
     {
       get
       {
-        if (object.ReferenceEquals((object) Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources.resourceMan, (object) null))
-          Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources.resourceMan = new ResourceManager("Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources", typeof (Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources).Assembly);
-        return Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources.resourceMan;
+        if (object.ReferenceEquals((object) Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources1.resourceMan, (object) null))
+          Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources1.resourceMan = new ResourceManager("Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources", typeof (Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources1).Assembly);
+        return Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources1.resourceMan;
       }
     }
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     internal static CultureInfo Culture
     {
-      get => Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources.resourceCulture;
-      set => Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources.resourceCulture = value;
+      get => Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources1.resourceCulture;
+      set => Microsoft.WindowsPhone.ImageDesigner.UI.Resources.Resources1.resourceCulture = value;
     }
   }
 }

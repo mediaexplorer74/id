@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+﻿// GettingStartedPageVM.cs
 // Type: Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels.GettingStartedPageVM
 // Assembly: ImageDesignerCore, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b3f029d4c9c2ec30
 // MVID: A00BBFA4-FB4D-4867-990A-673A22716507
@@ -8,9 +8,13 @@ using System.Windows;
 
 namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
 {
-  public class GettingStartedPageVM : IDViewModelBase
+  public partial class GettingStartedPageVM : IDViewModelBase
   {
-    public static readonly DependencyProperty OptionNewImageProperty = DependencyProperty.Register("OptionNewImage", typeof (Workflow), typeof (GettingStartedPageVM), new PropertyMetadata((object) Workflow.CreateImage, new PropertyChangedCallback(GettingStartedPageVM.OnWorkflowChanged)));
+    public static readonly DependencyProperty OptionNewImageProperty 
+            = DependencyProperty.Register("OptionNewImage",
+                typeof (Workflow), typeof (GettingStartedPageVM), 
+                new PropertyMetadata((object) Workflow.CreateImage, 
+                    new PropertyChangedCallback(GettingStartedPageVM.OnWorkflowChanged)));
 
     internal GettingStartedPageVM(IDStates mystate)
       : base(mystate)
@@ -60,7 +64,8 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
       set => this.SetValue(GettingStartedPageVM.OptionNewImageProperty, (object) value);
     }
 
-    private static void OnWorkflowChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    private static void OnWorkflowChanged(DependencyObject d, 
+        DependencyPropertyChangedEventArgs e)
     {
       GettingStartedPageVM gettingStartedPageVm = d as GettingStartedPageVM;
       if ((Workflow) e.NewValue != Workflow.CreateImage)

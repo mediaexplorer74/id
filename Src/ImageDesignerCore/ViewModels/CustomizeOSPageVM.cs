@@ -198,7 +198,8 @@ namespace Microsoft.WindowsPhone.ImageDesigner.Core.ViewModels
       string str = "";
       foreach (IPkgInfo ipkgInfo in ipkgInfoList)
       {
-        if (ipkgInfo.ReleaseType == 2)
+         // RnD
+        if ((int)ipkgInfo.ReleaseType == 2)
         {
           try
           {

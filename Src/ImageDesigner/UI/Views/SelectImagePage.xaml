@@ -45,7 +45,7 @@
               Header=" x:Static res:Strings.gpSelectImageType ">
       <StackPanel Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top">
         <FrameworkElement.Resources>
-          <core:EnumToBooleanConverter x:Key="enumToBooleanConverter"/>
+          <!--core:EnumToBooleanConverter x:Key="enumToBooleanConverter"/-->
         </FrameworkElement.Resources>
        
           <RadioButton x:Name="rbSelectOption_TestImage" 
